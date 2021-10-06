@@ -1,0 +1,32 @@
+[
+    {
+       "id":0,
+        "perusahaan":"Holcim Tbk.",
+        "informasi": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi, voluptas aspernatur ratione consequuntur incidunt quisquam ex corporis soluta sapiente necessitatibus. Aspernatur odio quam tenetur id dolores quidem amet, reprehenderit distinctio!",
+        "expired": "2021-09-12",
+        "posisi":"Driver",
+        "alamat":"Bogor"
+    },
+    {
+        "id":1,
+        "perusahaan":"Indocement Tbk.",
+        "informasi": "sit amet consectetur adipisicing elit. Eligendi, voluptas aspernatur ratione consequuntur incidunt quisquam ex corporis soluta sapiente necessitatibus. Aspernatur odio quam tenetur id dolores quidem amet, reprehenderit distinctio!",
+        "expired": "2022-09-12",
+        "posisi":"Safety Control",
+        "alamat":"Bogor"
+    }, {
+        "id":2,
+        "perusahaan":"Telkom Tbk.",
+        "informasi": "dolor sit amet consectetur adipisicing elit. Eligendi, voluptas aspernatur ratione consequuntur incidunt quisquam ex corporis soluta sapiente necessitatibus. Aspernatur odio quam tenetur id dolores quidem amet, reprehenderit distinctio!",
+        "expired": "2021-12-12",
+        "posisi":"Mechanic",
+        "alamat":"Bogor"
+    }, {
+        "id":3,
+        "perusahaan":"Federal Tbk.",
+        "informasi": "Ipsum dolor sit amet consectetur adipisicing elit. Eligendi, voluptas aspernatur ratione consequuntur incidunt quisquam ex corporis soluta sapiente necessitatibus. Aspernatur odio quam tenetur id dolores quidem amet, reprehenderit distinctio!",
+        "expired": "2022-08-12",
+        "posisi":"Maintenance",
+        "alamat":"Bogor"
+    }
+]

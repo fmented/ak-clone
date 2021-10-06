@@ -1,0 +1,24 @@
+[
+    {
+        "mata_kuliah":"Matematika diskrit",
+        "dosen":"snsxnskxn",
+        "kehadiran":67,
+        "tugas":70,
+        "uts":89,
+        "uas":90,
+        "nilai_akhir":88,
+        "grade": "A",
+"id":0
+    },
+    {
+        "mata_kuliah":"Kalkulus",
+        "dosen":"snsxnskxn",
+        "kehadiran":67,
+        "tugas":70,
+        "uts":89,
+        "uas":100,
+        "nilai_akhir":94,
+        "grade": "A",
+"id":1
+    }
+]
