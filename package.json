@@ -5,7 +5,7 @@
     "dev": "svelte-kit dev --host",
     "preview": "svelte-kit preview",
     "build": "rm -rf build && svelte-kit build && touch .svelte-kit/build/.nojekyll",
-    "deploy": "npm run build && npx gh-pages -d build",
+    "deploy": "npm run build && node deploy.js",
     "lint": "prettier --ignore-path .gitignore  --check --plugin-search-dir=. . && eslint --ignore-path .gitignore .",
     "format": "prettier --ignore-path .gitignore --write --plugin-search-dir=. ."
   },
