@@ -11,7 +11,7 @@ import {base} from '$app/paths'
     <link rel="manifest" href="{base}/manifest.json">
 </svelte:head>
 
-<main>
+<main style="--bg:url({base}/sttm.webp)">
 
 	<form>
 		<div class='header' action='{base}/home'>
@@ -63,7 +63,7 @@ import {base} from '$app/paths'
 	
 	:global(main){
 		height:100vh;
-		background: url(/sttm.webp);
+		background: var(--bg);
         background-repeat: no-repeat;
         background-position: center;
         background-size: cover;
