@@ -3,14 +3,10 @@ import Stack from "$lib/Stack.svelte";
 import SortableTable from "$lib/SortableTable.svelte";
 import TitledBox from "$lib/TitledBox.svelte";
 import { onMount } from "svelte";
-import { getJSON, setHead } from "$lib/scripts/helper";
+import { getJSON } from "$lib/scripts/helper";
 import { base } from "$app/paths";
+import Page from "$lib/Page.svelte";
 
-
-setHead({
-    title: 'SIA STTM - Home',
-    caption:'Nama Mahasiswa / Status / Jurusan'
-})
 
 onMount(async ()=>{
     let data = await getJSON( base+'/info.json')
@@ -25,9 +21,7 @@ $: column = row? Object.keys(row[0]) : []
 
 </script>
 
-
-<main>
-
+<Page title='SIA STTM - Home' description='Nama / Status / Jurusan'>
     <br>
     <Stack>
         <TitledBox name='Info Terbaru'>
@@ -59,14 +53,14 @@ $: column = row? Object.keys(row[0]) : []
         </TitledBox>
     </Stack>
     <br>
-</main>
+</Page>
+
 <style>
-ol{
-    padding: 0 1rem;
-}
-
-div{
-    margin-bottom: 1rem;
-}
-
+    ol{
+        padding: 0 1rem;
+    }
+    
+    div{
+        margin-bottom: 1rem;
+    }
 </style>

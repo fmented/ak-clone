@@ -6,13 +6,12 @@ const config = {
 		// hydrate the <div id="svelte"> element in src/app.html
 		target: '#svelte',
 		adapter: adapter({
-			pages: 'build',
-			fallback: null,
+			pages:'build',
+			assets:'build'
 		}),
 		paths:{
-			base:'/ak-clone'
-		}
-
+		},
+		appDir:'app'
 	},
 };
 

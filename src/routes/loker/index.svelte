@@ -3,8 +3,9 @@ import FormControl from "$lib/FormControl.svelte";
 import Modal from "$lib/Modal.svelte";
 import SortableTable from "$lib/SortableTable.svelte";
 import { onMount } from "svelte";
-import { getJSON, setHead } from "$lib/scripts/helper";
+import { getJSON } from "$lib/scripts/helper";
 import {base} from '$app/paths'
+import Page from "$lib/Page.svelte";
 
 onMount(async ()=>{
     let data = await getJSON(base+'/lowker.json')
@@ -18,12 +19,6 @@ $: column = row? Object.keys(row[0]) : []
 
 let modalActive = false
 
-setHead({
-        title:'Info Loker',
-        caption:'Lowongan Pekerjaan'
-    })
-
-
 let form = {
     posisi:'',
     perusahaan: '',
@@ -33,13 +28,14 @@ let form = {
 }
 </script>
 
-<main>
+<Page title='Info Loker' description='Informai Lowongan Kerja'>
     <div class=btn-container>
         <button on:click={()=>modalActive=true}>Tambah</button>
         <button on:click={()=>window.print()}>Print</button>
     </div>
     <SortableTable {row} {column}></SortableTable>
-</main>
+</Page>
+
 
 <Modal bind:active={modalActive}>
         <div slot="head"><h3>Tambah Lowongan Pekerjaan</h3></div>
@@ -56,12 +52,12 @@ let form = {
                 
             <FormControl>
                 <label for="alamat">Alamat</label>
-                <textarea type="text" id="alamat" placeholder="Alamat Kantor Perusahaan" bind:value={form.alamat}></textarea>
+                <textarea type="text" id="alamat" placeholder="Alamat Kantor Perusahaan" bind:value={form.alamat} rows="3"></textarea>
             </FormControl>
             
             <FormControl>
                 <label for="info">Informasi</label>
-                <textarea type="text" id="info" placeholder="Informasi Seputar Deskripsi Pekerjaan Dan Persyaratan" bind:value={form.informasi}></textarea>
+                <textarea type="text" id="info" placeholder="Informasi Seputar Deskripsi Pekerjaan Dan Persyaratan" bind:value={form.informasi} rows="3"></textarea>
             </FormControl>
             
             <FormControl>
@@ -75,7 +71,7 @@ let form = {
             <button class="cancel" type="button" on:click={close}>
                 batal
             </button>
-            <button class="submit" type="submit" on:click={()=>{row=[...row, form]; close()}}>
+            <button class="submit" type="submit" on:click={()=>{form.id=row.length; row=[...row, form]; close()}}>
                 tambah
             </button>
         </div>
@@ -83,10 +79,6 @@ let form = {
 </Modal>
 
 <style>
-    main{
-        margin: 1rem;
-    }
-
     div{
         overflow: auto;
     }

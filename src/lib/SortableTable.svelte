@@ -207,9 +207,11 @@ select:focus, input:focus{
         display: none;
     }
 
-    th span:last-child{
+    th .wrap{
         font-size: .8rem;
-        word-break: break-all;
+        word-wrap: break-word;
+        display: flex;
+        flex-wrap: wrap;
     }
 
     td:first-of-type, td:last-of-type{
@@ -221,6 +223,10 @@ select:focus, input:focus{
     }
     
 
+}
+
+td .wrap .fake-label{
+    font-size: .8rem;
 }
 
 

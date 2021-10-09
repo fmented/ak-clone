@@ -1,4 +1,6 @@
 <script>
+import { base } from "$app/paths";
+import {slide} from 'svelte/transition'
     import Submenu from "./Submenu.svelte";
     export let title = ''
     export let caption = ''
@@ -8,23 +10,16 @@
     let scope = new Map()
     let closeAll
 
-    let menu
-    const close = _ => active = false
+    export const close = _ => {closeAll(); active = false}
 </script>
 
 
-<svelte:body on:click={e=>{
-    if(active){
-        if ([...e.path].includes(menu)) return
-        console.log(e);
-                
-    }
-}}/>
+<svelte:body on:scroll={close}/>
 
 <header>
     <nav>
         <li class="header">
-            <img src=logo.webp alt=logo width=167 height=168>
+            <img src='{base}/logo.webp' alt=logo width=167 height=168>
             <div class=text>
                 <span class="title">{title}</span>
                 <span class=caption>{caption}</span>
@@ -36,14 +31,18 @@
             </button>
         </li>
     </nav>
-    <menu class:mobile-show={active} bind:this={menu}>
+    {#key active}
+    <menu class:mobile-show={active} transition:slide>
         <li>
             <Submenu display='🏠 Beranda' bind:scope bind:closeAll>
                 <li>
-                    <a href=/home>🏫 Beranda</a>
+                    <a href='{base}/home' on:click={close}>🏫 Beranda</a>
                 </li>
                 <li>
-                    <a href=/login>🚪 Logout</a>
+                    <a href='{base}/changepassword' on:click={close}>🔑 Ganti Password</a>
+                </li>
+                <li>
+                    <a href='{base}/login' on:click={close}>🚪 Logout</a>
                 </li>
             </Submenu>
         </li>
@@ -57,7 +56,7 @@
         <li>
             <Submenu display='👀 Lihat' bind:scope>
                 <li>
-                    <a href=/nilai>📄 Nilai</a>
+                    <a href='{base}/nilai' on:click={()=>active=false}>📄 Nilai</a>
                 </li>
             </Submenu>
         </li>
@@ -79,13 +78,13 @@
         <li>
             <Submenu display='🔗 Tautan' bind:scope>
                 <li>
-                    <a href="/loker">🏢 Info Lowker</a>
+                    <a href='{base}/loker' on:click={()=>active=false}>🏢 Info Lowker</a>
                 </li>
             </Submenu>
         </li>
 
     </menu>
-
+{/key}
 </header>
 
 
@@ -115,7 +114,7 @@
         display: grid;
         grid-template-columns: 80% 15%;
         grid-gap: 3%;
-        padding: 0 2%;
+        padding: .5rem auto;
         grid-template-rows: clamp(8vh, 120px, 15vh);
     }
 
@@ -141,7 +140,7 @@
         display: flex;
         align-items: center;
         gap: 1rem;
-        padding: 0;
+        padding: 0 1rem;
     }
 
     .text{
@@ -195,7 +194,6 @@
         menu, .mobile-show{
             display: flex;
             justify-content: space-evenly;
-            gap: 2em;
             border-radius: 0;
             border: 0;
         }
@@ -225,6 +223,7 @@
         }
 	
         header{
+            max-width: 100% !important;
             display: flex;
             align-items: baseline;
             justify-content: space-between;
@@ -232,6 +231,7 @@
         nav{
             grid-template-columns: 1fr;
         }
+
     }
 
     header{
@@ -240,6 +240,7 @@
         z-index: 99;
         border-bottom: 2px solid black;
         position: sticky;
+        transform: translateZ(0);
     }
 
 

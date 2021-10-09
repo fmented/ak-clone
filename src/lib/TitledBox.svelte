@@ -1,4 +1,4 @@
-<article>
+<article  class={$$props.class}>
     <div>{$$props.name}</div>
     <div>
         <slot></slot>
@@ -25,10 +25,5 @@
         font-weight: 500;
         border-bottom: 2px solid black;
     }
-
-
-
-
-
 </style>
 

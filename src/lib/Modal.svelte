@@ -1,5 +1,5 @@
 <script>
-    import {fade} from 'svelte/transition'
+    import {fade, fly} from 'svelte/transition'
     import {onMount} from 'svelte'
 
     export let active = false
@@ -26,7 +26,7 @@
     if([...e.path].includes(modal)) return
     active = false
     }} transition:fade use:teleport>
-    <article bind:this={modal}>
+    <article bind:this={modal} in:fly={{y:-100}} out:fade>
         <div class=head>
             <slot name=head></slot>
         </div>

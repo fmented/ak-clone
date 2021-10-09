@@ -1,12 +1,20 @@
 <script>
-import { setHead } from "$lib/scripts/helper";
-
-setHead({title:'Login', caption:'Login Page'})
+import {base} from '$app/paths'
 </script>
 
+
+<svelte:head>
+    <link rel="stylesheet" href="{base}/global.css">
+    <link rel="favicon" href="{base}/favicon.png">
+    <title>Login</title>
+    <meta name="description" content="Login Page">
+    <link rel="manifest" href="{base}/manifest.json">
+</svelte:head>
+
 <main>
+
 	<form>
-		<div class='header'>
+		<div class='header' action='{base}/home'>
 			<span class="logo">🎓</span>
 			<b>
 				SISTEM AKADEMIK - STTM CILEUNGSI
@@ -22,7 +30,7 @@ setHead({title:'Login', caption:'Login Page'})
 				<label for="password">Password</label>
 				<input id="password" type="password" placeholder="Password">
 			</div>
-			<button type="submit" class="submit">
+			<button type="button" class="submit" on:click="{_=> window.location='/home'}">
 				Login
 			</button>
 			<hr>
@@ -31,31 +39,31 @@ setHead({title:'Login', caption:'Login Page'})
 			<div class="info">
 				<b>Sekolah Tinggi Teknologi Muhammadiyah Cileungsi</b>
                 <address>
-                    <i>Perum PT.SC Jl.Anggrek No.25 Cileungsi-Bogor 16820  <a href="tel:021-82495502">021-82495502</a></i>
+					<em>Perum PT.SC Jl.Anggrek No.25 Cileungsi-Bogor 16820  <a href="tel:021-82495502">021-82495502</a></em>
                     <br>
-                    <i>All Right Reserved by : <a href="/">Anas Sobarnas and Team</a> - 2016</i>
+                    <em>All Right Reserved by : <a href="/">Fmented and ...</a> - 2016</em>
                 </address>
 			</div>
-			<span>
-				<a href="/">🏠 Menu Utama</a> |
-				<a href="/">☑ e-Learning</a> |
-				<a href="/">📔 e-Perpus</a> |
-				<a href="/">☑ e-Arsip</a> |
+			<div class="links">
+				<a href="/">🏠 Menu Utama</a>
+				<a href="/">☑ e-Learning</a>
+				<a href="/">📔 e-Perpus</a>
+				<a href="/">☑ e-Arsip</a>
 				<a href="/">🏠 e-Alumni</a>
-			</span>
+			</div >
 		</div>
 	</form>
 </main>
-
+	
 <style>
 	
-    label{
-        margin-bottom: .5em;
+	label{
+		margin-bottom: .5em;
     }
 	
-	main{
+	:global(main){
 		height:100vh;
-		background: url('/ak-clone/sttm.webp');
+		background: url(/sttm.webp);
         background-repeat: no-repeat;
         background-position: center;
         background-size: cover;
@@ -88,13 +96,16 @@ setHead({title:'Login', caption:'Login Page'})
 	.info{
 		display:flex;
 		flex-direction:column;
-		font-size:10px
+		font-size:12px
 	}
 	
-	.footer>span{
-		font-size:10px;
+	.footer>.links{
+		font-size: 12px;
 		margin-top:1em;
 		padding-bottom:3em;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-evenly;
 	}
 	
 	input{

@@ -60,7 +60,7 @@ $: active = scope.get(_)
         <span class=indicator>{active?'🔺':'🔻'}</span>
     </div>
     {#if active}        
-        <menu in:slide={{delay:100, duration:100}} out:slide={{duration:100}} class:left={[...scope.keys()][0]==_}>
+        <menu in:slide={{delay:100}} out:slide={{}} class:left={[...scope.keys()][0]==_}>
             <slot></slot>
         </menu>
     {/if}
@@ -89,6 +89,7 @@ $: active = scope.get(_)
         background: white;
         padding-top: .25rem;
         padding-bottom: .5rem;
+        transform: translateZ(0);
     }
 
     span{

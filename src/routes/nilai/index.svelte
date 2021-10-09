@@ -1,10 +1,11 @@
 <script>
-import { getJSON, setHead } from "$lib/scripts/helper";
+import { getJSON } from "$lib/scripts/helper";
 
 import SortableTable from "$lib/SortableTable.svelte";
 import {base} from '$app/paths'
 import Tabs from "$lib/Tabs.svelte";
 import { onMount } from "svelte";
+import Page from "$lib/Page.svelte";
 
 let semester = [1, 2, 3, 4, 5, 6, 7, 8]
 
@@ -22,13 +23,8 @@ onMount(async()=>{
 
 })
 
-setHead({
-    title:'SIA - Nilai',
-    caption: 'Mahasiswa / Lihat / Nilai'
-})
 
 $: tabs = !result.length? [] : result.map((v, i)=> {
-    console.log(v);
     return {
         component: SortableTable,
         value: i,
@@ -43,6 +39,6 @@ $: tabs = !result.length? [] : result.map((v, i)=> {
 
 </script>
 
-<main>
+<Page title='Lihat Nilai' description='Lihat Nilai Hasil Studi'>
     <Tabs items={tabs}></Tabs>
-</main>
+</Page>
