@@ -1,3 +1,9 @@
+<script context=module>
+    import { loginRequired } from "$lib/scripts/helper";
+    export const load = loginRequired
+</script>
+
+
 <script>
 import { getJSON } from "$lib/scripts/helper";
 

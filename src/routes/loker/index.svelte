@@ -1,3 +1,9 @@
+<script context=module>
+    import { loginRequired } from "$lib/scripts/helper";
+    export const load = loginRequired
+</script>
+
+
 <script>
 import FormControl from "$lib/FormControl.svelte";
 import Modal from "$lib/Modal.svelte";
@@ -6,6 +12,7 @@ import { onMount } from "svelte";
 import { getJSON } from "$lib/scripts/helper";
 import {base} from '$app/paths'
 import Page from "$lib/Page.svelte";
+
 
 onMount(async ()=>{
     let data = await getJSON(base+'/lowker.json')

@@ -35,14 +35,14 @@ import {slide} from 'svelte/transition'
     <menu class:mobile-show={active} transition:slide>
         <li>
             <Submenu display='🏠 Beranda' bind:scope bind:closeAll>
-                <li>
+                <li class="link-like">
                     <a href='{base}/home' on:click={close}>🏫 Beranda</a>
                 </li>
-                <li>
+                <li class="link-like">
                     <a href='{base}/changepassword' on:click={close}>🔑 Ganti Password</a>
                 </li>
-                <li>
-                    <a href='{base}/login' on:click={close}>🚪 Logout</a>
+                <li class="link-like">
+                    <a href='{base}/logout' on:click={close}>🚪 Logout</a>
                 </li>
             </Submenu>
         </li>
@@ -55,7 +55,7 @@ import {slide} from 'svelte/transition'
         </li>
         <li>
             <Submenu display='👀 Lihat' bind:scope>
-                <li>
+                <li class="link-like">
                     <a href='{base}/nilai' on:click={()=>active=false}>📄 Nilai</a>
                 </li>
             </Submenu>
@@ -77,7 +77,7 @@ import {slide} from 'svelte/transition'
         </li>
         <li>
             <Submenu display='🔗 Tautan' bind:scope>
-                <li>
+                <li class="link-like">
                     <a href='{base}/loker' on:click={()=>active=false}>🏢 Info Lowker</a>
                 </li>
             </Submenu>
@@ -225,7 +225,7 @@ import {slide} from 'svelte/transition'
         header{
             max-width: 100% !important;
             display: flex;
-            align-items: baseline;
+            align-items: center;
             justify-content: space-between;
         }
         nav{
@@ -240,7 +240,7 @@ import {slide} from 'svelte/transition'
         z-index: 99;
         border-bottom: 2px solid black;
         position: sticky;
-        transform: translateZ(0);
+        user-select: none;
     }
 
 

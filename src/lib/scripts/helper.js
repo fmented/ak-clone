@@ -1,11 +1,17 @@
-import { navContext } from "../../store";
+import { base } from "$app/paths"
 
-
-
-export function setHead(param){
-    navContext.set(param)
-}
 
 export async function getJSON(url) {
     return (await (await fetch(url)).json())
+}
+
+export async function loginRequired({session}){
+    
+    if(!session.auth || !session.user){
+        return {
+            status:301,
+            redirect: base+'/login'
+        }
+    }
+    return {}
 }

@@ -1,15 +1,52 @@
+<script context=module>
+	export async function load({session}){
+        if(session.auth && session.user){
+            return {
+                status:302,
+                redirect: base+'/home'
+            }
+        }
+        else return {}
+    }
+</script>
+
 <script>
 import {base} from '$app/paths'
+import PageHead from '$lib/PageHead.svelte';
+
+let username
+let password
+let error
+
+
+async function login() {
+	if(!(username && password)) return error = 'please fill all field'
+	error = ''
+	const req = await fetch(base+'/auth', {
+		method: 'POST',
+		body: JSON.stringify({
+			username,
+			password
+		}),
+		headers:{
+			'content-type': 'application/json'
+		}
+	})
+
+	const res = await req.json()
+	error = res.error
+	if(res.authenticated) window.location = base+'/home'
+}
+
+$: password, error=''
+$: username, error=''
+
 </script>
 
 
-<svelte:head>
-    <link rel="stylesheet" href="{base}/global.css">
-    <link rel="favicon" href="{base}/favicon.png">
-    <title>Login</title>
-    <meta name="description" content="Login Page">
-    <link rel="manifest" href="{base}/manifest.json">
-</svelte:head>
+<svelte:body on:keyup={e=>{if(e.key=='Enter') login()}} />
+
+<PageHead title=Login description='Halaman Login'/>
 
 <main style="--bg:url({base}/sttm.webp)">
 
@@ -24,13 +61,18 @@ import {base} from '$app/paths'
 		<div class='main'>
 			<div class="control">
 				<label for="username">Nama Pengguna</label>
-				<input id="username" type="text" placeholder="Username">
+				<input id="username" type="text" placeholder="Username" bind:value={username} name="username" required>
 			</div>
 			<div class="control">
 				<label for="password">Password</label>
-				<input id="password" type="password" placeholder="Password">
+				<input id="password" type="password" placeholder="Password" bind:value={password} name="password" required>
 			</div>
-			<button type="button" class="submit" on:click="{_=> window.location='/home'}">
+			{#if error}
+			<div style="text-align: center; color: #d45;">
+				<strong>{error}</strong>
+			</div>
+			{/if}
+			<button type="button" class="submit" on:click={login}>
 				Login
 			</button>
 			<hr>

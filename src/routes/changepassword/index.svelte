@@ -1,8 +1,14 @@
+<script context=module>
+    import { loginRequired } from "$lib/scripts/helper";
+    export const load = loginRequired
+</script>
+
+
 <script>
 import FormControl from "$lib/FormControl.svelte";
 import Page from "$lib/Page.svelte";
 import TitledBox from "$lib/TitledBox.svelte";
-
+import { session } from "$app/stores";
 
 let showpassword = false
 
@@ -19,7 +25,7 @@ $: indicator = (newpass && confirmpass) ? (match?'😄':'😢') : ''
         <TitledBox name='Ganti Password {indicator}' class='box-container'>
             <FormControl>
                 <label for=username>Username</label>
-                <input type="text" readonly value="20128227337" id=username>
+                <input type="text" readonly value={$session.user} id=username>
             </FormControl>
             <FormControl>
                 <label for=oldpass>Password Lama</label>

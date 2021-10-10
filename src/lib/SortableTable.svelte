@@ -146,21 +146,6 @@ section{
     margin-top: 1rem;
 }
 
-/* select, input{
-    border: 2px solid black;
-    border-radius: 4px;
-    transition: border-color, box-shadow 300ms ease;
-    max-width: 95%;
-}
-
-select:hover, input:hover{
-    box-shadow: 0 0 1px 1px rgba(0, 0, 0, .2);
-}
-
-select:focus, input:focus{
-    border-color: var(--brand) ;
-    outline: 0;
-} */
 
 @media print, (orientation: landscape) and (min-width:800px){
 
@@ -330,22 +315,24 @@ td .wrap .fake-label{
         </tbody>
     </table>
 </PrintableArea>
-
-    <div class="paginator">
-        {#if page==0}
+{#if paginate>1}
+    
+<div class="paginator">
+    {#if page==0}
             <button disabled>Prev</button>
-        {:else}
+            {:else}
             <button on:click={()=>page--}>Prev</button>
-        {/if}
-
+            {/if}
+            
             <span>{page+1} / {paginate}</span>
-
-        {#if page+1 == paginate}
+            
+            {#if page+1 == paginate}
             <button disabled>Next</button>
-        {:else}
+            {:else}
             <button on:click={()=>page++}>Next</button>
-        {/if}
-    </div>
+            {/if}
+        </div>
+    {/if}
     
 
 </section>

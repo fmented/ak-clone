@@ -1,20 +1,13 @@
 <script>
     import Navbar from './Navbar.svelte'
-    import {base} from '$app/paths'
+    import PageHead from './PageHead.svelte';
     export let title
     export let description
     let close
     let page
 </script>
 
-<svelte:head>
-    <link rel="icon" href="{base}/favicon.png" />
-	<link rel="stylesheet" href="{base}/global.css">
-    <title>{title}</title>
-    <meta name="description" content={description}/>
-    <link rel="manifest" href="{base}/manifest.json">
-
-</svelte:head>
+<PageHead {title} {description}/>
 
 <Navbar {title} caption={description} bind:close/>
 

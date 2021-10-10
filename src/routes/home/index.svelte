@@ -1,3 +1,9 @@
+<script context="module">
+    import {loginRequired} from '$lib/scripts/helper'
+    
+    export const load = loginRequired
+</script>
+
 <script>
 import Stack from "$lib/Stack.svelte";
 import SortableTable from "$lib/SortableTable.svelte";
@@ -7,12 +13,10 @@ import { getJSON } from "$lib/scripts/helper";
 import { base } from "$app/paths";
 import Page from "$lib/Page.svelte";
 
-
 onMount(async ()=>{
     let data = await getJSON( base+'/info.json')
     row=data
 })
-
 
 let row 
 
