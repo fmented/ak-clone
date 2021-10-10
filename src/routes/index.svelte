@@ -13,7 +13,6 @@
 <script>
 import { base } from '$app/paths';
 import { onMount } from 'svelte';
-import {fly} from 'svelte/transition'
 
 let slide = 0
 let intro = true
@@ -206,7 +205,7 @@ main{
     align-items: center;
     justify-content: center;
     margin: .5em;
-    height: calc(30vh - 2em);
+    height: calc(30vh - 4em);
 }
 
 .login-box{
