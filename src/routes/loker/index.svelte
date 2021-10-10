@@ -12,6 +12,7 @@ import { onMount } from "svelte";
 import { getJSON } from "$lib/scripts/helper";
 import {base} from '$app/paths'
 import Page from "$lib/Page.svelte";
+import Spinner from "$lib/Spinner.svelte";
 
 
 onMount(async ()=>{
@@ -36,11 +37,15 @@ let form = {
 </script>
 
 <Page title='Info Loker' description='Informai Lowongan Kerja'>
-    <div class=btn-container>
-        <button on:click={()=>modalActive=true}>Tambah</button>
-        <button on:click={()=>window.print()}>Print</button>
-    </div>
-    <SortableTable {row} {column}></SortableTable>
+    {#if !row}
+        <Spinner></Spinner>
+        {:else}        
+        <div class=btn-container>
+            <button on:click={()=>modalActive=true}>Tambah</button>
+            <button on:click={()=>window.print()}>Print</button>
+        </div>
+        <SortableTable {row} {column}></SortableTable>
+    {/if}
 </Page>
 
 

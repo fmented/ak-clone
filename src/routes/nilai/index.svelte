@@ -12,6 +12,7 @@ import {base} from '$app/paths'
 import Tabs from "$lib/Tabs.svelte";
 import { onMount } from "svelte";
 import Page from "$lib/Page.svelte";
+import Spinner from "$lib/Spinner.svelte";
 
 let semester = [1, 2, 3, 4, 5, 6, 7, 8]
 
@@ -46,5 +47,9 @@ $: tabs = !result.length? [] : result.map((v, i)=> {
 </script>
 
 <Page title='Lihat Nilai' description='Lihat Nilai Hasil Studi'>
-    <Tabs items={tabs}></Tabs>
+    {#if !result.length}
+    <Spinner></Spinner>
+        {:else}
+        <Tabs items={tabs}></Tabs>
+    {/if}
 </Page>

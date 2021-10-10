@@ -41,16 +41,24 @@ a:visited{
     text-decoration: none;
 }
 
+.link-like{
+    position: relative;
+}
 
 @media (orientation:landscape) and (min-width:800px){
      .link-like::before{
+        content: '';
+        position: absolute;
+        left: 0;
         transform: scaleX(0);
+        background: var(--brand);
+		width:100%;
+		transform-origin:0 50%;
         opacity: 0;
         height: 3px;
         bottom: 0;
         transition: transform 300ms ease, opacity 200ms ease-out;
     }
-
 
 
     .link-like:hover::before{
