@@ -40,7 +40,6 @@
 
     .in::before{
         content: '';
-        transform: translate(-50% -50%);
         background-color: var(--brand);
         aspect-ratio: 1;
         height: 50%;
