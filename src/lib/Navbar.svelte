@@ -36,13 +36,13 @@ import {slide} from 'svelte/transition'
         <li>
             <Submenu display='🏠 Beranda' bind:scope bind:closeAll>
                 <li class="link-like">
-                    <a href='{base}/home' on:click={close}>🏫 Beranda</a>
+                    <a href='{base}/home' on:click={close} rel=external>🏫 Beranda</a>
                 </li>
                 <li class="link-like">
-                    <a href='{base}/changepassword' on:click={close}>🔑 Ganti Password</a>
+                    <a href='{base}/changepassword' on:click={close} rel=external>🔑 Ganti Password</a>
                 </li>
                 <li class="link-like">
-                    <a href='{base}/logout' on:click={close}>🚪 Logout</a>
+                    <a href='{base}/logout' on:click={close} rel=external>🚪 Logout</a>
                 </li>
             </Submenu>
         </li>
@@ -56,7 +56,7 @@ import {slide} from 'svelte/transition'
         <li>
             <Submenu display='👀 Lihat' bind:scope>
                 <li class="link-like">
-                    <a href='{base}/nilai' on:click={()=>active=false}>📄 Nilai</a>
+                    <a href='{base}/nilai' on:click={close} rel=external>📄 Nilai</a>
                 </li>
             </Submenu>
         </li>
@@ -78,7 +78,7 @@ import {slide} from 'svelte/transition'
         <li>
             <Submenu display='🔗 Tautan' bind:scope>
                 <li class="link-like">
-                    <a href='{base}/loker' on:click={()=>active=false}>🏢 Info Lowker</a>
+                    <a href='{base}/loker' on:click={close} rel=external>🏢 Info Lowker</a>
                 </li>
             </Submenu>
         </li>
