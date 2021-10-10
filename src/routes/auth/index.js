@@ -1,7 +1,3 @@
-import { base } from "$app/paths"
-import { setContext } from "svelte"
-import {context} from '$app/stores'
-
 const user = [
     {
         username:2017130,
