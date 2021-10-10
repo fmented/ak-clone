@@ -14,12 +14,11 @@ import { base } from "$app/paths";
 import Page from "$lib/Page.svelte";
 import Spinner from "$lib/Spinner.svelte";
 
-// onMount(async ()=>{
-//     let data = await getJSON( base+'/info.json')
-//     row=data
-// })
+onMount(async ()=>{
+    data = await getJSON( base+'/info.json')
+})
 
-let data = getJSON( base+'/info.json')
+let data
 
 let column = ['id', 'tanggal', 'informasi', 'link']
 
@@ -30,11 +29,11 @@ let column = ['id', 'tanggal', 'informasi', 'link']
     <br>
     <Stack>
         <TitledBox name='Info Terbaru'>
-            {#await data}
+            {#if !data}
                 <Spinner></Spinner>
-            {:then row} 
-            <SortableTable {row} {column}></SortableTable>
-            {/await}
+            {:else} 
+            <SortableTable row={data} {column}></SortableTable>
+            {/if}
         </TitledBox>
         <TitledBox name='Visi dan Misi'>
             <div>
