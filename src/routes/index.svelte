@@ -137,7 +137,7 @@ $:console.log(slide);
 </header>
 
 <main style=padding-bottom:0;>
-    <a class="login-box" href="{base}/login">
+    <a class="login-box" href="{base}/login" rel=external>
         <div class="description">
             <h1 style="font-size: 3em;">🏛</h1>
             <h2>Single Sign On</h2>
