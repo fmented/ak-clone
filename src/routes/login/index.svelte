@@ -85,11 +85,11 @@ $: username, error=''
                 </address>
 			</div>
 			<div class="links">
-				<a href="/">🏠 Menu Utama</a>
-				<a href="/">☑ e-Learning</a>
-				<a href="/">📔 e-Perpus</a>
-				<a href="/">☑ e-Arsip</a>
-				<a href="/">🏠 e-Alumni</a>
+				<a href="/" rel=external>🏠 Menu Utama</a>
+				<a href="/" rel=external>☑ e-Learning</a>
+				<a href="/" rel=external>📔 e-Perpus</a>
+				<a href="/" rel=external>☑ e-Arsip</a>
+				<a href="/" rel=external>🏠 e-Alumni</a>
 			</div >
 		</div>
 	</form>

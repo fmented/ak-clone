@@ -5,6 +5,7 @@
 
 <script>
 import { base } from '$app/paths';
+import PageHead from '$lib/PageHead.svelte';
 import { onMount } from 'svelte';
 
 let slide = 0
@@ -61,13 +62,7 @@ onMount(()=>{
 </script>
 
 
-<svelte:head>
-    <link rel="stylesheet" href="{base}/global.css">
-    <link rel="favicon" href="{base}/favicon.png">
-    <title>Landing</title>
-    <meta name="description" content="Landing Page">
-    <link rel="manifest" href="{base}/manifest.json">
-</svelte:head>
+<PageHead title='Web Akademik' description='Landing Page'></PageHead>
 
 <header on:pointerdown={()=>read=!read}>
 
