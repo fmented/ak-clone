@@ -1,4 +1,9 @@
 <script>
+
+import Spinner from "$lib/Spinner.svelte";
+
+</script>
+<!-- <script>
 import { base } from '$app/paths';
 import {fly} from 'svelte/transition'
 
@@ -72,8 +77,6 @@ setTimeout(()=>slide=1, delay)
         <img src='{base}/ipad.png' alt="ipad" class="ipad" in:fly={{x:200, delay:900}} out:fly={{y:-100, delay:900}}>
         <img src='{base}/iphone.png' alt="iphone" class="iphone" in:fly={{x:200, delay:500}} out:fly={{y:100, delay:500}}>
         <img src='{base}/macbook.png' alt="macbook" class="macbook" in:fly={{x:100, delay:1200}} out:fly={{x:100, delay:1200}} on:introend="{()=>setTimeout(()=>slide=0, delay)}" on:outroend="{()=>setTimeout(()=>slide=1, delay)}" >
-        <!-- <img src="http://akademiksttmc.ac.id/eArsip/assets/img/sliders/revolution/hint1-blue.png" alt="logo" class="up" in:fly={{y:-100, delay:1300}} out:fly={{y:-100, delay:1300}}>
-        <img src="http://akademiksttmc.ac.id/eArsip/assets/img/sliders/revolution/hint2-blue.png" alt="logo" class="down" in:fly={{y:-100, delay:1400}} out:fly={{y:100, delay:1400}}> -->
     </div>
 
     {/if}
@@ -241,4 +244,7 @@ h1>span{
 }
 
 
-</style>
+</style> -->
+
+
+<Spinner></Spinner>
