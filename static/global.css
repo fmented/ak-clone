@@ -60,7 +60,6 @@ a:visited{
         transition: transform 300ms ease, opacity 200ms ease-out;
     }
 
-
     .link-like:hover::before{
         transform: scaleX(1);
         opacity: 1;
@@ -92,8 +91,7 @@ select, textarea, input:not([type="radio"], [type="submit"], [type="checkbox"]){
     background: var(--overlay2);
     outline: 0;
     border-radius: 2px;
-    width: calc(100% - 1ch);
-    
+    width: calc(100% - 1ch); 
 }
 
 
@@ -122,7 +120,7 @@ button{
 
 
 main{
-    padding: 1rem;
+    padding: 1rem 1rem 1rem 1rem;
 }
 
 

@@ -27,12 +27,10 @@
     }
 
     .out{
-        /* border-inline-color: transparent; */
         border-top-color: transparent;
     }
 
     .in{
-        /* border-block-color: transparent; */
         border-bottom-color: transparent;
         width: 75%;
 
