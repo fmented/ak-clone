@@ -15,7 +15,8 @@ import Page from "$lib/Page.svelte";
 import Spinner from "$lib/Spinner.svelte";
 
 onMount(async ()=>{
-    data = await getJSON( base+'/info.json')
+    const res = await getJSON( base+'/api/info')
+    data = res.result
 })
 
 let data

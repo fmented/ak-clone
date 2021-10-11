@@ -1,18 +1,12 @@
 <script context=module>
-	export async function load({session}){
-        if(session.auth && session.user){
-            return {
-                status:302,
-                redirect: base+'/home'
-            }
-        }
-        else return {}
-    }
+    import { redirectIfLoggedIn } from '$lib/scripts/helper';
+    export const load = redirectIfLoggedIn
 </script>
 
 <script>
 import {base} from '$app/paths'
 import PageHead from '$lib/PageHead.svelte';
+import { hash } from '$lib/scripts/helper';
 
 let username
 let password
@@ -22,11 +16,12 @@ let error
 async function login() {
 	if(!(username && password)) return error = 'please fill all field'
 	error = ''
+	
 	const req = await fetch(base+'/auth', {
 		method: 'POST',
 		body: JSON.stringify({
-			username,
-			password
+			username: hash(username),
+			password: hash(password)
 		}),
 		headers:{
 			'content-type': 'application/json'
@@ -34,12 +29,15 @@ async function login() {
 	})
 
 	const res = await req.json()
+
+	console.log(res)
 	error = res.error
 	if(res.authenticated) window.location = base+'/home'
 }
 
 $: password, error=''
 $: username, error=''
+
 
 </script>
 

@@ -16,8 +16,8 @@ import Spinner from "$lib/Spinner.svelte";
 
 
 onMount(async ()=>{
-    let data = await getJSON(base+'/lowker.json')
-    row=data
+    let data = await getJSON(base+'/api/lowongan')
+    row=data.result
 })
 
 

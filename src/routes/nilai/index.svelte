@@ -23,8 +23,8 @@ let column =  ['id', 'mata_kuliah', 'dosen', 'tugas', 'uts', 'uas', 'nilai_akhir
  
 onMount(async()=>{
     semester.forEach(async i => {
-        let data = await getJSON(`${base}/nilai/semester/${i}.json`)
-        result = [...result, data]
+        let data = await getJSON(`${base}/api/nilai/${i}`)
+        result = [...result, data.result]
     })
 
 

@@ -1,18 +1,13 @@
+import { parseCookie, getUserFromToken } from "$lib/scripts/helper";
+
+
 export function getSession({headers}){
     const cookie = headers.cookie
+    let token = parseCookie(cookie).userToken
 
-    let auth, user;
-
-    try {
-        auth = JSON.parse(cookie.split(';').filter(i=>i.includes('authenticatedSession'))[0].replace(' ', '').split('=')[1])
-        user = cookie.split(';').filter(i=>i.includes('userSession'))[0].replace(' ', '').split('=')[1]
-    } catch (error) {
-        auth = false,
-        user = null
-    }
+    let user = getUserFromToken(token)
 
     return{
         user,
-        auth,
     }
 }

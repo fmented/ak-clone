@@ -1,13 +1,6 @@
 <script context=module>
-	export async function load({session}){
-        if(session.auth && session.user){
-            return {
-                status:302,
-                redirect: base+'/home'
-            }
-        }
-        else return {}
-    }
+    import { redirectIfLoggedIn } from '$lib/scripts/helper';
+    export const load = redirectIfLoggedIn
 </script>
 
 <script>
@@ -65,8 +58,6 @@ onMount(()=>{
     })
 })
 
-
-$:console.log(slide);
 </script>
 
 

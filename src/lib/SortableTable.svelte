@@ -235,6 +235,9 @@ td .wrap .fake-label{
 
 <section> 
 
+
+{#if row.length}
+    
 <Stack gap='5%'>
     <div class="wrap sorter">
         <label for="sortBy">Urutkan</label>
@@ -259,6 +262,7 @@ td .wrap .fake-label{
         <input id=search bind:value={search} type="search">
     </div>
 </Stack>
+{/if}
 
 <PrintableArea>
 <table>
@@ -286,7 +290,7 @@ td .wrap .fake-label{
             {#if paginatedTable.length}
                     
                 {#each paginatedTable as data (data)}
-                <tr animate:flip|local={{duration:300}}>
+                <tr animate:flip={{duration:300}}>
                     {#each column as field}
                     {#if field != data_id}                            
                     <td transition:fade>

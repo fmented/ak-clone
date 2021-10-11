@@ -1,26 +1,14 @@
-const userList = [
-    {
-        username:2017130,
-        password:'whatever'
-    },
-    {
-        username:'admin',
-        password:'admin'
-    },
-    {
-        username: 'x',
-        password: 'xxx'
-    }
-]
+import { clean, hash } from "$lib/scripts/helper"
+import { userList, tokenList } from "$lib/store"
 
 
 export async function post({body}){
+    
     const username = body.username
     const password = body.password
 
-    const u = userList.filter(i=>i.username == username)[0]
 
-    console.log(u, username, password)
+    const u = userList().filter(i=>i.username == clean(username))[0]
 
     const authenticated = u && u.password == password
 
@@ -31,12 +19,13 @@ export async function post({body}){
                 error : 'incorrect username or password'
             },
             headers:{
-                'set-cookie': [`authenticatedSession=${authenticated};`, `userSession=${null};`]
+                'set-cookie': `userToken=${null};`,
             },
             status:200,
         }
     }
 
+    let token = tokenList().filter(i=>i.ref.username==clean(username))[0].tokenId
 
     return {
         body:{
@@ -44,8 +33,9 @@ export async function post({body}){
             authenticated
         },
         headers:{
-            'set-cookie': [`authenticatedSession=${authenticated};`, `userSession=${u.username};`],
+            'set-cookie': `userToken=${hash(token)};Secure;HttpOnly`,
         },
         status:200,
     }
+
 }
