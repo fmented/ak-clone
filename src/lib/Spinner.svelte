@@ -9,7 +9,23 @@
         max-height: 25vh;
         margin: 0 auto;
     }
-    div{
+    
+    .out, .in{
+        border: 8px solid var(--brand);
+        width: 50%;
+    }
+    
+    .out{
+        border-top-color: transparent;
+    }
+    
+    .in{
+        border-bottom-color: transparent;
+        width: 75%;
+        
+    }
+    
+    .in , .out, .spinner{
         aspect-ratio: 1;
         display: grid;
         place-items: center;
@@ -20,22 +36,6 @@
         animation-iteration-count: infinite;
         position: relative;
     }
-
-    .out, .in{
-        border: 8px solid var(--brand);
-        width: 50%;
-    }
-
-    .out{
-        border-top-color: transparent;
-    }
-
-    .in{
-        border-bottom-color: transparent;
-        width: 75%;
-
-    }
-
     .in::before{
         content: '';
         background-color: var(--brand);
