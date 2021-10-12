@@ -55,7 +55,7 @@ export const info = ()=> [
         informasi:"SEMINAR TEKNOLOGI DAN PENERAPANNYA",
         link:{
             href:"/",
-            text:"SEMINAR TEKNOLOGI DALAM ISLAM"
+            text:"SEMINAR TEKNOLOGI DAN PENERAPANNYA"
         }
     }
 ]

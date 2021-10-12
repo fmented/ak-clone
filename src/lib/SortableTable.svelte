@@ -66,6 +66,11 @@ const capitalize = string=>string.toUpperCase().replace('_', ' ')
     scroll-behavior: smooth;
 }
 
+:root{
+    --mobile-head-column: 40%;
+    --row-accent: #eeefff
+}
+
 
 
 
@@ -87,7 +92,7 @@ tr{
 
 .wrap{
     display: grid;
-    grid-template-columns: 25% 75%;
+    grid-template-columns: var(--mobile-head-column) calc( 100% - var(--mobile-head-column) );
     align-items: center;
     grid-gap: .5rem;
 }
@@ -107,7 +112,11 @@ td > .wrap{
 }
 
 tbody tr td >.wrap{
-    background-image: linear-gradient(90deg, var(--brand) 25%, white 25%);
+    background-image: linear-gradient(90deg, var(--brand) var(--mobile-head-column), white var(--mobile-head-column));
+}
+
+tbody tr td:nth-child(even) > .wrap{
+    background-image: linear-gradient(90deg, var(--brand) var(--mobile-head-column), var(--row-accent) var(--mobile-head-column));;
 }
 
 
@@ -117,6 +126,7 @@ td > .wrap > span:first-child{
 
 .fake-label{
     word-wrap: break-word;
+    white-space: nowrap;
 }
 
 
@@ -150,7 +160,11 @@ section{
 @media print, (orientation: landscape) and (min-width:800px){
 
     tbody tr:nth-child(even) td >.wrap{
-    background-image: none
+    background-image: none;
+    }
+
+    tbody tr:nth-child(even) {
+        background: var(--row-accent);
     }
 
     .sorter{
@@ -166,6 +180,15 @@ section{
         background: var(--brand);
         cursor: pointer;
         border-collapse: collapse;
+        border-radius: 4px 4px 0 0;
+    }
+
+    th:first-of-type{
+        border-radius: 4px 0 0 0;
+    }
+
+    th:last-of-type{
+        border-radius: 0 4px 0 0;
     }
 
     td, th{
@@ -173,14 +196,15 @@ section{
         max-width: 8rem;
     }
 
+    td:hover, th:hover{
+        box-shadow: var(--shadow) inset;
+    }
+
 
     tr {
         display: table-row;
     }
 
-    th{
-        border: var(--border);
-    }
 
 
     td > .wrap{
@@ -197,6 +221,7 @@ section{
         word-wrap: break-word;
         display: flex;
         flex-wrap: wrap;
+        gap:0;
     }
 
     td:first-of-type, td:last-of-type{
@@ -205,6 +230,15 @@ section{
 
     .sorter:first-of-type{
         display: none;
+    }
+
+    td{
+        border: 0;
+    }
+
+    th :first-of-type{
+        border-radius: 8px 0 0 0;
+        overflow: hidden;
     }
     
 
@@ -228,6 +262,10 @@ td .wrap .fake-label{
 
 .paginator>span{
     font-size: 1.25rem;
+}
+
+input, select{
+    width: calc(100% - 1ch);
 }
 
 </style>
@@ -270,7 +308,7 @@ td .wrap .fake-label{
         <tr>
             {#each column as field}
                 {#if field != data_id}
-                    <th on:click={sort(field)}>    
+                    <th on:click={sort(field)} title="Sort By {capitalize(field)}">    
                         <div class="wrap">
                             {#if sortBy.col === field}
                             <span>🔺</span>
@@ -290,10 +328,10 @@ td .wrap .fake-label{
             {#if paginatedTable.length}
                     
                 {#each paginatedTable as data (data)}
-                <tr animate:flip={{duration:300}}>
+                <tr animate:flip={{duration:400}}>
                     {#each column as field}
                     {#if field != data_id}                            
-                    <td transition:fade>
+                    <td transition:fade title={capitalize(field)}>
                         <div class=wrap>
                             <span class=fake-label>
                                 {field==data_id?'No.': capitalize(field)}

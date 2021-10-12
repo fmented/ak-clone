@@ -1,12 +1,10 @@
-import { parseCookie, getUserFromToken } from "$lib/scripts/helper";
+import { getUserFromToken, readCookie } from "$lib/scripts/helper";
 
 
 export function getSession({headers}){
     const cookie = headers.cookie || ''
-    let token = parseCookie(cookie).userToken
-
+    let token = readCookie(cookie, 'userToken')
     let user = getUserFromToken(token)
-
     return{
         user,
     }

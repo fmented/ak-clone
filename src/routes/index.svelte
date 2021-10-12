@@ -190,8 +190,7 @@ main{
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: .5em;
-    height: calc(30vh - 4em);
+    padding: 2em;
 }
 
 .login-box{
@@ -297,6 +296,7 @@ header{
     main{
         justify-content: flex-end;
         height: max-content;
+        padding: 1em;
     }
 
     .login-box{

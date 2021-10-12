@@ -18,6 +18,7 @@ export async function loginRequired({session}){
 }
 
 export function getUserFromToken(token){
+    if (!token) return null
     let user
     try {
         user = tokenList().filter(i=>i.tokenId==clean(token))[0].ref.username
@@ -53,6 +54,26 @@ export function parseCookie(cookie){
     })
 
     return v
+}
+
+export function readCookie(cookie, key) {
+    const r = new RegExp(`(?<=^${key}=)(.*)`)
+
+    const match = cookie.split(' ').filter(k=>k.startsWith(key))[0]
+
+    if(!match) return null
+
+    const result = match.match(r)
+    if(!result) return null
+    
+    let parsed
+    try {
+        parsed = JSON.parse(result[0])
+    } catch (error) {
+        parsed = result[0]
+    }
+    return parsed
+
 }
 
 export function hash(str){

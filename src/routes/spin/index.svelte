@@ -247,4 +247,13 @@ h1>span{
 </style> -->
 
 
+
+<svelte:head>
+    <link rel="stylesheet" href="/global.css">
+    <link rel="favicon" href="/favicon.png">
+    <title>Landing</title>
+    <meta name="description" content="Landing Page">
+    <link rel="manifest" href="/manifest.json">
+</svelte:head>
+
 <Spinner></Spinner>

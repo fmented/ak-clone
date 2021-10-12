@@ -29,8 +29,6 @@ async function login() {
 	})
 
 	const res = await req.json()
-
-	console.log(res)
 	error = res.error
 	if(res.authenticated) window.location = base+'/home'
 }
@@ -59,7 +57,7 @@ $: username, error=''
 		<div class='main'>
 			<div class="control">
 				<label for="username">Nama Pengguna</label>
-				<input id="username" type="text" placeholder="Username" bind:value={username} name="username" required>
+				<input id="username" type="text" placeholder="Username" bind:value={username} name="username" required autocomplete="off">
 			</div>
 			<div class="control">
 				<label for="password">Password</label>
@@ -100,6 +98,10 @@ $: username, error=''
 	label{
 		margin-bottom: .5em;
     }
+
+	input{
+		width: 100%;
+	}
 	
 	:global(main){
 		height:100vh;
@@ -119,58 +121,29 @@ $: username, error=''
 		box-shadow: var(--shadow) ;
         max-width: 90vw;
 		max-height: 90%;
-		overflow: hidden;
+		overflow: auto;
 	}
 	
-
-
-    @media (orientation: landscape){
-		form{
-			overflow: auto;
-		}
-
-
-	}
 	
 	
 	.info{
 		display:flex;
 		flex-direction:column;
-		font-size:12px
 	}
 	
 	.footer>.links{
-		font-size: 12px;
 		margin-top:1em;
-		padding-bottom:3em;
 		display: flex;
 		flex-wrap: wrap;
-		justify-content: space-evenly;
+		gap: .5rem;
+		justify-content: center;
 	}
 	
-	input{
-		width:100%;
-		transition: box-shadow 400ms ease, border 300ms ease;
-		border-radius:4px;
-        height: 2em;
-        padding: 1em;
-        border: var(--border);
-        font-size: 16px;
-	}
-
-	
-	input:hover{
-	    box-shadow: var(--shadow);
-	}
 	
 	label{
 		font-weight:600;
 	}
-	
-	input:focus-visible, input:focus{
-		border:1px solid var(--brand);
-		outline:0;
-	}
+
 	
 	.control{
         margin:.5em;
@@ -207,6 +180,9 @@ $: username, error=''
 		display:flex;
 		flex-direction:column;
 		gap:.5em;
+		align-content: center;
+		font-size: .85rem;
+		padding-bottom: 2rem;
 	}
 	
 	

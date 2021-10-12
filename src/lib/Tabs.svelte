@@ -1,5 +1,5 @@
 <script>
-	import {fly, fade} from 'svelte/transition'
+	import {fly, fade, slide} from 'svelte/transition'
   export let items = [];
   export let activeTabValue = 0;
 
@@ -15,7 +15,7 @@
 </ul>
 {#each items as item}
 	{#if activeTabValue == item?.value}
-	<div class="box" in:fly={{y:-100, delay:300}} out:fly={{y:100}}>
+	<div class="box" in:slide={{y:100, delay:300}} out:slide={{y:100}}>
 		<svelte:component this={item?.component}  {...item?.props}/>
 	</div>
 	{/if}
