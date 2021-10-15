@@ -51,6 +51,7 @@
         place-items: center;
         background: rgba(0,0,0,.7);
         z-index: 99;
+        box-shadow: var(--shadow);
     }
 
     article{

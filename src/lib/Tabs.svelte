@@ -8,7 +8,7 @@
 
 <ul>
 {#each items as item}
-	<li class={activeTabValue === item?.value ? 'active' : ''} transition:fade>
+	<li class={activeTabValue === item?.value ? 'active' : ''} transition:fade tabindex={activeTabValue === item?.value ? 1 : ''}>
 		<span on:click={handleClick(item?.value)}>{item?.label}</span>
 	</li>
 {/each}
@@ -24,7 +24,7 @@
 
 	.box {
     padding: .5rem;
-		border: 1px solid #dee2e6;
+	border: 1px solid #dee2e6;
     border-radius: 0 0 4px 4px;
     border-top: 0;
 	}
@@ -49,7 +49,8 @@
     display: block;
     padding: 0.5rem 1rem;
     cursor: pointer;
-		position:relative;
+	position:relative;
+	user-select: none;
   }
 
   span:hover {

@@ -268,6 +268,12 @@ input, select{
     width: calc(100% - 1ch);
 }
 
+@media print{
+    th, td{
+        box-shadow: var(--shadow) inset;
+    }
+}
+
 </style>
 
 

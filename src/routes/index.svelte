@@ -10,10 +10,8 @@ import { onMount } from 'svelte';
 
 let slide = 0
 let intro = true
-let delay = 1000
 let read = false
 
-setTimeout(()=>slide=1, delay)
 
 $: getstate = n => slide==n && !read? 'running':'paused'
 
@@ -53,7 +51,13 @@ function prev() {
     }
 }
 
+function goToSlide(n) {
+    intro = true
+    slide = n
+}
+
 onMount(()=>{
+    slide=1
     document.addEventListener('visibilitychange', e=>{
         read = document.hidden ? true : false
     })
@@ -101,7 +105,7 @@ onMount(()=>{
         </div>
     </div>
     <div class="image" class:hide={slide!=2}>
-        <img src="{base}/ps.png" alt="img" style="width: 40%; --in:400ms; --out:1000ms; --state:{getstate(2)}" class:bottom-in={slide==2&&intro} class:right-out={slide==2&!intro}>
+        <img src="{base}/ps.webp" alt="img" style="width: 50%; height:auto; --in:400ms; --out:1000ms; --state:{getstate(2)}" class:bottom-in={slide==2&&intro} class:right-out={slide==2&!intro} height="300" width="300">
     </div>
     
 
@@ -120,17 +124,23 @@ onMount(()=>{
         <div class="nextbtn" class:hide={!read} on:pointerdown={next}>▶</div>
         <div class="prevbtn" class:hide={!read} on:pointerdown={prev}>◀</div>
 
+        <div class="dots" class:hide={!read}>
+            {#each Array(3) as _, i }
+                <strong on:pointerdown={()=>{if(slide!=i+1) goToSlide(i+1)}} class:current={slide==i+1}>🔵</strong>
+            {/each}
+        </div>
+
 </header>
 
 <main style=padding-bottom:0;>
     <a class="login-box" href="{base}/login" rel=external>
         <div class="description">
-            <h1 style="font-size: 3em;">🏛</h1>
+            <h1 style="font-size: 3em;"><svg width=1em xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10.496 2.132a1 1 0 00-.992 0l-7 4A1 1 0 003 8v7a1 1 0 100 2h14a1 1 0 100-2V8a1 1 0 00.496-1.868l-7-4zM6 9a1 1 0 00-1 1v3a1 1 0 102 0v-3a1 1 0 00-1-1zm3 1a1 1 0 012 0v3a1 1 0 11-2 0v-3zm5-1a1 1 0 00-1 1v3a1 1 0 102 0v-3a1 1 0 00-1-1z" clip-rule="evenodd"></path></svg></h1>
             <h2>Single Sign On</h2>
         </div>
         <div class="description" style=background:white;color:black;>
                 <h2>Login</h2>
-                <h2>▶</h2>
+                <h2><svg width="1em" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg></h2>
             </div>
         </a>
     </main>
@@ -143,8 +153,40 @@ onMount(()=>{
     --headerwidth: 100vw;
 }
 
+svg{
+    vertical-align: bottom;
+}
+
 *{
     user-select: none;
+}
+
+
+.dots{
+    position: absolute;
+    bottom: 5%;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap:1rem
+}
+
+.dots strong{
+    opacity: .3;
+    will-change: opacity, transform;
+    color: var(--brand)
+}
+
+.dots .current{
+    transform: scale(1.2);
+    opacity: .75;
+}
+
+.dots strong:hover{
+    opacity: .75;
 }
 
 .nextbtn, .prevbtn{
@@ -161,7 +203,7 @@ onMount(()=>{
 }
 
 .nextbtn:hover, .prevbtn:hover{
-    opacity: 1;
+    opacity: .75;
 }
 
 .prevbtn{

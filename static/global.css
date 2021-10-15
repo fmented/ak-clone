@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Bitter:wght@300&display=swap');
+
 :root{
     --surface1: white;
     --surface2: #aad;
@@ -28,6 +30,7 @@ html, body{
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    font-family: 'Bitter', serif;;
 }
 
 
@@ -67,6 +70,10 @@ a:visited{
     }
 }
 
+svg{
+    vertical-align: bottom;
+}
+
 ::-webkit-scrollbar{
     width: .7rem;
     height: .7rem;
@@ -88,7 +95,7 @@ a:visited{
 
 label{
     font-weight:600;
-    font-size: .85rem;
+    font-size: 1rem;
     padding: .25rem 0 ;
     font-family: Arial, Helvetica, sans-serif;
 }
@@ -99,12 +106,26 @@ input:not([type="radio"], [type="submit"], [type="checkbox"], [disable]), select
     border-radius:4px;
     padding: .5em 1em;
     border: var(--border);
-    font-size: .85rem;
+    font-size: 1rem;
     font-family: Arial, Helvetica, sans-serif;
+    background: white;
+}
+
+input[readonly]{
+    background: #eeefff;
+}
+
+input[disable]{
+    background: var(--overlay);
 }
 
 input[type="range"]{
     padding: .5em 0;
+}
+
+input[type="checkbox"], input[type="radio"]{
+    height: 1.25em;
+    width: 1.25em;
 }
 
 input:not([type="radio"], [type="submit"], [type="checkbox"], [disable]):hover, select:hover, textarea:hover{

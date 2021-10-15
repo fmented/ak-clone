@@ -57,7 +57,14 @@ $: active = scope.get(_)
 <div bind:this={_} on:click={handler} class=container>
     <div class="title">
         <span class={$$props.class} style={$$props.style} class:active>{display}</span>
-        <span class=indicator>{active?'🔺':'🔻'}</span>
+        <span class=indicator>
+            {#if active}
+            <svg width="2em" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" color="var(--brand)"><path d="M0 0h24v24H0z" fill="none"></path><path d="M12 8l-6 6 1.41 1.41L12 10.83l4.59 4.58L18 14z"></path></svg>
+            {:else}
+            <svg width="2em" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" color="var(--brand)"><path d="M0 0h24v24H0z" fill="none"></path><path d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"></path></svg>
+            {/if}
+        
+        </span>
     </div>
     {#if active}        
         <menu in:slide={{delay:100}} out:slide={{}} class:left={[...scope.keys()][0]==_}>
@@ -91,6 +98,7 @@ $: active = scope.get(_)
         padding-bottom: .5rem;
         transform: translateZ(0);
     }
+
 
     span{
         cursor: pointer;

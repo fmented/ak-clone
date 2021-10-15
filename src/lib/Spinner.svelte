@@ -3,7 +3,7 @@
         <div class="in">
         </div>
     </div>
-    <p>Please Wait</p>
+    <strong>Please Wait ...</strong>
 </div>
 
 <style>
@@ -21,27 +21,26 @@
         border-width: 8px;
         border-style: solid;
         height: 40%;
-        border-image: linear-gradient(to bottom, var(--error, #f63), var(--brand, #66d)) 1 100%;
+        border-image: linear-gradient(to bottom, var(--secondary, #65b), var(--brand, #66d)) 1 100%;
         animation-name: spin-out;
         animation-duration: 1500ms;
     }
     
-    p{
+    strong{
         position: absolute;
         bottom: 0%;
         text-align: center;
-        font-weight: bolder;
         animation: txt 1500ms ease-in-out infinite;
         animation-direction: alternate;
+        color: #66d;
     }
  
     .in{
         animation-name: spin-in;
-        border-image: linear-gradient(to top, var(--error, #f63), var(--brand, #66d)) 1 100%;
+        border-image: linear-gradient(to bottom, var(--secondary, #65b), var(--brand, #66d)) 1 100%;
         height: calc(100%);
         transform: rotate(90deg);
         --r: 90deg;
-        z-index: -1;
     }
 
 
@@ -57,6 +56,7 @@
     div:not(.spinner){
         animation-timing-function: ease-in-out;
         animation-iteration-count: infinite;
+        animation-direction: alternate;
     }
     
 
