@@ -235,7 +235,9 @@ button{
 
 main{
     padding: 1rem 1rem 1rem 1rem;
-    background: var(--surface1);
 }
 
 
+html{
+    background-color: var(--surface1);
+}

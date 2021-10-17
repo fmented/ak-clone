@@ -107,19 +107,13 @@ $: username, error=''
 	
 	:global(main){
 		height:100vh;
-		background: var(--bg) !important;
+		background-image: var(--bg);
         background-repeat: no-repeat;
         background-position: center;
         background-size: cover;
 		position:relative;
 		display:grid;
 		place-items:center;
-	}
-
-	@media (prefers-color-scheme: dark){
-		:global(main){
-			backdrop-filter: opacity(.5)
-		}
 	}
 	
 	form{
