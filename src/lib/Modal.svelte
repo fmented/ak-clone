@@ -65,7 +65,7 @@
 
     
     .head, .action, .content{
-        border: 2px solid black;
+        border: 2px solid var(--text);
     }
 
     .head{
@@ -76,7 +76,7 @@
         background: var(--brand);
         font-size: large;
         font-weight: 600;
-        color: white;
+        color: var(--surface1);
     }
 
     .action{
@@ -96,7 +96,7 @@
     }
 
     .content, .action{
-        background-color: white;
+        background-color: var(--surface1);
     }
 
     .head, .action{   
