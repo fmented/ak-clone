@@ -20,7 +20,5 @@
     "svelte": "^3.37.0"
   },
   "type": "module",
-  "dependencies": {
-    "html-minifier": "^4.0.0"
-  }
+  "dependencies": {}
 }
