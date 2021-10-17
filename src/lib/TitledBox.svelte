@@ -10,7 +10,7 @@
         display: block;
         border-radius: 8px 8px 0 0;
         overflow: hidden;
-        border: 1px solid black;
+        border: var(--border);
         box-sizing: border-box;
     }
 
@@ -23,7 +23,7 @@
         color: white;
         font-size: 18px;
         font-weight: 500;
-        border-bottom: 2px solid black;
+        border-bottom: 2px solid var(--text);
     }
 </style>
 

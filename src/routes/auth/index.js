@@ -33,7 +33,8 @@ export async function post({body}){
             authenticated
         },
         headers:{
-            'set-cookie': `userToken=${hash(token)};Secure;HttpOnly`,
+            'set-cookie': `userToken=${hash(token)};Secure;HttpOnly;Max-Age=${60*60*24*7};SameSite=Lax;`,
+            
         },
         status:200,
     }

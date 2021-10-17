@@ -3,8 +3,10 @@
 :root{
     --surface1: white;
     --surface2: #aad;
+    --text:black;
     --brand: #66d;
     --disable:#aaa;
+    --readonly:#eeefff;
     --overlay: rgba(0,0,0,.1);
     --overlay2: rgba(0,0,0,.02);
     --border: 1px solid black;
@@ -13,6 +15,77 @@
     --bp:800px;
     --scrollbar-size: .7rem;
 }
+
+
+@media (prefers-color-scheme: light){
+    :root{
+        --surface1: white;
+        --surface2: #aad;
+        --text:black;
+        --brand: #66d;
+        --disable:#aaa;
+        --readonly:#eeefff;
+        --overlay: rgba(0,0,0,.1);
+        --overlay2: rgba(0,0,0,.02);
+        --border: 1px solid black;
+        --shadow: 0px 0px 2px 1px rgba(0,0,0,0.1) ;
+        --shadow-focus: 0px 0px 2px 1px var(--brand) ;
+        --bp:800px;
+        --scrollbar-size: .7rem;
+    }
+}
+
+
+@media (prefers-color-scheme: dark){
+    :root{
+        --surface1: black;
+        --surface2: #444;
+        --text:white;
+        --brand: #66d;
+        --disable:#aaa;
+        --readonly:#333344;
+        --overlay: rgba(255,255,255,.4);
+        --overlay2: rgba(255,255,255,.7);
+        --border: 1px solid white;
+        --shadow: 0px 0px 2px 1px rgba(255,255,255, var(--overlay)) ;
+        --shadow-focus: 0px 0px 2px 1px var(--brand) ;
+        --bp:800px;
+        --scrollbar-size: .7rem;
+    }
+}
+
+[color-scheme="light"]{
+        --surface1: white;
+        --surface2: #aad;
+        --text:black;
+        --brand: #66d;
+        --disable:#aaa;
+        --readonly:#eeefff;
+        --overlay: rgba(0,0,0,.1);
+        --overlay2: rgba(0,0,0,.02);
+        --border: 1px solid black;
+        --shadow: 0px 0px 2px 1px rgba(0,0,0,0.1) ;
+        --shadow-focus: 0px 0px 2px 1px var(--brand) ;
+        --bp:800px;
+        --scrollbar-size: .7rem;
+}
+
+[color-scheme="light"]{
+    --surface1: black;
+    --surface2: #444;
+    --text:white;
+    --brand: #66d;
+    --disable:#aaa;
+    --readonly:#333344;
+    --overlay: rgba(255,255,255,.4);
+    --overlay2: rgba(255,255,255,.7);
+    --border: 1px solid white;
+    --shadow: 0px 0px 2px 1px rgba(255,255,255, var(--overlay)) ;
+    --shadow-focus: 0px 0px 2px 1px var(--brand) ;
+    --bp:800px;
+    --scrollbar-size: .7rem;
+}
+
 
 html, body{
     height: 100%;
@@ -30,7 +103,8 @@ html, body{
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    font-family: 'Bitter', serif;;
+    font-family: 'Bitter', serif;
+    color: var(--text);
 }
 
 
@@ -62,6 +136,7 @@ a:visited{
         height: 3px;
         bottom: 0;
         transition: transform 300ms ease, opacity 200ms ease-out;
+        will-change: transform, opacity;
     }
 
     .link-like:hover::before{
@@ -83,14 +158,14 @@ svg{
     border-radius: 4px;
     opacity: .2;
     width: 90%;
-    border: .5px double white;
+    border: .5px double var(--surface1);
     background-image: linear-gradient( #65b calc(50% - 8px), white calc(50% - 8px), #65b calc(50% - 4px), white calc(50% - 4px), #65b calc(50%), white calc(50%), #65b calc(50% + 4px), white calc(50% + 4px), #65b calc(50% + 8px));
 }
 
 
 ::-webkit-scrollbar-track{
     background: var(--surface2);
-    border: .25rem solid white;
+    border: .25rem solid var(--surface1);
 }
 
 label{
@@ -108,11 +183,11 @@ input:not([type="radio"], [type="submit"], [type="checkbox"], [disable]), select
     border: var(--border);
     font-size: 1rem;
     font-family: Arial, Helvetica, sans-serif;
-    background: white;
+    background: var(--surface1);
 }
 
 input[readonly]{
-    background: #eeefff;
+    background: var(--readonly);
 }
 
 input[disable]{
@@ -148,6 +223,7 @@ button{
     color: var(--surface1);
     border-radius: 4px;
     cursor: pointer;
+    font-weight: 800;
 }
 
 [disabled]{
@@ -159,6 +235,7 @@ button{
 
 main{
     padding: 1rem 1rem 1rem 1rem;
+    background: var(--surface1);
 }
 
 

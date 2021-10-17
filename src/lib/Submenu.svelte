@@ -3,8 +3,7 @@
 </script>
 
 <script>
-import {hasContext, onDestroy, onMount} from 'svelte'
-import {slide} from 'svelte/transition'
+import { onDestroy, onMount} from 'svelte'
 
 export let display = 'submenu'
 export let scope = new Map()
@@ -67,7 +66,7 @@ $: active = scope.get(_)
         </span>
     </div>
     {#if active}        
-        <menu in:slide={{delay:100}} out:slide={{}} class:left={[...scope.keys()][0]==_}>
+        <menu class:left={[...scope.keys()][0]==_}>
             <slot></slot>
         </menu>
     {/if}
@@ -93,7 +92,7 @@ $: active = scope.get(_)
     }
 
     menu{
-        background: white;
+        background: var(--surface1);
         padding-top: .25rem;
         padding-bottom: .5rem;
         transform: translateZ(0);
@@ -109,9 +108,10 @@ $: active = scope.get(_)
             position: absolute;
             top:100%;
             right: 0;
-            border: 1px solid black;
             margin-top: .25rem;
             width: max-content;
+            border: var(--border);
+
         }
 
         .left{

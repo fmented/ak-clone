@@ -58,6 +58,10 @@ $: if(!filteredTable.length || page+1>paginate) page = 0
 
 const capitalize = string=>string.toUpperCase().replace('_', ' ')
 
+let currentSort = sortBy.col
+
+$: sort(currentSort)
+
 </script>
 
 <style>
@@ -68,7 +72,7 @@ const capitalize = string=>string.toUpperCase().replace('_', ' ')
 
 :root{
     --mobile-head-column: 40%;
-    --row-accent: #eeefff
+    --row-accent: var(--readonly);
 }
 
 
@@ -104,7 +108,7 @@ th > .wrap{
 
 td{
     overflow: hidden;
-    border: 1px solid black;
+    border: 1px solid var(--text);
 }
 
 td > .wrap{
@@ -112,7 +116,7 @@ td > .wrap{
 }
 
 tbody tr td >.wrap{
-    background-image: linear-gradient(90deg, var(--brand) var(--mobile-head-column), white var(--mobile-head-column));
+    background-image: linear-gradient(90deg, var(--brand) var(--mobile-head-column), var(--surface1) var(--mobile-head-column));
 }
 
 tbody tr td:nth-child(even) > .wrap{
@@ -121,7 +125,7 @@ tbody tr td:nth-child(even) > .wrap{
 
 
 td > .wrap > span:first-child{
-    color: white;
+    color: var(--surface1);
 }
 
 .fake-label{
@@ -285,7 +289,7 @@ input, select{
 <Stack gap='5%'>
     <div class="wrap sorter">
         <label for="sortBy">Urutkan</label>
-        <select value={sortBy.col} on:change={e=>sort(e.target.value)} id=sortBy>
+        <select bind:value="{currentSort}" id=sortBy>
             {#each column as field}
             <option value={field}>{capitalize(field)}</option>
             {/each}
@@ -314,9 +318,9 @@ input, select{
         <tr>
             {#each column as field}
                 {#if field != data_id}
-                    <th on:click={sort(field)} title="Sort By {capitalize(field)}">    
+                    <th on:click={()=>currentSort =  currentSort!=field? field: data_id} title="Sort By {capitalize(field)}">    
                         <div class="wrap">
-                            {#if sortBy.col === field}
+                            {#if currentSort === field}
                             <span>🔺</span>
                             {:else}
                             <span>🔶</span>

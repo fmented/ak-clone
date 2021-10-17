@@ -135,10 +135,10 @@ onMount(()=>{
 <main style=padding-bottom:0;>
     <a class="login-box" href="{base}/login" rel=external>
         <div class="description">
-            <h1 style="font-size: 3em;"><svg width=1em xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10.496 2.132a1 1 0 00-.992 0l-7 4A1 1 0 003 8v7a1 1 0 100 2h14a1 1 0 100-2V8a1 1 0 00.496-1.868l-7-4zM6 9a1 1 0 00-1 1v3a1 1 0 102 0v-3a1 1 0 00-1-1zm3 1a1 1 0 012 0v3a1 1 0 11-2 0v-3zm5-1a1 1 0 00-1 1v3a1 1 0 102 0v-3a1 1 0 00-1-1z" clip-rule="evenodd"></path></svg></h1>
-            <h2>Single Sign On</h2>
+            <h1 style="font-size: 3em;"><svg width=1em xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="white"><path fill-rule="evenodd" d="M10.496 2.132a1 1 0 00-.992 0l-7 4A1 1 0 003 8v7a1 1 0 100 2h14a1 1 0 100-2V8a1 1 0 00.496-1.868l-7-4zM6 9a1 1 0 00-1 1v3a1 1 0 102 0v-3a1 1 0 00-1-1zm3 1a1 1 0 012 0v3a1 1 0 11-2 0v-3zm5-1a1 1 0 00-1 1v3a1 1 0 102 0v-3a1 1 0 00-1-1z" clip-rule="evenodd"></path></svg></h1>
+            <h2 style="color: white;">Single Sign On</h2>
         </div>
-        <div class="description" style=background:white;color:black;>
+        <div class="description" style=background:var(--surface1);color:var(--text);>
                 <h2>Login</h2>
                 <h2><svg width="1em" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg></h2>
             </div>
@@ -216,7 +216,7 @@ svg{
 
 .item3{
     background: var(--brand);
-    color: white;
+    color: var(--surface1);
     width: max-content;
     padding: 4px 8px;
     font-size: 12px;
@@ -240,7 +240,7 @@ main{
     flex-direction: column;
     border-radius: 8px;
     overflow: hidden;
-    border: 1px solid black;
+    border: var(--border);
     width: 100%;
     box-shadow: 0 0 1px 1px rgba(0,0,0,.1) ;
 }
@@ -252,7 +252,7 @@ main{
     justify-content: space-between;
     padding: 1rem;
     background: var(--brand);
-    color: white;
+    color: var(--surface1);
 }
 
 header{
@@ -262,6 +262,13 @@ header{
  position: relative;
  animation-iteration-count: 1;
 }  
+
+
+@media(prefers-color-scheme:dark){
+    header{
+        background: black;
+    }
+}
 
 .mac{
     position: absolute;

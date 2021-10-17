@@ -58,7 +58,7 @@
   }
 
   li.active > span {
-    color: #495057;
+    color: var(--brand);
     border-color: #dee2e6 #dee2e6 #fff;
   }
 	
