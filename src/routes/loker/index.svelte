@@ -50,7 +50,7 @@ let form = {
 
 
 <Modal bind:active={modalActive}>
-        <div slot="head"><h3>Tambah Lowongan Pekerjaan</h3></div>
+        <div slot="head"><h3 style="color: white;">Tambah Lowongan Pekerjaan</h3></div>
         <div slot=content>
             <FormControl>
                 <label for="posisi">Posisi</label>

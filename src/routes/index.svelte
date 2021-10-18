@@ -256,16 +256,24 @@ main{
 }
 
 header{
- background: url(/bg1.jpg);
  overflow: hidden;
  height: 70vh;
  position: relative;
 }  
 
+header::before{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: url(/bg1.jpg);
+}
 
 @media(prefers-color-scheme:dark){
-    header{
-        background: black;
+    header::before{
+        filter: brightness(.2);
     }
 }
 

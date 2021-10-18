@@ -107,24 +107,42 @@ $: username, error=''
 	
 	:global(main){
 		height:100vh;
-		background-image: var(--bg);
-        background-repeat: no-repeat;
-        background-position: center;
-        background-size: cover;
 		position:relative;
 		display:grid;
 		place-items:center;
 	}
+
+	:global(main::before){
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		z-index: -1;
+		background-image: var(--bg);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+		filter: brightness(.6);
+	}
+
+	@media(prefers-color-scheme: dark){
+		:global(main::before){
+			filter: brightness(.2);
+		}
+	}
 	
 	form{
 		border-radius:8px;
-		background:var(--surface1);
+		background: transparent;
 		margin:.5em;
 		box-shadow: var(--shadow) ;
         max-width: 90vw;
 		max-height: 90%;
 		overflow: auto;
 		border: var(--border);
+		backdrop-filter: blur(8px) contrast(.5) opacity(90%);
 	}
 	
 	
@@ -210,7 +228,6 @@ $: username, error=''
 		width: 1em;
 		vertical-align: bottom;
 	}
-	
 
 
 </style>

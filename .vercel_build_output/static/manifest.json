@@ -1,0 +1,17 @@
+{
+    "theme_color" : "#6666dd",
+    "background_color" : "#6666dd",
+    "display" : "standalone",
+    "scope" : "/",
+    "start_url" : "/",
+    "name" : "Web Akademik STTM",
+    "short_name" : "SIA STTM",
+    "description" : "Aplikasi Akademik STTM Berbasis Web",
+    "icons": [
+        {
+            "src": "/android-chrome-144x144.png",
+            "sizes": "144x144",
+            "type": "image/png"
+        }
+    ]
+}
