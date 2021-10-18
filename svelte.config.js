@@ -8,7 +8,7 @@ const config = {
 		paths:{
 		},
 		appDir:'app',
-		ssr:false
+		ssr:true
 	},
 };
 
