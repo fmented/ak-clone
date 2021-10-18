@@ -260,7 +260,6 @@ header{
  overflow: hidden;
  height: 70vh;
  position: relative;
- animation-iteration-count: 1;
 }  
 
 
