@@ -5,6 +5,8 @@
 <script>
 import { onDestroy, onMount} from 'svelte'
 
+import {slide } from 'svelte/transition'
+
 export let display = 'submenu'
 export let scope = new Map()
 let _
@@ -66,7 +68,7 @@ $: active = scope.get(_)
         </span>
     </div>
     {#if active}        
-        <menu class:left={[...scope.keys()][0]==_}>
+        <menu class:left={[...scope.keys()][0]==_} transition:slide>
             <slot></slot>
         </menu>
     {/if}
