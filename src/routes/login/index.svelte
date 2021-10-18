@@ -124,7 +124,7 @@ $: username, error=''
         background-repeat: no-repeat;
         background-position: center;
         background-size: cover;
-		filter: brightness(.6);
+		filter: brightness(.8) blur(4px);
 	}
 
 	form{
