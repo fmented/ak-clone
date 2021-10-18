@@ -115,10 +115,10 @@ onMount(()=>{
         <span style="font-size: 20px; margin-top: 2rem; --in:1100ms; --state:{getstate(3)}" class:left-in={slide==3}>Sistem Akademik STTM Cileungsi dapat diakses menggunakan PC, Laptop</span>
     </div>
     <div class="image" class:hide={slide!=3}>
-        <img src='{base}/mac.png' alt="mac" class="mac" style="--in:800ms; --out:1000ms; --state:{getstate(3)}" class:right-in={slide==3&&intro} class:bottom-out={slide==3&&!intro}>
-        <img src='{base}/ipad.png' alt="ipad" class="ipad" style="--in:1100ms; --out:1100ms; --state:{getstate(3)}" class:right-in={slide==3&&intro} class:left-out={slide==3&&!intro}>
-        <img src='{base}/iphone.png' alt="iphone" class="iphone" style="--in:1400ms; --out:1200ms; --state:{getstate(3)}" class:right-in={slide==3&&intro} class:left-out={slide==3&&!intro}>
-        <img src='{base}/macbook.png' alt="macbook" class="macbook" style="--in:1500ms; --out:3100ms; --state:{getstate(3)}" class:right-in={slide==3&&intro} class:right-out={slide==3&&!intro} on:animationend={switchstate}>
+        <img src='{base}/mac.png' alt="mac" class="mac" style="--in:800ms; --out:1000ms; --state:{getstate(3)}" class:right-bounce-in={slide==3&&intro} class:bottom-out={slide==3&&!intro}>
+        <img src='{base}/ipad.png' alt="ipad" class="ipad" style="--in:1200ms; --out:1100ms; --state:{getstate(3)}" class:right-bounce-in={slide==3&&intro} class:left-out={slide==3&&!intro}>
+        <img src='{base}/iphone.png' alt="iphone" class="iphone" style="--in:1500ms; --out:1200ms; --state:{getstate(3)}" class:right-bounce-in={slide==3&&intro} class:left-out={slide==3&&!intro}>
+        <img src='{base}/macbook.png' alt="macbook" class="macbook" style="--in:1700ms; --out:1000ms; --state:{getstate(3)}" class:right-bounce-in={slide==3&&intro} class:right-out={slide==3&&!intro} on:animationend={switchstate}>
     </div>
 
         <div class="nextbtn" class:hide={!read} on:pointerdown={next}>▶</div>
@@ -318,7 +318,6 @@ header::before{
     flex-direction: column;
     width: 100%;
     height: 50%;
-    overflow: hidden;
 }
 
 .image{
@@ -330,7 +329,6 @@ header::before{
     position: absolute;
     left: 0;
     top:50%;
-    overflow: hidden;
 }
 
 
@@ -443,6 +441,13 @@ h1>span{
     animation-play-state: var(--state);
 }
 
+.right-bounce-in{
+    animation: right-no-opacity 1000ms cubic-bezier(0, 1.5, 0.75, 1) backwards;
+    animation-delay: var(--in);
+    animation-play-state: var(--state);
+    opacity: 1;
+}
+
 .right-out{
     animation: right 1s ease forwards;
     animation-direction: reverse;
@@ -496,6 +501,16 @@ h1>span{
     }
     50%{
         opacity: .1;
+    }
+    90%{
+        opacity: 1;
+    }
+}
+
+@keyframes right-no-opacity{
+    0%{
+        transform: translateX(calc(1 * var(--headerwidth)));
+        opacity: 0;
     }
     90%{
         opacity: 1;

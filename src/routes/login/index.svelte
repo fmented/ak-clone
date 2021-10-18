@@ -66,8 +66,8 @@ $: username, error=''
 				<input id="password" type="password" placeholder="Password" bind:value={password} name="password" required>
 			</div>
 			{#if error}
-			<div style="text-align: center; color: #d45;">
-				<strong>{error}</strong>
+			<div style="text-align: center;">
+				<strong style=" color: #d45;">{error}</strong>
 			</div>
 			{/if}
 			<button type="button" class="submit" on:click={login}>
@@ -127,12 +127,6 @@ $: username, error=''
 		filter: brightness(.6);
 	}
 
-	@media(prefers-color-scheme: dark){
-		:global(main::before){
-			filter: brightness(.2);
-		}
-	}
-	
 	form{
 		border-radius:8px;
 		background: transparent;
@@ -142,9 +136,21 @@ $: username, error=''
 		max-height: 90%;
 		overflow: auto;
 		border: var(--border);
-		backdrop-filter: blur(8px) contrast(.5) opacity(90%);
+		backdrop-filter: blur(8px) contrast(.2) opacity(90%) brightness(3);
 	}
 	
+
+	@media(prefers-color-scheme: dark){
+		:global(main::before){
+			filter: brightness(.2);
+		}
+
+		form{
+			backdrop-filter: blur(8px) contrast(.2) opacity(50%) brightness(.1);
+		}
+	}
+	
+
 	
 	
 	.info{

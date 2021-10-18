@@ -125,7 +125,7 @@ tbody tr td:nth-child(even) > .wrap{
 
 
 td > .wrap > span:first-child{
-    color: var(--surface1);
+    color: white;
 }
 
 .fake-label{
@@ -218,6 +218,7 @@ section{
     td > .wrap > .fake-label{
         visibility: collapse;
         display: none;
+        font-weight: 600;
     }
 
     th .wrap{
@@ -249,7 +250,7 @@ section{
 }
 
 td .wrap .fake-label{
-    font-size: .8rem;
+    font-size: .9rem;
 }
 
 
