@@ -1,9 +1,9 @@
 <div class="spinner">
+    <strong>Please Wait ...</strong>
     <div class="out">
         <div class="in">
         </div>
     </div>
-    <strong>Please Wait ...</strong>
 </div>
 
 <style>
@@ -12,8 +12,9 @@
         box-sizing: content-box;
     }
     .spinner{
-        max-height: 25vh;
+        max-height: min(40vh, 200px);
         margin: 0 auto;
+        padding: 1rem;
     }
     
     .out, .in{
@@ -28,7 +29,7 @@
     
     strong{
         position: absolute;
-        bottom: 0%;
+        bottom: 0;
         text-align: center;
         animation: txt 1500ms ease-in-out infinite;
         animation-direction: alternate;

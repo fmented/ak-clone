@@ -50,13 +50,14 @@
         display: grid;
         place-items: center;
         background: rgba(0,0,0,.7);
+        backdrop-filter: blur(8px);
         z-index: 99;
         box-shadow: var(--shadow);
     }
 
     article{
-        min-width: 280px;
-        max-width: 90%;
+        min-width: 340px;
+        max-width: 96%;
         min-height: 20%;
         max-height: 90%;
         display: grid;

@@ -11,7 +11,7 @@
     --overlay: rgba(0,0,0,.1);
     --overlay2: rgba(0,0,0,.02);
     --border: 1px solid black;
-    --shadow: 0px 0px 2px 1px rgba(0,0,0,0.1) ;
+    --shadow: 0px 0px 2px 1px var(--overlay);
     --shadow-focus: 0px 0px 2px 1px var(--brand) ;
     --bp:800px;
     --scrollbar-size: .7rem;
@@ -30,7 +30,7 @@
         --overlay: rgba(0,0,0,.1);
         --overlay2: rgba(0,0,0,.02);
         --border: 1px solid black;
-        --shadow: 0px 0px 2px 1px rgba(0,0,0,0.1) ;
+        --shadow: 0px 0px 2px 1px var(--overlay) ;
         --shadow-focus: 0px 0px 2px 1px var(--brand) ;
         --bp:800px;
         --scrollbar-size: .7rem;
@@ -47,10 +47,10 @@
         --visited:#99f;
         --disable:#aaa;
         --readonly:#333344;
-        --overlay: rgba(255,255,255,.4);
+        --overlay: rgba(255,255,255,.3);
         --overlay2: rgba(255,255,255,.7);
         --border: 1px solid white;
-        --shadow: 0px 0px 2px 1px rgba(255,255,255, var(--overlay)) ;
+        --shadow: 0px 0px 2px 1px var(--overlay) ;
         --shadow-focus: 0px 0px 2px 1px var(--brand) ;
         --bp:800px;
         --scrollbar-size: .7rem;
@@ -68,7 +68,7 @@
         --overlay: rgba(0,0,0,.1);
         --overlay2: rgba(0,0,0,.02);
         --border: 1px solid black;
-        --shadow: 0px 0px 2px 1px rgba(0,0,0,0.1) ;
+        --shadow: 0px 0px 2px 1px var(--overlay) ;
         --shadow-focus: 0px 0px 2px 1px var(--brand) ;
         --bp:800px;
         --scrollbar-size: .7rem;
@@ -82,10 +82,10 @@
     --visited:#99f;
     --disable:#aaa;
     --readonly:#333344;
-    --overlay: rgba(255,255,255,.4);
+    --overlay: rgba(255,255,255,.3);
     --overlay2: rgba(255,255,255,.7);
     --border: 1px solid white;
-    --shadow: 0px 0px 2px 1px rgba(255,255,255, var(--overlay)) ;
+    --shadow: 0px 0px 2px 1px var(--overlay) ;
     --shadow-focus: 0px 0px 2px 1px var(--brand) ;
     --bp:800px;
     --scrollbar-size: .7rem;
@@ -113,13 +113,13 @@ html, body{
 }
 
 
-a{
+a, a *{
     color: var(--brand);
     text-decoration: none;
     position: relative;
 }
 
-a:visited{
+a:visited, a:visited *{
     color: var(--visited);
     text-decoration: none;
 }
@@ -173,6 +173,7 @@ svg{
     border: .25rem solid var(--surface1);
 }
 
+
 label{
     font-weight:600;
     font-size: 1rem;
@@ -189,6 +190,7 @@ input:not([type="radio"], [type="submit"], [type="checkbox"], [disable]), select
     font-size: 1rem;
     font-family: Arial, Helvetica, sans-serif;
     background: var(--surface1);
+    min-height: 2ch;
 }
 
 input[readonly]{

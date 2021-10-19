@@ -24,21 +24,14 @@ $: sort = (column) => {
 
     
     let sortStandard = (a, b) => 
-        (a[col] < b[col]) 
+        (JSON.stringify(a[col]) < JSON.stringify(b[col])) 
         ? -1 
-        : (a[col] > b[col]) 
-        ? 1  
-        : 0;
-
-    let sortLink = (a, b) =>
-        (a[col]?.text < b[col]?.text) 
-        ? -1  
-        : (a[col]?.text > b[col]?.text) 
+        : (JSON.stringify(a[col]) > JSON.stringify(b[col])) 
         ? 1  
         : 0;
 
     
-    paginatedTable = column === 'link' ?  paginatedTable.sort( sortLink ) : paginatedTable.sort(sortStandard)
+    paginatedTable = paginatedTable.sort(sortStandard)
 }
 
 

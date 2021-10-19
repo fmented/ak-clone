@@ -15,7 +15,7 @@
 </ul>
 {#each items as item}
 	{#if activeTabValue == item?.value}
-	<div class="box" in:slide={{delay:300}} out:slide={{duration:200}}>
+	<div class="box" in:slide={{delay:350, duration:300}} out:slide={{duration:200}}>
 		<svelte:component this={item?.component}  {...item?.props}/>
 	</div>
 	{/if}

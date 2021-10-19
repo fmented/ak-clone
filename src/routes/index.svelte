@@ -70,12 +70,12 @@ onMount(()=>{
 
 <header on:pointerdown={()=>read=!read}>
 
-    <div class="text" class:top-out={slide==1&&!intro} style="--in:300ms; --out:1000ms; --state:{getstate(1)}" class:hide={slide!=1} last on:animationend={switchslide}>
-        <h1 style="font-size: 24px; --in:300ms; --out:1000ms; --state:{getstate(1)}" class:top-in={slide==1}>Selamat Datang <span>di website</span></h1>
-        <h1 style="font-size: 20px; --in:400ms; --out:1000ms; --state:{getstate(1)}" class:top-in={slide==1}>AKADEMIK STTM CILEUNGSI</h1>
-        <b class="item3" style="--in:500ms; --out:1000ms; --state:{getstate(1)}" class:top-in={slide==1}>Excellent - Moral - Proffesional</b>
-        <span class="item4" style="--in:600ms; --out:1000ms; --state:{getstate(1)}" class:left-in={slide==1}>Smart - Clean - Responsive - Elegant</span>
-        <div style="margin-top: 1em; --in:700ms; --out:1000ms; --state:{getstate(1)}" class:right-in={slide==1} on:animationend={()=>switchstate(1)}>
+    <div class="text" class:top-out={slide==1&&!intro} style="--out:2000ms; --state:{getstate(1)}" class:hide={slide!=1} last on:animationend={switchslide}>
+        <h1 style="font-size: 24px; --in:300ms; --state:{getstate(1)}" class:top-in={slide==1}>Selamat Datang <span>di website</span></h1>
+        <h1 style="font-size: 20px; --in:400ms; --state:{getstate(1)}" class:top-in={slide==1}>AKADEMIK STTM CILEUNGSI</h1>
+        <b class="item3" style="--in:500ms; --state:{getstate(1)}" class:top-in={slide==1}>Excellent - Moral - Proffesional</b>
+        <span class="item4" style="--in:600ms; --state:{getstate(1)}" class:left-in={slide==1}>Smart - Clean - Responsive - Elegant</span>
+        <div style="margin-top: 1em; --in:700ms; --state:{getstate(1)}" class:right-in={slide==1} on:animationend={()=>switchstate(1)}>
             <span>Sekolah Tinggi Teknologi Muhammadiyah Cileungsi</span>
             <br>
             <span>Jln Anggrek Cileungsi</span>
@@ -84,15 +84,15 @@ onMount(()=>{
         </div>
     </div>      
     <div class="image" class:hide={slide!=1}>
-        <img src='{base}/logo.webp' alt="logo" class="logo" width=168 height=168 style="--in:400ms; --out:1000ms; --state:{getstate(1)}" class:right-in={slide==1 && intro} class:bottom-out={slide==1&&!intro}>
+        <img src='{base}/logo.webp' alt="logo" class="logo" width=168 height=168 style="--in:400ms; --out:2000ms; --state:{getstate(1)}" class:right-in={slide==1 && intro} class:bottom-out={slide==1&&!intro}>
     </div> 
    
    
    
    
     <div class="text" class:hide={slide!=2}>
-        <h1 style="font-size: 24px; --in:400ms; --out:1100ms; --state:{getstate(2)}" class:left-in={slide==2 && intro} last on:animationend={switchslide} class:bottom-out={slide==2 && !intro}>GUIDANCE</h1>
-        <div style="margin-top: 1em; font-size: 20px; --in:700ms; --out:1000ms; --state:{getstate(2)}" class:top-in={slide==2 && intro} class:left-out={slide==2&&!intro} on:animationend={switchstate}>
+        <h1 style="font-size: 24px; --in:300ms; --out:2100ms; --state:{getstate(2)}" class:left-in={slide==2 && intro} last on:animationend={switchslide} class:top-out={slide==2 && !intro}>GUIDANCE</h1>
+        <div style="margin-top: 1em; font-size: 20px; --in:500ms; --out:2000ms; --state:{getstate(2)}" class:top-in={slide==2 && intro} class:left-out={slide==2&&!intro} on:animationend={switchstate}>
             <span>e-Arsip</span>
             <br>
             <span>e-Learning</span>
@@ -105,20 +105,20 @@ onMount(()=>{
         </div>
     </div>
     <div class="image" class:hide={slide!=2}>
-        <img src="{base}/ps.webp" alt="img" style="width: 50%; height:auto; --in:400ms; --out:1000ms; --state:{getstate(2)}" class:bottom-in={slide==2&&intro} class:right-out={slide==2&!intro} height="300" width="300">
+        <img src="{base}/ps.webp" alt="img" style="width: 50%; height:auto; --in:400ms; --out:1950ms; --state:{getstate(2)}" class:bottom-in={slide==2&&intro} class:right-out={slide==2&!intro} height="300" width="300">
     </div>
     
 
-    <div class="text" last class:hide={slide!=3} style="--in:400ms; --out:1200ms; --state:{getstate(3)}" class:right-out={slide==3 && !intro} on:animationend={switchslide}>
-        <h1 style="font-size: 24px; --in:400ms; --state:{getstate(3)}" class:top-in={slide==3}>Mudah Diakses</h1>
-        <b class="item3" style="--in:700ms; --state:{getstate(3)}" class:right-in={slide==3}>Responsive & Theme-Colored</b>
-        <span style="font-size: 20px; margin-top: 2rem; --in:1100ms; --state:{getstate(3)}" class:left-in={slide==3}>Sistem Akademik STTM Cileungsi dapat diakses menggunakan PC, Laptop</span>
+    <div class="text" last class:hide={slide!=3} style="--in:300ms; --out:2100ms; --state:{getstate(3)}" class:top-out={slide==3 && !intro} on:animationend={switchslide}>
+        <h1 style="font-size: 24px; --in:500ms; --state:{getstate(3)}" class:top-in={slide==3}>Mudah Diakses</h1>
+        <b class="item3" style="--in:400ms; --state:{getstate(3)}" class:right-in={slide==3}>Responsive & Theme-Colored</b>
+        <span style="font-size: 20px; margin-top: 2rem; --in:500ms; --state:{getstate(3)}" class:left-in={slide==3}>Sistem Akademik STTM Cileungsi dapat diakses menggunakan PC, Laptop</span>
     </div>
     <div class="image" class:hide={slide!=3}>
-        <img src='{base}/mac.png' alt="mac" class="mac" style="--in:800ms; --out:1000ms; --state:{getstate(3)}" class:right-bounce-in={slide==3&&intro} class:bottom-out={slide==3&&!intro}>
-        <img src='{base}/ipad.png' alt="ipad" class="ipad" style="--in:1200ms; --out:1100ms; --state:{getstate(3)}" class:right-bounce-in={slide==3&&intro} class:left-out={slide==3&&!intro}>
-        <img src='{base}/iphone.png' alt="iphone" class="iphone" style="--in:1500ms; --out:1200ms; --state:{getstate(3)}" class:right-bounce-in={slide==3&&intro} class:left-out={slide==3&&!intro}>
-        <img src='{base}/macbook.png' alt="macbook" class="macbook" style="--in:1700ms; --out:1000ms; --state:{getstate(3)}" class:right-bounce-in={slide==3&&intro} class:right-out={slide==3&&!intro} on:animationend={switchstate}>
+        <img src='{base}/mac.png' alt="mac" class="mac" style="--in:400ms; --out:2000ms; --state:{getstate(3)}" class:right-bounce-in={slide==3&&intro} class:bottom-out={slide==3&&!intro}>
+        <img src='{base}/ipad.png' alt="ipad" class="ipad" style="--in:600ms; --out:2000ms; --state:{getstate(3)}" class:right-bounce-in={slide==3&&intro} class:left-out={slide==3&&!intro}>
+        <img src='{base}/iphone.png' alt="iphone" class="iphone" style="--in:800ms; --out:2000ms; --state:{getstate(3)}" class:right-bounce-in={slide==3&&intro} class:left-out={slide==3&&!intro}>
+        <img src='{base}/macbook.png' alt="macbook" class="macbook" style="--in:1000ms; --out:1900ms; --state:{getstate(3)}" class:right-bounce-in={slide==3&&intro} class:right-out={slide==3&&!intro} on:animationend={switchstate}>
     </div>
 
         <div class="nextbtn" class:hide={!read} on:pointerdown={next}>▶</div>
@@ -280,7 +280,7 @@ header::before{
 .mac{
     position: absolute;
     width:50%;
-    left: 15%;
+    left: 25%;
     height: auto;
     bottom:15%;
 }
@@ -461,7 +461,7 @@ h1>span{
         opacity: 0;
     }
     50%{
-        opacity: .1;
+        opacity: .2;
     }
     90%{
         opacity: 1;
@@ -474,7 +474,7 @@ h1>span{
         opacity: 0;
     }
     50%{
-        opacity: .1;
+        opacity: .2;
     }
     90%{
         opacity: 1;
@@ -487,7 +487,7 @@ h1>span{
         opacity: 0;
     }
     50%{
-        opacity: .1;
+        opacity: .2;
     }
     90%{
         opacity: 1;
@@ -500,7 +500,7 @@ h1>span{
         opacity: 0;
     }
     50%{
-        opacity: .1;
+        opacity: .2;
     }
     90%{
         opacity: 1;

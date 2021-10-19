@@ -129,14 +129,13 @@ $: username, error=''
 
 	form{
 		border-radius:8px;
-		background: transparent;
+		background: rgba(255,255,255,.9);
 		margin:.5em;
 		box-shadow: var(--shadow) ;
         max-width: 90vw;
-		max-height: 90%;
+		max-height: 96%;
 		overflow: auto;
 		border: var(--border);
-		backdrop-filter: blur(8px) contrast(.2) opacity(90%) brightness(3);
 	}
 	
 
@@ -146,7 +145,7 @@ $: username, error=''
 		}
 
 		form{
-			backdrop-filter: blur(8px) contrast(.2) opacity(50%) brightness(.1);
+			background: rgba(0,0,0,.3);
 		}
 	}
 	
