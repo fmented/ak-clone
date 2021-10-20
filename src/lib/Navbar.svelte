@@ -160,6 +160,7 @@ import {slide, fly} from 'svelte/transition'
     .header > img {
         height: 60%;
         width: auto;
+        cursor: pointer;
     }
 
     li{
