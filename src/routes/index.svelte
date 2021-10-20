@@ -68,14 +68,14 @@ onMount(()=>{
 
 <PageHead title='Web Akademik' description='Landing Page'></PageHead>
 
-<header on:pointerdown={()=>read=!read}>
+<header on:pointerdown={()=>read=!read} class:bg2={slide==3} class:bg1={slide!=3}>
 
     <div class="text" class:top-out={slide==1&&!intro} style="--out:2000ms; --state:{getstate(1)}" class:hide={slide!=1} last on:animationend={switchslide}>
         <h1 style="font-size: 24px; --in:300ms; --state:{getstate(1)}" class:top-in={slide==1}>Selamat Datang <span>di website</span></h1>
         <h1 style="font-size: 20px; --in:400ms; --state:{getstate(1)}" class:top-in={slide==1}>AKADEMIK STTM CILEUNGSI</h1>
-        <b class="item3" style="--in:500ms; --state:{getstate(1)}" class:top-in={slide==1}>Excellent - Moral - Proffesional</b>
+        <b class="item3" style="--in:500ms; --state:{getstate(1)}" class:top-in={slide==1}>Excellent - Moral - Professional</b>
         <span class="item4" style="--in:600ms; --state:{getstate(1)}" class:left-in={slide==1}>Smart - Clean - Responsive - Elegant</span>
-        <div style="margin-top: 1em; --in:700ms; --state:{getstate(1)}" class:right-in={slide==1} on:animationend={()=>switchstate(1)}>
+        <div style="margin-top: 1em; --in:700ms; --state:{getstate(1)}" class:right-in={slide==1} on:animationend={switchstate}>
             <span>Sekolah Tinggi Teknologi Muhammadiyah Cileungsi</span>
             <br>
             <span>Jln Anggrek Cileungsi</span>
@@ -261,7 +261,7 @@ header{
  position: relative;
 }  
 
-header::before{
+header::before, header::after{
     content: '';
     position: absolute;
     width: 100%;
@@ -269,11 +269,24 @@ header::before{
     top: 0;
     left: 0;
     background: url(/bg1.jpg);
+    opacity: 0;
+    will-change: opacity;
+    transition: opacity 500ms linear;
+}
+
+
+header::after{
+    z-index: -1;
+    background: url(/bg2.jpg);
+}
+
+header.bg1::before, header.bg2::after{
+    opacity: 1;
 }
 
 @media(prefers-color-scheme:dark){
-    header::before{
-        filter: brightness(.2);
+    header::before, header::after{
+        filter: invert(.9);
     }
 }
 

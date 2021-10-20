@@ -13,6 +13,8 @@ import { getJSON } from "$lib/scripts/helper";
 import { base } from "$app/paths";
 import Page from "$lib/Page.svelte";
 import Spinner from "$lib/Spinner.svelte";
+import { session } from '$app/stores';
+
 
 onMount(async ()=>{
     const res = await getJSON( base+'/api/info')
@@ -23,10 +25,9 @@ let data
 
 let column = ['id', 'tanggal', 'informasi', 'link']
 
-
 </script>
 
-<Page title='SIA STTM - Home' description='Nama / Status / Jurusan'>
+<Page title='SIA STTM - Home' description='{$session.user} / Mahasiswa / Informatika'>
     <br>
     <Stack>
         <TitledBox name='Info Terbaru'>

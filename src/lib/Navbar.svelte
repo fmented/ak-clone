@@ -21,7 +21,7 @@ import {slide, fly} from 'svelte/transition'
 <header>
     <nav>
         <li class="header">
-            <img src='{base}/logo.webp' alt=logo width=167 height=168>
+            <img src='{base}/logo.webp' alt=logo width=167 height=168 on:click="{()=>window.location="/"}">
             <div class=text>
                 <span class="title">{title}</span>
                 <span class=caption>{caption}</span>
