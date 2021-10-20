@@ -5,7 +5,7 @@
 <script>
 import { onDestroy, onMount} from 'svelte'
 
-import {slide } from 'svelte/transition'
+import {slide, fly } from 'svelte/transition'
 
 export let display = 'submenu'
 export let scope = new Map()
@@ -67,11 +67,11 @@ $: active = scope.get(_)
         
         </span>
     </div>
-    {#if active}        
-        <menu class:left={[...scope.keys()][0]==_} transition:slide>
+    {#key active}        
+        <menu class:left={[...scope.keys()][0]==_} in:fly={{duration: 300, x:-100}} out:slide={{duration:300}} class:active={active}>
             <slot></slot>
         </menu>
-    {/if}
+    {/key}
 </div>
 
 
@@ -87,6 +87,7 @@ $: active = scope.get(_)
     .title{
         display: flex;
         justify-content: space-between;
+        z-index: 1;
     }
 
     .container{
@@ -98,8 +99,12 @@ $: active = scope.get(_)
         padding-top: .25rem;
         padding-bottom: .5rem;
         transform: translateZ(0);
+        display: none;
     }
 
+    menu.active{
+        display: block;
+    }
 
     span{
         cursor: pointer;
