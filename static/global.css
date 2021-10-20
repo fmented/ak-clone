@@ -111,7 +111,7 @@ html, body{
     font-family: 'Bitter', serif;
 }
 
-p,strong,em,h1,h2,h3,h4,h5,span{
+p,strong,em,h1,h2,h3,h4,h5,span,label{
     color: var(--text);
 }
 
