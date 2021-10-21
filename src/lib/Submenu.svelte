@@ -51,7 +51,8 @@ $: active = scope.get(_)
 </script>
 
 <svelte:body on:click={e=>{
-    if([...e.path].includes(_)) return
+    const path = e.path || (e.composedPath && e.composedPath())
+    if([...path].includes(_)) return
     close()
 }}/>
 

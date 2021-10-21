@@ -12,7 +12,8 @@
 <Navbar {title} caption={description} bind:close/>
 
 <svelte:body on:click={e=>{
-    if([...e.path].includes(page)) close()
+    const path = e.path || (e.composedPath && e.composedPath())
+    if([...path].includes(page)) close()
 }}/>
 
 <main bind:this={page}>
