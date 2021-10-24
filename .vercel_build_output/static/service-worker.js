@@ -1,4 +1,4 @@
-const timestamp = 1635102060414;
+const timestamp = 1635104210720;
 const build = [
   "/app/start-0e7851ed.js",
   "/app/assets/start-61d1577b.css",
@@ -44,20 +44,15 @@ const files = [
   "/favicon-32x32.png",
   "/favicon.ico",
   "/global.css",
-  "/ipad.png",
   "/ipad.webp",
-  "/iphone.png",
   "/iphone.webp",
   "/logo.webp",
-  "/mac.png",
   "/mac.webp",
-  "/macbook.png",
   "/macbook.webp",
   "/manifest.json",
   "/mstile-150x150.png",
   "/ps.webp",
   "/safari-pinned-tab.svg",
-  "/site.webmanifest",
   "/sttm.webp"
 ];
 const worker = self;
