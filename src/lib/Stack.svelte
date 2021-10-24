@@ -3,7 +3,7 @@
 	export let template = '1fr 1fr'
 </script>
 
-<div style="--gap:{gap}; --template:{template}">
+<div style={`--gap:${gap}; --template:${template}; ${$$props.style}`}>
 	<slot></slot>
 </div>
 

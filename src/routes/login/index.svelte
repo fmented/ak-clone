@@ -42,7 +42,9 @@ $: username, error=''
 
 <svelte:body on:keyup={e=>{if(e.key=='Enter') login()}} />
 
-<PageHead title=Login description='Halaman Login'/>
+<PageHead title=Login description='Halaman Login'>
+<link rel="prefetch" href='{base}/sttm.webp'/>
+</PageHead>
 
 <main style="--bg:url({base}/sttm.webp)">
 
@@ -81,7 +83,7 @@ $: username, error=''
                 <address>
 					<em>Perum PT.SC Jl.Anggrek No.25 Cileungsi-Bogor 16820  <a href="tel:021-82495502">021-82495502</a></em>
                     <br>
-                    <em>All Right Reserved by : <a href="https://github.com/fmented/ak-clone">Fmented and ...</a> - 2016</em>
+                    <em>All Right Reserved by : <a href="https://github.com/fmented/ak-clone">Fmented and ...</a> - 2021</em>
                 </address>
 			</div>
 			<div class="links">

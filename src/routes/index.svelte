@@ -66,7 +66,10 @@ onMount(()=>{
 </script>
 
 
-<PageHead title='Web Akademik' description='Landing Page'></PageHead>
+<PageHead title='Web Akademik' description='Landing Page'>
+    <link rel="prefetch" href="{base}/bg1.jpg">
+    <link rel="prefetch" href="{base}/bg2.jpg">
+</PageHead>
 
 <header on:pointerdown={()=>read=!read} class:bg2={slide==3} class:bg1={slide!=3}>
 
@@ -92,7 +95,7 @@ onMount(()=>{
    
     <div class="text" class:hide={slide!=2}>
         <h1 style="font-size: 24px; --in:300ms; --out:2100ms; --state:{getstate(2)}" class:left-in={slide==2 && intro} last on:animationend={switchslide} class:top-out={slide==2 && !intro}>GUIDANCE</h1>
-        <div style="margin-top: 1em; font-size: 20px; --in:500ms; --out:2000ms; --state:{getstate(2)}" class:top-in={slide==2 && intro} class:left-out={slide==2&&!intro} on:animationend={switchstate}>
+        <div style="margin-top: 1em; font-size: 20px; --in:500ms; --out:2050ms; --state:{getstate(2)}" class:top-in={slide==2 && intro} class:left-out={slide==2&&!intro} on:animationend={switchstate}>
             <span>e-Arsip</span>
             <br>
             <span>e-Learning</span>
@@ -115,10 +118,10 @@ onMount(()=>{
         <span style="font-size: 20px; margin-top: 2rem; --in:500ms; --state:{getstate(3)}" class:left-in={slide==3}>Sistem Akademik STTM Cileungsi dapat diakses menggunakan PC, Laptop</span>
     </div>
     <div class="image" class:hide={slide!=3}>
-        <img src='{base}/mac.png' alt="mac" class="mac" style="--in:400ms; --out:2000ms; --state:{getstate(3)}" class:right-bounce-in={slide==3&&intro} class:bottom-out={slide==3&&!intro}>
-        <img src='{base}/ipad.png' alt="ipad" class="ipad" style="--in:600ms; --out:2000ms; --state:{getstate(3)}" class:right-bounce-in={slide==3&&intro} class:left-out={slide==3&&!intro}>
-        <img src='{base}/iphone.png' alt="iphone" class="iphone" style="--in:800ms; --out:2000ms; --state:{getstate(3)}" class:right-bounce-in={slide==3&&intro} class:left-out={slide==3&&!intro}>
-        <img src='{base}/macbook.png' alt="macbook" class="macbook" style="--in:1000ms; --out:1900ms; --state:{getstate(3)}" class:right-bounce-in={slide==3&&intro} class:right-out={slide==3&&!intro} on:animationend={switchstate}>
+        <img src='{base}/mac.webp' alt="mac" class="mac" style="--in:400ms; --out:2000ms; --state:{getstate(3)}" class:right-bounce-in={slide==3&&intro} class:bottom-out={slide==3&&!intro}>
+        <img src='{base}/ipad.webp' alt="ipad" class="ipad" style="--in:600ms; --out:2000ms; --state:{getstate(3)}" class:right-bounce-in={slide==3&&intro} class:left-out={slide==3&&!intro}>
+        <img src='{base}/iphone.webp' alt="iphone" class="iphone" style="--in:800ms; --out:2000ms; --state:{getstate(3)}" class:right-bounce-in={slide==3&&intro} class:left-out={slide==3&&!intro}>
+        <img src='{base}/macbook.webp' alt="macbook" class="macbook" style="--in:1000ms; --out:1900ms; --state:{getstate(3)}" class:right-bounce-in={slide==3&&intro} class:right-out={slide==3&&!intro} on:animationend={switchstate}>
     </div>
 
         <div class="nextbtn" class:hide={!read} on:pointerdown={next}>▶</div>
@@ -132,7 +135,7 @@ onMount(()=>{
 
 </header>
 
-<main style=padding-bottom:0;>
+<main style=padding-bottom:1rem;>
     <a class="login-box" href="{base}/login" rel=external>
         <div class="description">
             <h1 style="font-size: 3em;"><svg width=1em xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="white"><path fill-rule="evenodd" d="M10.496 2.132a1 1 0 00-.992 0l-7 4A1 1 0 003 8v7a1 1 0 100 2h14a1 1 0 100-2V8a1 1 0 00.496-1.868l-7-4zM6 9a1 1 0 00-1 1v3a1 1 0 102 0v-3a1 1 0 00-1-1zm3 1a1 1 0 012 0v3a1 1 0 11-2 0v-3zm5-1a1 1 0 00-1 1v3a1 1 0 102 0v-3a1 1 0 00-1-1z" clip-rule="evenodd"></path></svg></h1>
@@ -268,6 +271,7 @@ header::before, header::after{
     height: 100%;
     top: 0;
     left: 0;
+    background-size: cover;
     background: url(/bg1.jpg);
     opacity: 0;
     will-change: opacity;

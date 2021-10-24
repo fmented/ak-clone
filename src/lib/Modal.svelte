@@ -23,7 +23,8 @@
 
 {#if active}
 <aside on:click={e=>{
-    if([...e.path].includes(modal)) return
+    const path = e.path || (e.composedPath && e.composedPath())
+    if([...path].includes(modal)) return
     active = false
     }} transition:fade use:teleport>
     <article bind:this={modal} in:fly={{y:-100}} out:fade>
@@ -50,7 +51,7 @@
         display: grid;
         place-items: center;
         background: rgba(0,0,0,.7);
-        backdrop-filter: blur(8px);
+        backdrop-filter: blur(4px);
         z-index: 99;
         box-shadow: var(--shadow);
     }

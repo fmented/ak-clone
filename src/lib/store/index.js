@@ -57,6 +57,87 @@ export const info = ()=> [
             href:"/",
             text:"SEMINAR TEKNOLOGI DAN PENERAPANNYA"
         }
+    },
+    {
+        id: 3,
+        tanggal:"02-03-2021",
+        informasi:"KALENDER AKADEMIK TAHUN AJARAN 2021 SAMPAI 2022 SEMESTER GANJIL",
+        link:{
+            href:"/",
+            text:"KALENDER AKADEMIK TAHUN AJARAN 2021 SAMPAI 2022 SEMESTER GANJIL"
+        }
+    },
+    {
+        id: 4,
+        tanggal:"05-03-2021",
+        informasi:"JADWAL UTS TAHUN 2021",
+        link:{
+            href:"/",
+            text:"JADWAL UTS TAHUN 2021"
+        }
+    },
+    {
+        id: 5,
+        tanggal:"03-03-2021",
+        informasi:"SEMINAR TEKNOLOGI DAN PENERAPANNYA",
+        link:{
+            href:"/",
+            text:"SEMINAR TEKNOLOGI DAN PENERAPANNYA"
+        }
+    },
+    {
+        id: 6,
+        tanggal:"02-03-2021",
+        informasi:"KALENDER AKADEMIK TAHUN AJARAN 2021 SAMPAI 2022 SEMESTER GANJIL",
+        link:{
+            href:"/",
+            text:"KALENDER AKADEMIK TAHUN AJARAN 2021 SAMPAI 2022 SEMESTER GANJIL"
+        }
+    },
+    {
+        id: 7,
+        tanggal:"05-03-2021",
+        informasi:"JADWAL UTS TAHUN 2021",
+        link:{
+            href:"/",
+            text:"JADWAL UTS TAHUN 2021"
+        }
+    },
+    {
+        id: 8,
+        tanggal:"03-03-2021",
+        informasi:"SEMINAR TEKNOLOGI DAN PENERAPANNYA",
+        link:{
+            href:"/",
+            text:"SEMINAR TEKNOLOGI DAN PENERAPANNYA"
+        }
+    },
+    {
+        id: 9,
+        tanggal:"02-03-2021",
+        informasi:"KALENDER AKADEMIK TAHUN AJARAN 2021 SAMPAI 2022 SEMESTER GANJIL",
+        link:{
+            href:"/",
+            text:"KALENDER AKADEMIK TAHUN AJARAN 2021 SAMPAI 2022 SEMESTER GANJIL"
+        }
+    },
+    {
+        id: 10,
+        tanggal:"05-03-2021",
+        informasi:"JADWAL UTS TAHUN 2021",
+        link:{
+            href:"/",
+            text:"JADWAL UTS TAHUN 2021"
+        }
+    },
+    {
+        id: 11,
+        tanggal:"03-03-2021",
+        informasi:"SEMINAR TEKNOLOGI DAN PENERAPANNYA",
+        link:{
+            href:"/",
+            text:"SEMINAR TEKNOLOGI DAN PENERAPANNYA"
+        }
     }
 ]
 

@@ -7,13 +7,16 @@ import Stack from './Stack.svelte'
 
 export let data_id = 'id'
 
-let limit = 10
+let limit = 15
 let search = ''
 let page = 0
 
 export let row = []
 
 export let column = []
+
+export let maxHeight = '20rem'
+
 	
 let sortBy = {col: data_id};
 
@@ -31,7 +34,7 @@ $: sort = (column) => {
         : 0;
 
     
-    paginatedTable = paginatedTable.sort(sortStandard)
+    filteredTable = filteredTable.sort(sortStandard)
 }
 
 
@@ -39,9 +42,7 @@ $: sort = (column) => {
 
 $: filteredTable = row.filter(data=>JSON.stringify(Object.values(data)).includes(search))
 
-
-
-$: paginatedTable = filteredTable.filter((_, i)=>i>=limit*page && i<limit*(page+1))
+// $: paginatedTable = filteredTable.filter((_, i)=>i>=limit*page && i<limit*(page+1))
 
 
 $: paginate = Math.ceil(filteredTable.length / limit) || 1
@@ -155,7 +156,6 @@ section{
 
 
 @media print, (orientation: landscape) and (min-width:800px){
-
     tbody tr:nth-child(even) td >.wrap{
     background-image: none;
     }
@@ -178,6 +178,9 @@ section{
         cursor: pointer;
         border-collapse: collapse;
         border-radius: 4px 4px 0 0;
+        position: sticky;
+        top: 0;
+        z-index: 1;
     }
 
     th:first-of-type{
@@ -189,8 +192,7 @@ section{
     }
 
     td, th{
-        min-width: 4rem;
-        max-width: 8rem;
+        min-width: 5rem;
     }
 
     td:hover, th:hover{
@@ -216,10 +218,10 @@ section{
 
     th .wrap{
         font-size: .8rem;
-        word-wrap: break-word;
         display: flex;
-        flex-wrap: wrap;
+        flex-direction: column;
         gap:0;
+        align-items: flex-start;
     }
 
     td:first-of-type, td:last-of-type{
@@ -266,6 +268,17 @@ input, select{
     width: calc(100% - 1ch);
 }
 
+.controlWrapper{
+    background: var(--surface1);
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+
+.tableWrapper{
+    max-height: var(--maxHeight);
+    overflow-y: auto;
+}
 @media print{
     th, td{
         box-shadow: var(--shadow) inset;
@@ -276,10 +289,8 @@ input, select{
 
 
 <section> 
-
-
 {#if row.length}
-    
+<div class="controlWrapper">
 <Stack gap='5%'>
     <div class="wrap sorter">
         <label for="sortBy">Urutkan</label>
@@ -291,10 +302,10 @@ input, select{
     </div>
 
     <div class="wrap sorter">
-        <label for=paginateBy>Tampilkan</label>
+        <label for=paginateBy>Maximum</label>
         <select id=paginateBy bind:value={limit}>
             {#each Array(5) as _, i}
-            <option value={(i+1)*10}>{(i+1)*10}</option>
+            <option value={(i+1)*5}>{(i+1)*5}</option>
             {/each}
         </select>
     </div>
@@ -304,8 +315,10 @@ input, select{
         <input id=search bind:value={search} type="search">
     </div>
 </Stack>
+</div>
 {/if}
 
+<div style="--maxHeight:{maxHeight}" class="tableWrapper" >
 <PrintableArea>
 <table>
     <thead>
@@ -329,9 +342,9 @@ input, select{
                 </tr>
             </thead>
             <tbody>
-            {#if paginatedTable.length}
+            {#if filteredTable.length}
                     
-                {#each paginatedTable as data (data)}
+                {#each filteredTable.filter((_, i)=>i>=limit*page && i<limit*(page+1)) as data (data)}
                 <tr animate:flip={{duration:400}}>
                     {#each column as field}
                     {#if field != data_id}                            
@@ -361,6 +374,8 @@ input, select{
         </tbody>
     </table>
 </PrintableArea>
+</div>
+
 {#if paginate>1}
     
 <div class="paginator">

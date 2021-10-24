@@ -44,7 +44,7 @@ let form = {
             <button on:click={()=>modalActive=true}>Tambah</button>
             <button on:click={()=>window.print()}>Print</button>
         </div>
-        <SortableTable {row} {column}></SortableTable>
+        <SortableTable {row} {column} maxHeight=25rem></SortableTable>
     {/if}
 </Page>
 

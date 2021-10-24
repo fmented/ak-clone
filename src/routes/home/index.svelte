@@ -29,7 +29,7 @@ let column = ['id', 'tanggal', 'informasi', 'link']
 
 <Page title='SIA STTM - Home' description='{$session.user} / Mahasiswa / Informatika'>
     <br>
-    <Stack>
+    <Stack template='55% calc(45% - 2em)'>
         <TitledBox name='Info Terbaru'>
             {#if !data}
                 <Spinner></Spinner>
