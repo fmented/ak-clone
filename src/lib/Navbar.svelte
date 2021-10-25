@@ -19,7 +19,7 @@ import {slide, fly} from 'svelte/transition'
 <svelte:body on:scroll={close}/>
 
 <header>
-    <nav>
+    <ul>
         <li class="header">
             <img src='{base}/logo.webp' alt=logo width=167 height=168 on:click="{()=>window.location="/"}">
             <div class=text>
@@ -28,7 +28,7 @@ import {slide, fly} from 'svelte/transition'
             </div>
         </li>
         <li class=toggler>
-            <button on:click={()=>{closeAll(); active=!active}}>
+            <button on:click={()=>{closeAll(); active=!active}} title="toggle button">
                 {#if !active}
                 <svg width="1em" in:fly={{y:100, duration:300}}  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" color="var(--brand)"><path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"></path></svg>
                 {:else}
@@ -36,7 +36,7 @@ import {slide, fly} from 'svelte/transition'
                 {/if}
             </button>
         </li>
-    </nav>
+    </ul>
     {#key active}
     <menu class:mobile-show={active} transition:slide={{duration: 300}}>
         <li>
@@ -116,7 +116,7 @@ import {slide, fly} from 'svelte/transition'
         display: block;
     }
 
-    nav{
+    ul{
         display: grid;
         grid-template-columns: 80% 15%;
         grid-gap: 3%;
@@ -190,7 +190,7 @@ import {slide, fly} from 'svelte/transition'
 
     .title{
         color: var(--brand);
-        font-size: clamp(18px, 18px, 5rem);
+        font-size: clamp(1rem, .1rem + 1vw, 2.5rem);
         font-weight: 700;
     }
 
@@ -239,7 +239,7 @@ import {slide, fly} from 'svelte/transition'
             align-items: center;
             justify-content: space-between;
         }
-        nav{
+        ul{
             grid-template-columns: 1fr;
         }
 
