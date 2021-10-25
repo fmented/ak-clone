@@ -5843,7 +5843,7 @@ function parse_body(raw, headers) {
   if (!raw)
     return raw;
   const content_type = headers["content-type"];
-  const [type, ...directives] = content_type ? content_type.split(/;\s*/) : [];
+  const [type, ...directives2] = content_type ? content_type.split(/;\s*/) : [];
   const text = () => new TextDecoder(headers["content-encoding"] || "utf-8").decode(raw);
   switch (type) {
     case "text/plain":
@@ -5853,7 +5853,7 @@ function parse_body(raw, headers) {
     case "application/x-www-form-urlencoded":
       return get_urlencoded(text());
     case "multipart/form-data": {
-      const boundary = directives.find((directive) => directive.startsWith("boundary="));
+      const boundary = directives2.find((directive) => directive.startsWith("boundary="));
       if (!boundary)
         throw new Error("Missing boundary");
       return get_multipart(text(), boundary.slice("boundary=".length));
@@ -5890,19 +5890,19 @@ function get_multipart(text, boundary) {
       let [name, value] = raw_header.split(": ");
       name = name.toLowerCase();
       headers[name] = value;
-      const directives = {};
+      const directives2 = {};
       raw_directives.forEach((raw_directive) => {
         const [name2, value2] = raw_directive.split("=");
-        directives[name2] = JSON.parse(value2);
+        directives2[name2] = JSON.parse(value2);
       });
       if (name === "content-disposition") {
         if (value !== "form-data")
           throw new Error("Malformed form data");
-        if (directives.filename) {
+        if (directives2.filename) {
           throw new Error("File upload is not yet implemented");
         }
-        if (directives.name) {
-          key = directives.name;
+        if (directives2.name) {
+          key = directives2.name;
         }
       }
     });
@@ -6606,10 +6606,77 @@ function getSession({ headers }) {
     user
   };
 }
+var dev = `localhost:3000`;
+var deploy = "https://ak-clone.vercel.app";
+var directives = {
+  "img-src": [
+    "*",
+    "'self'",
+    "data:"
+  ],
+  "font-src": [
+    "*",
+    "'self'",
+    "data:"
+  ],
+  "style-src": [
+    "'self'",
+    "'unsafe-inline'"
+  ],
+  "default-src": [
+    "'self'",
+    dev,
+    deploy,
+    "ws://" + dev,
+    "ws://" + deploy,
+    "https://*.google.com",
+    "https://*.googleapis.com",
+    "https://*.firebase.com",
+    "https://*.gstatic.com",
+    "https://*.cloudfunctions.net",
+    "https://*.algolia.net",
+    "https://*.facebook.com",
+    "https://*.facebook.net",
+    "https://*.stripe.com",
+    "https://*.sentry.io"
+  ],
+  "script-src": [
+    "'self'",
+    "'unsafe-eval'",
+    "'unsafe-inline'",
+    dev,
+    deploy,
+    "https://*.stripe.com",
+    "https://*.facebook.com",
+    "https://*.facebook.net",
+    "https://*.sentry.io",
+    "https://polyfill.io"
+  ],
+  "frame-src": [
+    "https://*.stripe.com",
+    "https://*.facebook.com",
+    "https://*.facebook.net"
+  ]
+};
+var CSP = Object.entries(directives).map(([key, arr]) => key + " " + arr.join(" ")).join("; ");
+async function handle({ request, resolve: resolve2 }) {
+  const response = await resolve2(request);
+  return {
+    ...response,
+    headers: {
+      ...response.headers,
+      "X-Frame-Options": "SAMEORIGIN",
+      "X-Content-Type-Options": `nosniff`,
+      "Content-Security-Policy": CSP,
+      "X-XSS-Protection": 1
+    }
+  };
+}
 var user_hooks = /* @__PURE__ */ Object.freeze({
   __proto__: null,
   [Symbol.toStringTag]: "Module",
-  getSession
+  getSession,
+  handle
 });
 var template = ({ head, body }) => '<!DOCTYPE html>\n<html lang="en">\n	<head>\n		<meta charset="utf-8" />\n		<meta name="viewport" content="width=device-width, initial-scale=1" />\n		' + head + '\n	</head>\n	<body>\n		<div id="svelte">' + body + "</div>\n	</body>\n</html>\n";
 var options = null;
