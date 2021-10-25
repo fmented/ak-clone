@@ -32,8 +32,6 @@ const directives = {
     "'self'",
     dev,
     deploy,
-    "ws://" + dev,
-    "ws://" + deploy,
     "https://*.google.com",
     "https://*.googleapis.com",
     "https://*.firebase.com",
