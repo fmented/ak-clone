@@ -4,7 +4,6 @@
 	},
 	{
 		"src": "/.*",
-		"dest": ".vercel/functions/render",
-		"headers": {"cache-control": "public, max-age=604800, immutable"}
+		"dest": ".vercel/functions/render"
 	}
 ]
