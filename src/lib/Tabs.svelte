@@ -1,5 +1,5 @@
 <script>
-	import {fly, fade, slide} from 'svelte/transition'
+	import {fade, slide} from 'svelte/transition'
   export let items = [];
   export let activeTabValue = 0;
 
@@ -8,7 +8,7 @@
 
 <ul>
 {#each items as item}
-	<li class={activeTabValue === item?.value ? 'active' : ''} transition:fade tabindex={activeTabValue === item?.value ? 1 : ''}>
+	<li class={activeTabValue === item?.value ? 'active' : ''} transition:fade>
 		<span on:click={handleClick(item?.value)}>{item?.label}</span>
 	</li>
 {/each}

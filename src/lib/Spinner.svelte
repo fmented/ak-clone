@@ -16,9 +16,7 @@
         margin: 0 auto;
         padding: 1rem;
     }
-    
     .out, .in{
-        --r: 0deg;
         border-width: 8px;
         border-style: solid;
         height: 40%;
@@ -41,7 +39,6 @@
         border-image: linear-gradient(to bottom, var(--secondary, #65b), var(--brand, #66d)) 1 100%;
         height: calc(100%);
         transform: rotate(90deg);
-        --r: 90deg;
     }
 
 

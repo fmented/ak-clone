@@ -1,24 +1,24 @@
-const timestamp = 1635225321107;
+const timestamp = 1635228902353;
 const build = [
-  "/app/start-960b071e.js",
+  "/app/start-c034f35a.js",
   "/app/assets/start-61d1577b.css",
   "/app/layout.svelte-c3619dea.js",
   "/app/error.svelte-88216201.js",
-  "/app/pages/index.svelte-2fd082d4.js",
-  "/app/assets/pages/index.svelte-e0c70bef.css",
+  "/app/pages/index.svelte-4d914278.js",
+  "/app/assets/pages/index.svelte-c5c0d96a.css",
   "/app/pages/changepassword/index.svelte-de6623c6.js",
   "/app/assets/pages/changepassword/index.svelte-0cbfab54.css",
   "/app/pages/input/index.svelte-b5aa87d6.js",
   "/app/assets/pages/input/index.svelte-95cbe373.css",
   "/app/pages/login/index.svelte-d10df173.js",
   "/app/assets/pages/login/index.svelte-123a3979.css",
-  "/app/pages/loker/index.svelte-0d2e3e45.js",
+  "/app/pages/loker/index.svelte-ed9cbde9.js",
   "/app/assets/pages/loker/index.svelte-e7d6f703.css",
-  "/app/pages/nilai/index.svelte-d2e0f067.js",
+  "/app/pages/nilai/index.svelte-610107f8.js",
   "/app/assets/pages/nilai/index.svelte-dfc61709.css",
-  "/app/pages/home/index.svelte-fe66cb97.js",
+  "/app/pages/home/index.svelte-06ae7022.js",
   "/app/assets/pages/home/index.svelte-8cbf3e75.css",
-  "/app/pages/spin/index.svelte-757625e7.js",
+  "/app/pages/spin/index.svelte-bde2e1c9.js",
   "/app/chunks/vendor-3e1a4086.js",
   "/app/chunks/paths-28a87002.js",
   "/app/chunks/helper-fdf82727.js",
@@ -31,8 +31,8 @@ const build = [
   "/app/assets/stores-2ede06c6.css",
   "/app/chunks/SortableTable-0a038a22.js",
   "/app/assets/SortableTable-eb476b1b.css",
-  "/app/chunks/Spinner-2001130c.js",
-  "/app/assets/Spinner-994c5188.css"
+  "/app/chunks/Spinner-52f46c79.js",
+  "/app/assets/Spinner-2c252a10.css"
 ];
 const files = [
   "/android-chrome-144x144.png",
