@@ -1,17 +1,17 @@
-const timestamp = 1635193595353;
+const timestamp = 1635225321107;
 const build = [
-  "/app/start-d2d2e76d.js",
+  "/app/start-960b071e.js",
   "/app/assets/start-61d1577b.css",
   "/app/layout.svelte-c3619dea.js",
   "/app/error.svelte-88216201.js",
-  "/app/pages/index.svelte-3b9556a2.js",
+  "/app/pages/index.svelte-2fd082d4.js",
   "/app/assets/pages/index.svelte-e0c70bef.css",
   "/app/pages/changepassword/index.svelte-de6623c6.js",
   "/app/assets/pages/changepassword/index.svelte-0cbfab54.css",
   "/app/pages/input/index.svelte-b5aa87d6.js",
   "/app/assets/pages/input/index.svelte-95cbe373.css",
-  "/app/pages/login/index.svelte-3b9dd01e.js",
-  "/app/assets/pages/login/index.svelte-de3d8aaf.css",
+  "/app/pages/login/index.svelte-d10df173.js",
+  "/app/assets/pages/login/index.svelte-123a3979.css",
   "/app/pages/loker/index.svelte-0d2e3e45.js",
   "/app/assets/pages/loker/index.svelte-e7d6f703.css",
   "/app/pages/nilai/index.svelte-d2e0f067.js",

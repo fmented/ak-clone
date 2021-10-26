@@ -35,19 +35,17 @@ async function login() {
 
 $: password, error=''
 $: username, error=''
-
-
+let menu
+let hide=false
 </script>
 
 
 <svelte:body on:keyup={e=>{if(e.key=='Enter') login()}} />
 
 <PageHead title=Login description='Halaman Login'>
-<link rel="prefetch" href='{base}/sttm.webp'/>
 </PageHead>
 
-<main style="--bg:url({base}/sttm.webp)">
-
+<main bind:this="{menu}" on:pointerdown={e=>setTimeout(()=>hide=e.target==menu, 400)} on:pointerup={()=>hide=false} class:transparent={hide} style="--bg:url({base}/sttm.webp)">
 	<form>
 		<div class='header'>
 			<span class="logo">
@@ -114,7 +112,8 @@ $: username, error=''
 		place-items:center;
 	}
 
-	:global(main::before){
+
+	main::before{
 		content: '';
 		position: absolute;
 		top: 0;
@@ -127,6 +126,15 @@ $: username, error=''
         background-position: center;
         background-size: cover;
 		filter: brightness(.8) blur(4px);
+		transition: filter 500ms ease;
+	}
+
+	main.transparent::before{
+		filter: brightness(1) blur(0);
+	}
+
+	main.transparent form{
+		opacity: .005;
 	}
 
 	form{
@@ -137,6 +145,8 @@ $: username, error=''
         max-width: 90vw;
 		max-height: 96%;
 		overflow: auto;
+		will-change: opacity;
+		transition: opacity 500ms ease;
 		border: var(--border);
 	}
 	

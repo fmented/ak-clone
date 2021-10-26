@@ -18,7 +18,7 @@ $: getstate = n => slide==n && !read? 'running':'paused'
 $: switchstate = ()=> intro=false
 
 $: switchslide = (e)=>{
-    let x = e.target.hasAttribute('last')
+    let x = e.target.hasAttribute('title')
     if(x && !intro){
         intro=true
         if(slide==3){
@@ -58,7 +58,7 @@ function goToSlide(n) {
 
 onMount(()=>{
     slide=1
-    document.addEventListener('visibilitychange', e=>{
+    document.addEventListener('visibilitychange', _=>{
         read = document.hidden ? true : false
     })
 })
@@ -67,13 +67,11 @@ onMount(()=>{
 
 
 <PageHead title='Web Akademik' description='Landing Page'>
-    <link rel="prefetch" href="{base}/bg1.jpg">
-    <link rel="prefetch" href="{base}/bg2.jpg">
 </PageHead>
 
 <header on:pointerdown={()=>read=!read} class:bg2={slide==3} class:bg1={slide!=3}>
 
-    <div class="text" class:top-out={slide==1&&!intro} style="--out:2000ms; --state:{getstate(1)}" class:hide={slide!=1} last on:animationend={switchslide}>
+    <div class="text" class:top-out={slide==1&&!intro} style="--out:2000ms; --state:{getstate(1)}" class:hide={slide!=1} title="last" on:animationend={switchslide}>
         <h1 style="font-size: 24px; --in:300ms; --state:{getstate(1)}" class:top-in={slide==1}>Selamat Datang <span>di website</span></h1>
         <h1 style="font-size: 20px; --in:400ms; --state:{getstate(1)}" class:top-in={slide==1}>AKADEMIK STTM CILEUNGSI</h1>
         <b class="item3" style="--in:500ms; --state:{getstate(1)}" class:top-in={slide==1}>Excellent - Moral - Professional</b>
@@ -94,15 +92,15 @@ onMount(()=>{
    
    
     <div class="text" class:hide={slide!=2}>
-        <h1 style="font-size: 24px; --in:300ms; --out:2100ms; --state:{getstate(2)}" class:left-in={slide==2 && intro} last on:animationend={switchslide} class:top-out={slide==2 && !intro}>GUIDANCE</h1>
+        <h1 style="font-size: 24px; --in:300ms; --out:2100ms; --state:{getstate(2)}" class:left-in={slide==2 && intro} title="last" on:animationend={switchslide} class:top-out={slide==2 && !intro}>GUIDANCE</h1>
         <div style="margin-top: 1em; font-size: 20px; --in:500ms; --out:2050ms; --state:{getstate(2)}" class:top-in={slide==2 && intro} class:left-out={slide==2&&!intro} on:animationend={switchstate}>
             <span>e-Arsip</span>
             <br>
             <span>e-Learning</span>
             <br>
-            <span>e-Arsip</span>
+            <span>e-Perpus</span>
             <br>
-            <span>e-Learning</span>
+            <span>e-Alumni</span>
             <br>
             <span>Accesibility, Central, Responsive, User friendly</span>
         </div>
@@ -112,7 +110,7 @@ onMount(()=>{
     </div>
     
 
-    <div class="text" last class:hide={slide!=3} style="--in:300ms; --out:2100ms; --state:{getstate(3)}" class:top-out={slide==3 && !intro} on:animationend={switchslide}>
+    <div class="text" title="last" class:hide={slide!=3} style="--in:300ms; --out:2100ms; --state:{getstate(3)}" class:top-out={slide==3 && !intro} on:animationend={switchslide}>
         <h1 style="font-size: 24px; --in:500ms; --state:{getstate(3)}" class:top-in={slide==3}>Mudah Diakses</h1>
         <b class="item3" style="--in:400ms; --state:{getstate(3)}" class:right-in={slide==3}>Responsive & Theme-Colored</b>
         <span style="font-size: 20px; margin-top: 2rem; --in:500ms; --state:{getstate(3)}" class:left-in={slide==3}>Sistem Akademik STTM Cileungsi dapat diakses menggunakan PC, Laptop</span>
