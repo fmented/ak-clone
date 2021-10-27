@@ -37,6 +37,8 @@ $: password, error=''
 $: username, error=''
 let menu
 let hide=false
+let timer
+
 </script>
 
 
@@ -45,7 +47,7 @@ let hide=false
 <PageHead title=Login description='Halaman Login'>
 </PageHead>
 
-<main bind:this="{menu}" on:pointerdown={e=>setTimeout(()=>hide=e.target==menu, 400)} on:pointerup={()=>hide=false} class:transparent={hide} style="--bg:url({base}/sttm.webp)">
+<main bind:this="{menu}" on:pointerdown={e=>timer = setTimeout(()=>hide=e.target==menu, 400)} on:pointerup={()=>{hide=false; clearTimeout(timer);}} class:transparent={hide} style="--bg:url({base}/sttm.webp)">
 	<form>
 		<div class='header'>
 			<span class="logo">
@@ -126,7 +128,8 @@ let hide=false
         background-position: center;
         background-size: cover;
 		filter: brightness(.8) blur(4px);
-		transition: filter 500ms ease;
+		transition: filter 400ms ease;
+		transition-delay: 300ms;
 	}
 
 	main.transparent::before{
@@ -137,7 +140,7 @@ let hide=false
 		opacity: .005;
 	}
 
-	form{
+	main form{
 		border-radius:8px;
 		background: rgba(255,255,255,.9);
 		margin:.5em;
@@ -146,17 +149,21 @@ let hide=false
 		max-height: 96%;
 		overflow: auto;
 		will-change: opacity;
-		transition: opacity 500ms ease;
+		transition: opacity 200ms ease;
 		border: var(--border);
 	}
 	
 
 	@media(prefers-color-scheme: dark){
-		:global(main::before){
-			filter: brightness(.2);
+		main::before{
+			filter: brightness(.2) blur(4px);
 		}
 
-		form{
+		main.transparent::before{
+		filter: brightness(.2) blur(0);
+	}
+
+		main form{
 			background: rgba(0,0,0,.3);
 		}
 	}
