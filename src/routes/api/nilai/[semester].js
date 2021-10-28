@@ -3,7 +3,7 @@ import { nilai } from "$lib/store"
 
 export async function get({params, headers}) {
     const {semester} = params
-    const result = nilai().filter(i=>i.semester==semester)
+    const result = semester == 'all' ? nilai() : nilai().filter(i=>i.semester==semester)
     const user = getUserFromToken(readCookie(headers.cookie, 'userToken'))
     if(result.length && user){
         return {
@@ -17,7 +17,8 @@ export async function get({params, headers}) {
     return {
         body: {
             message: ' Are you logged in?',
-            result:[]        }
+            result:[]        
+        }
     }
 
 }

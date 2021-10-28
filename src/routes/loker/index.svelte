@@ -22,18 +22,32 @@ onMount(async ()=>{
 
 
 let row 
+let close
 
 $: column = row? Object.keys(row[0]) : []
 
 let modalActive = false
 
-let form = {
-    posisi:'',
-    perusahaan: '',
-    alamat: '',
-    informasi: '',
-    expired: undefined,
+let posisi,perusahaan,alamat,informasi,expired,error
+
+function add() {
+    if(posisi && perusahaan && alamat && informasi && expired){
+        error = ''
+        let form = {
+            posisi,
+            perusahaan,
+            alamat,
+            informasi,
+            expired
+        }
+        row = [...row, form] 
+        close()
+        return
+    }
+    error='Please Input All Field' 
 }
+
+$: valid = posisi&&perusahaan&&alamat&&informasi&&expired
 </script>
 
 <Page title='Info Loker' description='Informai Lowongan Kerja'>
@@ -49,41 +63,48 @@ let form = {
 </Page>
 
 
-<Modal bind:active={modalActive}>
+<Modal bind:active={modalActive} bind:close>
         <div slot="head"><h3 style="color: white;">Tambah Lowongan Pekerjaan</h3></div>
         <div slot=content>
+
             <FormControl>
                 <label for="posisi">Posisi</label>
-                <input type="text" id="posisi" placeholder="Posisi Yang Dibutuhkan" bind:value={form.posisi}>
+                <input type="text" id="posisi" placeholder="Posisi Yang Dibutuhkan" bind:value={posisi}>
             </FormControl>
             
             <FormControl>
                 <label for="nama">Nama Perusahaan</label>
-                <input type="text" id="nama" placeholder="Nama Kantor Perusahaan" bind:value={form.perusahaan}>
+                <input type="text" id="nama" placeholder="Nama Kantor Perusahaan" bind:value={perusahaan}>
             </FormControl>
                 
             <FormControl>
                 <label for="alamat">Alamat</label>
-                <textarea type="text" id="alamat" placeholder="Alamat Kantor Perusahaan" bind:value={form.alamat} rows="3"></textarea>
+                <textarea type="text" id="alamat" placeholder="Alamat Kantor Perusahaan" bind:value={alamat} rows="3"></textarea>
             </FormControl>
             
             <FormControl>
                 <label for="info">Informasi</label>
-                <textarea type="text" id="info" placeholder="Informasi Seputar Deskripsi Pekerjaan Dan Persyaratan" bind:value={form.informasi} rows="3"></textarea>
+                <textarea type="text" id="info" placeholder="Informasi Seputar Deskripsi Pekerjaan Dan Persyaratan" bind:value={informasi} rows="3"></textarea>
             </FormControl>
             
             <FormControl>
                 <label for="exp">Kadaluarsa</label>
                 <input type="text" id="exp" placeholder="Tanggal Ditutupnya Lowongan" 
-                onfocus="this.type='date'" onblur="if(!this.value) this.type='text'" pattern="\d{4}-\d{2}-\d{2}" bind:value={form.expired}>
+                onfocus="this.type='date'" onblur="if(!this.value) this.type='text'" pattern="\d{4}-\d{2}-\d{2}" bind:value={expired}>
             </FormControl>
+            
+            {#if error && !valid}
+            <div style=" text-align: center;">
+                <strong style=" color: #d45;">{error}</strong>
+            </div>
+            {/if}
         </div>
         
-        <div slot=action let:close>
+        <div slot=action>
             <button class="cancel" type="button" on:click={close}>
                 batal
             </button>
-            <button class="submit" type="submit" on:click={()=>{form.id=row.length; row=[...row, form]; close()}}>
+            <button class="submit" type="submit" on:click={add}>
                 tambah
             </button>
         </div>

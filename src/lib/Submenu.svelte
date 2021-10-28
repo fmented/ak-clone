@@ -58,7 +58,7 @@ $: active = scope.get(_)
 
 <div bind:this={_} on:click={handler} class=container>
     <div class="title">
-        <span class={$$props.class} style={$$props.style} class:active>{display}</span>
+        <span class={$$props.class} style={$$props.style} class:active title={'Menu ' + display.replace(/[^\x00-\x7F]/g, '')}>{display}</span>
         <span class=indicator>
             {#if active}
             <svg width="2em" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" color="var(--brand)"><path d="M0 0h24v24H0z" fill="none"></path><path d="M12 8l-6 6 1.41 1.41L12 10.83l4.59 4.58L18 14z"></path></svg>

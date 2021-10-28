@@ -156,6 +156,7 @@ section{
 
 
 @media print, (orientation: landscape) and (min-width:800px){
+    
     tbody tr:nth-child(even) td >.wrap{
     background-image: none;
     }
@@ -174,13 +175,17 @@ section{
     
     thead{
         visibility: visible;
-        background: var(--brand);
         cursor: pointer;
         border-collapse: collapse;
         border-radius: 4px 4px 0 0;
+        
+    }
+    
+    th{
         position: sticky;
         top: 0;
         z-index: 1;
+        background: var(--brand);
     }
 
     th:first-of-type{
@@ -193,6 +198,7 @@ section{
 
     td, th{
         min-width: 5rem;
+        max-width: 10rem;
     }
 
     td:hover, th:hover{
@@ -278,10 +284,12 @@ input, select{
 .tableWrapper{
     max-height: var(--maxHeight);
     overflow-y: auto;
+    
 }
 @media print{
     th, td{
         box-shadow: var(--shadow) inset;
+        position: initial;
     }
 }
 
@@ -304,7 +312,7 @@ input, select{
     <div class="wrap sorter">
         <label for=paginateBy>Maximum</label>
         <select id=paginateBy bind:value={limit}>
-            {#each Array(5) as _, i}
+            {#each Array(10) as _, i}
             <option value={(i+1)*5}>{(i+1)*5}</option>
             {/each}
         </select>

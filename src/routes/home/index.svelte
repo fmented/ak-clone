@@ -27,7 +27,7 @@ let column = ['id', 'tanggal', 'informasi', 'link']
 
 </script>
 
-<Page title='SIA STTM - Home' description='{$session.user} / Mahasiswa / Informatika'>
+<Page title='SIA STTM - Home' description='{$session.user=='admin'?'Fauki Prayitno ':$session.user} / Mahasiswa / Informatika'>
     <br>
     <Stack template='55% calc(45% - 2em)'>
         <TitledBox name='Info Terbaru'>

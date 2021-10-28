@@ -21,14 +21,14 @@ import {slide, fly} from 'svelte/transition'
 <header>
     <ul>
         <li class="header">
-            <img src='{base}/logo.webp' alt=logo width=167 height=168 on:click="{()=>window.location="/"}">
+            <img src='{base}/logo.webp' alt=logo width=167 height=168 on:click="{()=>window.location="/"}" title="Logo STTM">
             <div class=text>
                 <span class="title">{title}</span>
                 <span class=caption>{caption}</span>
             </div>
         </li>
         <li class=toggler>
-            <button on:click={()=>{closeAll(); active=!active}} title="toggle button">
+            <button on:click={()=>{closeAll(); active=!active}} title="Toggle Button">
                 {#if !active}
                 <svg width="1em" in:fly={{y:100, duration:300}}  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" color="var(--brand)"><path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"></path></svg>
                 {:else}

@@ -106,7 +106,7 @@ onMount(()=>{
         </div>
     </div>
     <div class="image" class:hide={slide!=2}>
-        <img src="{base}/ps.webp" alt="img" style="width: 50%; height:auto; --in:400ms; --out:1950ms; --state:{getstate(2)}" class:bottom-in={slide==2&&intro} class:right-out={slide==2&!intro} height="300" width="300">
+        <img src="{base}/ps.webp" alt="img" style="--in:400ms; --out:1950ms; --state:{getstate(2)}" class=ps class:bottom-in={slide==2&&intro} class:right-out={slide==2&!intro} height=300 width=300>
     </div>
     
 
@@ -195,7 +195,7 @@ svg{
     top: 50%;
     transform: translateY(-50%);
     font-size: 3rem;
-    aspect-ratio: 1;
+    aspect-ratio: 1/1;
     cursor: pointer;
     opacity: .3;
     will-change: transform,opacity;
@@ -294,7 +294,7 @@ header.bg1::before, header.bg2::after{
 
 .mac{
     position: absolute;
-    width:50%;
+    max-width:50%;
     left: 25%;
     height: auto;
     bottom:15%;
@@ -302,7 +302,7 @@ header.bg1::before, header.bg2::after{
 
 .ipad{
     position: absolute;
-    width:30%;
+    max-width:30%;
     left: 1%;
     bottom:15%;
     height: auto;
@@ -310,7 +310,7 @@ header.bg1::before, header.bg2::after{
 
 .iphone{
     position: absolute;
-    width:12%;
+    max-width:12%;
     left: 32%;
     bottom:10%;
     height: auto;
@@ -318,7 +318,7 @@ header.bg1::before, header.bg2::after{
 
 .macbook{
     position: absolute;
-    width:50%;
+    max-width:50%;
     right: 1%;
     bottom:15%;
     height: auto;
@@ -340,14 +340,21 @@ header.bg1::before, header.bg2::after{
     width: 100%;
     display: grid;
     place-items: center;
-    position: relative;
     position: absolute;
     left: 0;
     top:50%;
 }
 
+.logo{
+    height:60%;
+    width: auto;
+}
 
-[style*="--state"]{
+.ps{
+    width: 25%; 
+    height:auto;
+}
+*[style*=--state]{
     will-change: transform,opacity;
 }
 
@@ -385,17 +392,18 @@ header.bg1::before, header.bg2::after{
     }
 
     .logo{
-        height: 30%;
-        width: auto;
+        height: auto;
+        width: 30%;
+    }
+
+    .ps{
+        width: 30%; 
+        height:auto;
     }
 
     
 }
 
-.logo{
-    height:70%;
-    width: auto;
-}
 
 .text > h1{
     font-size: 18px;
