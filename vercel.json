@@ -15,20 +15,12 @@
           {
             "key" : "Content-Type",
             "value" : "application/json; charset=utf-8"
-          },
-          {
-            "key" : "Cache-Control",
-            "value" : "public, max-age=604800, immutable"
           }
         ]
       },
       {
-        "source": "/(*.webp)",
+        "source": "/(.*)",
         "headers" : [
-          {
-            "key" : "Cache-Control",
-            "value" : "public, max-age=604800, immutable"
-          },
           {
             "key" : "X-Content-Type-Options",
             "value" : "nosniff"
@@ -36,67 +28,11 @@
         ]
       },
       {
-        "source": "/(*.woff2)",
+        "source": "(.*)(\\.css|\\.webp|\\.jpg|\\.woff2|\\.png|\\.js|\\.svg)",
         "headers" : [
           {
             "key" : "Cache-Control",
             "value" : "public, max-age=604800, immutable"
-          },
-          {
-            "key" : "X-Content-Type-Options",
-            "value" : "nosniff"
-          }
-        ]
-      },
-      {
-        "source": "/(*.jpg)",
-        "headers" : [
-          {
-            "key" : "Cache-Control",
-            "value" : "public, max-age=604800, immutable"
-          },
-          {
-            "key" : "X-Content-Type-Options",
-            "value" : "nosniff"
-          }
-        ]
-      },
-      {
-        "source": "/(*.png)",
-        "headers" : [
-          {
-            "key" : "Cache-Control",
-            "value" : "public, max-age=604800, immutable"
-          },
-          {
-            "key" : "X-Content-Type-Options",
-            "value" : "nosniff"
-          }
-        ]
-      },
-      {
-        "source": "/(*.css)",
-        "headers" : [
-          {
-            "key" : "Cache-Control",
-            "value" : "public, max-age=604800, immutable"
-          },
-          {
-            "key" : "X-Content-Type-Options",
-            "value" : "nosniff"
-          }
-        ]
-      },
-      {
-        "source": "/(*.js)",
-        "headers" : [
-          {
-            "key" : "Cache-Control",
-            "value" : "public, max-age=604800, immutable"
-          },
-          {
-            "key" : "X-Content-Type-Options",
-            "value" : "nosniff"
           }
         ]
       }
