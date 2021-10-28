@@ -23,11 +23,47 @@
         ]
       },
       {
-        "source": "/(.*)",
+        "source": "/(*.css)",
         "headers" : [
           {
             "key" : "Cache-Control",
-            "value" : "public, max-age=604800, immutable"
+            "value" : "public, max-age=604800"
+          }
+        ]
+      },
+      {
+        "source": "/(*.webp)",
+        "headers" : [
+          {
+            "key" : "Cache-Control",
+            "value" : "public, max-age=604800"
+          }
+        ]
+      },
+      {
+        "source": "/(*.jpg)",
+        "headers" : [
+          {
+            "key" : "Cache-Control",
+            "value" : "public, max-age=604800"
+          }
+        ]
+      },
+      {
+        "source": "/(*.js)",
+        "headers" : [
+          {
+            "key" : "Cache-Control",
+            "value" : "public, max-age=604800"
+          }
+        ]
+      },
+      {
+        "source": "/(*.woff2)",
+        "headers" : [
+          {
+            "key" : "Cache-Control",
+            "value" : "public, max-age=604800"
           }
         ]
       }
