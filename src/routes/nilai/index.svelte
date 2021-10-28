@@ -34,10 +34,10 @@ $: tabs = !result.length? [] : result.map((v, i)=> {
         value: i,
         props: {
             row: v,
-            column: i!=8? column : [...column, 'semester'],
+            column: semester[i]!='all'? column : [...column, 'semester'],
             maxHeight:'25rem'
         },
-        label: i!=8? `Semester: ${i+1}`: 'Semua Nilai'
+        label: semester[i]!='all'? `Semester: ${i+1}`: 'Semua Nilai'
     }
 })
 
