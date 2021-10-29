@@ -297,7 +297,7 @@ header.bg1::before, header.bg2::after{
 
 .mac{
     position: absolute;
-    max-width:50%;
+    width:50%;
     left: 25%;
     height: auto;
     bottom:15%;
@@ -305,7 +305,7 @@ header.bg1::before, header.bg2::after{
 
 .ipad{
     position: absolute;
-    max-width:30%;
+    width:30%;
     left: 1%;
     bottom:15%;
     height: auto;
@@ -313,7 +313,7 @@ header.bg1::before, header.bg2::after{
 
 .iphone{
     position: absolute;
-    max-width:12%;
+    width:12%;
     left: 32%;
     bottom:10%;
     height: auto;
@@ -321,7 +321,7 @@ header.bg1::before, header.bg2::after{
 
 .macbook{
     position: absolute;
-    max-width:50%;
+    width:50%;
     right: 1%;
     bottom:15%;
     height: auto;
