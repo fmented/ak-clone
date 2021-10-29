@@ -94,6 +94,8 @@ html, body{
     height: 100%;
     width: 100%;
     scroll-behavior: smooth;
+    overflow-x: hidden;
+    overflow-y: auto;
 }
 
 .brand{
@@ -108,7 +110,8 @@ html, body{
     padding: 0;
     font-family: 'Bitter', serif;
     color: var(--text);
-    
+    scrollbar-color: #65b var(--surface2);
+    scrollbar-width: thin;
 }
 
 a, a *{
@@ -158,6 +161,7 @@ svg{
 }
 
 ::-webkit-scrollbar-thumb{
+    border-radius: .25rem;
     opacity: .2;
     width: 90%;
     border: .5px double var(--surface1);
@@ -175,17 +179,6 @@ svg{
     border: .25rem solid var(--surface1);
 }
 
-@supports (scrollbar-color: #65b var(--surface1)) and (scrollbar-width: .7rem){
-    *{
-        scrollbar-color: #6655bb var(--surface1);
-        scrollbar-width: thin;
-    }
-
-    *:hover{
-        scrollbar-color: var(--brand) var(--surface1);
-        scrollbar-width: thin;
-    }
-}
 
 
 label{
