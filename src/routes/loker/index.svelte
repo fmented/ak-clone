@@ -50,6 +50,8 @@ function add() {
 $: valid = posisi&&perusahaan&&alamat&&informasi&&expired
 </script>
 
+<svelte:body on:keyup={e=>{if(e.key=='Enter' && modalActive && valid) add()}} />
+
 <Page title='Info Loker' description='Informai Lowongan Kerja'>
     {#if !row}
         <Spinner></Spinner>

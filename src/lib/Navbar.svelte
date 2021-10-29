@@ -195,6 +195,8 @@ import {slide, fly} from 'svelte/transition'
     }
 
     .caption{
+        font-size: .85rem;
+        font-weight: 800;
         color: var(--surface1);
         background: var(--brand);
         padding: .25rem;

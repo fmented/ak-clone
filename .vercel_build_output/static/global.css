@@ -94,8 +94,6 @@ html, body{
     height: 100%;
     width: 100%;
     scroll-behavior: smooth;
-    overflow-x: hidden;
-    overflow-y: auto;
 }
 
 .brand{
@@ -110,7 +108,7 @@ html, body{
     padding: 0;
     font-family: 'Bitter', serif;
     color: var(--text);
-    scrollbar-color: #65b var(--surface2);
+    scrollbar-color: var(--brand) var(--surface2);
     scrollbar-width: thin;
 }
 
@@ -161,7 +159,7 @@ svg{
 }
 
 ::-webkit-scrollbar-thumb{
-    border-radius: .25rem;
+    border-radius: 8px;
     opacity: .2;
     width: 90%;
     border: .5px double var(--surface1);
@@ -169,7 +167,6 @@ svg{
 }
 
 ::-webkit-scrollbar-thumb:hover{
-    cursor: pointer;
     background: linear-gradient( var(--brand) calc(50% - 8px), white calc(50% - 8px), var(--brand) calc(50% - 4px), white calc(50% - 4px), var(--brand) calc(50%), white calc(50%), var(--brand) calc(50% + 4px), white calc(50% + 4px), var(--brand) calc(50% + 8px));
 }
 
