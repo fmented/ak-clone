@@ -168,9 +168,6 @@ let timer
 		}
 	}
 	
-
-	
-	
 	.info{
 		display:flex;
 		flex-direction:column;

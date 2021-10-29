@@ -37,13 +37,7 @@ $: sort = (column) => {
     filteredTable = filteredTable.sort(sortStandard)
 }
 
-
-
-
 $: filteredTable = row.filter(data=>JSON.stringify(Object.values(data)).includes(search))
-
-// $: paginatedTable = filteredTable.filter((_, i)=>i>=limit*page && i<limit*(page+1))
-
 
 $: paginate = Math.ceil(filteredTable.length / limit) || 1
 
@@ -55,7 +49,6 @@ const capitalize = string=>string.toUpperCase().replace('_', ' ')
 let currentSort = sortBy.col
 
 $: sort(currentSort)
-
 </script>
 
 <style>

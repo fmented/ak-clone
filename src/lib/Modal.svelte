@@ -95,6 +95,7 @@
         border-bottom: 0;
         max-height: 100%;
         overflow-y: auto;
+        padding-inline-end: 4px;
     }
 
     .content, .action{
