@@ -13,7 +13,7 @@ import { onMount } from "svelte";
 import Page from "$lib/Page.svelte";
 import Spinner from "$lib/Spinner.svelte";
 
-let semester = [1, 2, 3, 4, 5, 6, 7, 8, 'all']
+let semester = [1, 2, 3, 4, 5, 6, 7, 8,]
 
 let result = []
 
@@ -27,6 +27,11 @@ onMount(async()=>{
     })
 })
 
+$: if(result.length == 8){
+    const all = [...result].flat()
+    result = [...result, all]
+}
+
 
 $: tabs = !result.length? [] : result.map((v, i)=> {
     return {
@@ -34,10 +39,10 @@ $: tabs = !result.length? [] : result.map((v, i)=> {
         value: i,
         props: {
             row: v,
-            column: semester[i]!='all'? column : [...column, 'semester'],
+            column: i==8? [...column, 'semester']: column ,
             maxHeight:'25rem'
         },
-        label: semester[i]!='all'? `Semester: ${i+1}`: 'Semua Nilai'
+        label: i==8? 'Semua Nilai': `Semester: ${i+1}`
     }
 })
 

@@ -59,19 +59,10 @@ $: sort(currentSort)
 </script>
 
 <style>
-:global(*){
-    box-sizing: border-box;
-    scroll-behavior: smooth;
-}
-
 :root{
     --mobile-head-column: 40%;
     --row-accent: var(--readonly);
 }
-
-
-
-
 table{
     width: 100%;
     border-collapse: collapse;
@@ -85,6 +76,7 @@ tr{
     display: flex;
     flex-direction: column;
     margin-bottom: .5rem;
+    padding-inline-end: 4px;
 }
 
 
@@ -157,6 +149,9 @@ section{
 
 @media print, (orientation: landscape) and (min-width:800px){
     
+    .tableWrapper{
+        padding-inline-end: 4px;
+    }
     tbody tr:nth-child(even) td >.wrap{
     background-image: none;
     }
@@ -208,6 +203,7 @@ section{
 
     tr {
         display: table-row;
+        padding-inline-end: 0;
     }
 
 
