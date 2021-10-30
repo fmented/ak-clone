@@ -60,7 +60,7 @@ $: valid = posisi&&perusahaan&&alamat&&informasi&&expired
             <button on:click={()=>modalActive=true}>Tambah</button>
             <button on:click={()=>window.print()}>Print</button>
         </div>
-        <SortableTable {row} {column} maxHeight=25rem></SortableTable>
+        <SortableTable {row} {column} maxHeight=65vh></SortableTable>
     {/if}
 </Page>
 

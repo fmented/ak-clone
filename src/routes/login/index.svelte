@@ -128,14 +128,16 @@ let timer
         background-position: center;
         background-size: cover;
 		filter: brightness(.8) blur(4px);
-		transition: filter 400ms ease;
+		transition: filter 800ms ease;
 	}
 
 	main.transparent::before{
-		filter: brightness(1) blur(0);
+		transition: filter 800ms ease;
+		filter: brightness(.8) blur(0);
 	}
 
 	main.transparent form{
+		transition: opacity 600ms ease;
 		opacity: .005;
 	}
 
@@ -148,8 +150,7 @@ let timer
 		max-height: 96%;
 		overflow: auto;
 		will-change: opacity;
-		transition-delay: 300ms;
-		transition: opacity 300ms ease;
+		transition: opacity 600ms ease;
 		border: var(--border);
 	}
 	

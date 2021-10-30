@@ -40,7 +40,7 @@ $: tabs = !result.length? [] : result.map((v, i)=> {
         props: {
             row: v,
             column: i==8? [...column, 'semester']: column ,
-            maxHeight:'25rem'
+            maxHeight:'50vh'
         },
         label: i==8? 'Semua Nilai': `Semester: ${i+1}`
     }

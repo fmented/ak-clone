@@ -1,6 +1,7 @@
 <script>
 import { base } from "$app/paths";
 import {slide, fly} from 'svelte/transition'
+import {quintInOut} from 'svelte/easing'
     import Submenu from "./Submenu.svelte";
     export let title = ''
     export let caption = ''
@@ -28,15 +29,15 @@ import {slide, fly} from 'svelte/transition'
         <li class=toggler>
             <button on:click={()=>{closeAll(); active=!active}} title="Toggle Button">
                 {#if !active}
-                <svg width="1em" in:fly={{y:100, duration:300}}  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" color="var(--brand)"><path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"></path></svg>
+                <svg width="1em" in:fly={{y:100, duration:300, easing:quintInOut}}  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" color="var(--brand)"><path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"></path></svg>
                 {:else}
-                <svg width="1em" in:fly={{y:100, duration:300}}  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" color="var(--brand)"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+                <svg width="1em" in:fly={{y:100, duration:300, easing:quintInOut}}  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" color="var(--brand)"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
                 {/if}
             </button>
         </li>
     </ul>
     {#key active}
-    <menu class:mobile-show={active} transition:slide={{duration: 300}}>
+    <menu class:mobile-show={active} transition:slide={{easing: quintInOut}}>
         <li>
             <Submenu display='🏠 Beranda' bind:scope bind:closeAll>
                 <li class="link-like">
@@ -104,10 +105,10 @@ import {slide, fly} from 'svelte/transition'
     }
 
     ul{
-        display: grid;
-        grid-template-columns: 80% 15%;
-        grid-gap: 3%;
-        grid-template-rows: clamp(8vh, 120px, 15vh);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: .25rem .5rem;
     }
 
     .toggler{
@@ -134,19 +135,22 @@ import {slide, fly} from 'svelte/transition'
     .header{
         display: flex;
         align-items: center;
-        gap: 1rem;
-        padding: 0 1rem;
+        gap: .5rem;
+        max-width: 85%;
     }
 
     .text{
         display: flex;
         flex-direction: column;
+        gap: .2rem;
     }
 
     .header > img {
-        height: 60%;
-        width: auto;
+        min-width: 36px;
+        max-width: 20%;
+        height: auto;
         cursor: pointer;
+        padding-block: .5rem;
     }
 
     li{
@@ -197,7 +201,6 @@ import {slide, fly} from 'svelte/transition'
             border: 0;
         }
 
-
         a:hover::before{
           transform: scaleX(1);  
         }
@@ -219,7 +222,6 @@ import {slide, fly} from 'svelte/transition'
         }
 	
         header{
-            max-width: 100% !important;
             display: flex;
             align-items: center;
             justify-content: space-between;

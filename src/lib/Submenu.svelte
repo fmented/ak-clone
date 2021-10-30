@@ -7,6 +7,8 @@ import { onDestroy, onMount} from 'svelte'
 
 import {slide, fly } from 'svelte/transition'
 
+import {quintInOut } from 'svelte/easing'
+
 export let display = 'submenu'
 export let scope = new Map()
 let _
@@ -69,7 +71,7 @@ $: active = scope.get(_)
         </span>
     </div>
     {#key active}        
-        <menu class:left={[...scope.keys()][0]==_} in:fly={{duration: 300, x:-100}} out:slide={{duration:300}} class:active={active}>
+        <menu class:left={[...scope.keys()][0]==_} in:fly={{duration: 300, x:-100, easing:quintInOut}} out:slide={{duration: 300, easing:quintInOut}} class:active={active}>
             <slot></slot>
         </menu>
     {/key}
