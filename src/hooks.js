@@ -54,7 +54,6 @@ const directives = {
     "https://*.facebook.net",
     "https://*.sentry.io",
     "https://polyfill.io",
-    // (req, res) => `'nonce-${res.locals.nonce}'`,
   ],
   'frame-src': [
     "https://*.stripe.com",

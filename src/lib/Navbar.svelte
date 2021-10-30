@@ -1,6 +1,4 @@
 <script>
-import { browser } from "$app/env";
-
 import { base } from "$app/paths";
 import {slide, fly} from 'svelte/transition'
     import Submenu from "./Submenu.svelte";
@@ -95,22 +93,11 @@ import {slide, fly} from 'svelte/transition'
 
 
 <style>
-    :global(.blue){
-        background: blue;
-    }
-
-    *{
-        box-sizing: border-box;
-    }
-
     a{
         text-decoration: none;
         color: var(--text);
     }
 
-    a::before{
-        display: none;
-    }
 
     .mobile-show{
         display: block;
@@ -120,7 +107,6 @@ import {slide, fly} from 'svelte/transition'
         display: grid;
         grid-template-columns: 80% 15%;
         grid-gap: 3%;
-        padding: .5rem auto;
         grid-template-rows: clamp(8vh, 120px, 15vh);
     }
 
@@ -211,9 +197,6 @@ import {slide, fly} from 'svelte/transition'
             border: 0;
         }
 
-        a::before{
-            display: absolute;
-        }
 
         a:hover::before{
           transform: scaleX(1);  

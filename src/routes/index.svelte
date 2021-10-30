@@ -354,7 +354,7 @@ header.bg1::before, header.bg2::after{
 }
 
 .ps{
-    width: 25%; 
+    width: 40%; 
     height:auto;
 }
 *[style*=--state]{
@@ -400,7 +400,7 @@ header.bg1::before, header.bg2::after{
     }
 
     .ps{
-        width: 30%; 
+        width: 32%; 
         height:auto;
     }
 
