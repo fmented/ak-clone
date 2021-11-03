@@ -108,8 +108,6 @@ html, body{
     padding: 0;
     font-family: 'Bitter', serif;
     color: var(--text);
-    scrollbar-color: var(--brand) var(--surface2);
-    scrollbar-width: thin;
 }
 
 a, a *{
@@ -147,36 +145,44 @@ a:visited, a:visited *{
         transform: scaleX(1);
         opacity: 1;
     }
+    ::-webkit-scrollbar{
+        transform: translateZ(0);
+        width: .7rem;
+        height: .7rem;
+    }
+    
+    ::-webkit-scrollbar-thumb{
+        transform: translateZ(0);
+        border-radius: 8px;
+        opacity: .2;
+        width: 90%;
+        border: .5px double var(--surface1);
+        background: linear-gradient( #65b calc(50% - 8px), white calc(50% - 8px), #65b calc(50% - 4px), white calc(50% - 4px), #65b calc(50%), white calc(50%), #65b calc(50% + 4px), white calc(50% + 4px), #65b calc(50% + 8px));
+    }
+    
+    ::-webkit-scrollbar-thumb:hover{
+        background: linear-gradient( var(--brand) calc(50% - 8px), white calc(50% - 8px), var(--brand) calc(50% - 4px), white calc(50% - 4px), var(--brand) calc(50%), white calc(50%), var(--brand) calc(50% + 4px), white calc(50% + 4px), var(--brand) calc(50% + 8px));
+    }
+    
+    
+    ::-webkit-scrollbar-track{
+        transform: translateZ(0);
+        background: var(--surface2);
+        border: .25rem solid var(--surface1);
+        margin-bottom: 2px;
+        margin-top: 1px;
+    }
+
+    *{
+        scrollbar-color: var(--brand) var(--surface2);
+        scrollbar-width: thin;
+    }
 }
 
 svg{
     vertical-align: bottom;
 }
 
-::-webkit-scrollbar{
-    width: .7rem;
-    height: .7rem;
-}
-
-::-webkit-scrollbar-thumb{
-    border-radius: 8px;
-    opacity: .2;
-    width: 90%;
-    border: .5px double var(--surface1);
-    background: linear-gradient( #65b calc(50% - 8px), white calc(50% - 8px), #65b calc(50% - 4px), white calc(50% - 4px), #65b calc(50%), white calc(50%), #65b calc(50% + 4px), white calc(50% + 4px), #65b calc(50% + 8px));
-}
-
-::-webkit-scrollbar-thumb:hover{
-    background: linear-gradient( var(--brand) calc(50% - 8px), white calc(50% - 8px), var(--brand) calc(50% - 4px), white calc(50% - 4px), var(--brand) calc(50%), white calc(50%), var(--brand) calc(50% + 4px), white calc(50% + 4px), var(--brand) calc(50% + 8px));
-}
-
-
-::-webkit-scrollbar-track{
-    background: var(--surface2);
-    border: .25rem solid var(--surface1);
-    margin-bottom: 2px;
-    margin-top: 1px;
-}
 
 
 

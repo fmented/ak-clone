@@ -69,7 +69,6 @@ tr{
     display: flex;
     flex-direction: column;
     margin-bottom: .5rem;
-    padding-inline-end: 4px;
 }
 
 

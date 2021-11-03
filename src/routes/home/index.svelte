@@ -1,27 +1,28 @@
 <script context="module">
     import {loginRequired} from '$lib/scripts/helper'
     
-    export const load = loginRequired
+    export const load = async ({fetch ,session}) =>{
+        if(!session.user) return loginRequired({session})
+        let res = await fetch(base+'/api/info')
+        let data = (await res.json()).result
+        return {
+            props: {
+                data
+            }
+        }
+    }
 </script>
 
 <script>
 import Stack from "$lib/Stack.svelte";
 import SortableTable from "$lib/SortableTable.svelte";
 import TitledBox from "$lib/TitledBox.svelte";
-import { onMount } from "svelte";
-import { getJSON } from "$lib/scripts/helper";
 import { base } from "$app/paths";
 import Page from "$lib/Page.svelte";
-import Spinner from "$lib/Spinner.svelte";
 import { session } from '$app/stores';
 
 
-onMount(async ()=>{
-    const res = await getJSON( base+'/api/info')
-    data = res.result
-})
-
-let data
+export let data
 
 let column = ['id', 'tanggal', 'informasi', 'link']
 
@@ -31,11 +32,7 @@ let column = ['id', 'tanggal', 'informasi', 'link']
     <br>
     <Stack template='55% calc(45% - 2em)'>
         <TitledBox name='Info Terbaru'>
-            {#if !data}
-                <Spinner></Spinner>
-            {:else} 
             <SortableTable row={data} {column}></SortableTable>
-            {/if}
         </TitledBox>
         <TitledBox name='Visi dan Misi'>
             <div>

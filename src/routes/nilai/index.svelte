@@ -1,32 +1,38 @@
 <script context=module>
     import { loginRequired } from "$lib/scripts/helper";
-    export const load = loginRequired
+    const semester = [1, 2, 3, 4, 5, 6, 7, 8,]
+
+    export const load = async ({fetch ,session}) =>{
+        if(!session.user) return loginRequired({session})
+
+        let result = []
+        for (let i of semester) {
+            let res = await fetch(`${base}/api/nilai/${i}`)
+            let data = (await res.json()).result
+            result.push(data)
+        }
+    
+
+        return {
+            props: {
+                result
+            }
+        }
+    }
 </script>
 
 
 <script>
-import { getJSON } from "$lib/scripts/helper";
 import SortableTable from "$lib/SortableTable.svelte";
 import {base} from '$app/paths'
 import Tabs from "$lib/Tabs.svelte";
-import { onMount } from "svelte";
 import Page from "$lib/Page.svelte";
-import Spinner from "$lib/Spinner.svelte";
 
-let semester = [1, 2, 3, 4, 5, 6, 7, 8,]
-
-let result = []
+export let result = []
 
 let column =  ['id', 'mata_kuliah', 'dosen', 'tugas', 'uts', 'uas', 'nilai_akhir', 'grade']
 
  
-onMount(async()=>{
-    semester.forEach(async i => {
-        let data = await getJSON(`${base}/api/nilai/${i}`)
-        result = [...result, data.result]
-    })
-})
-
 $: if(result.length == 8){
     const all = [...result].flat()
     result = [...result, all]
@@ -50,9 +56,5 @@ $: tabs = !result.length? [] : result.map((v, i)=> {
 </script>
 
 <Page title='Lihat Nilai' description='Lihat Nilai Hasil Studi'>
-    {#if !result.length}
-    <Spinner></Spinner>
-        {:else}
-        <Tabs items={tabs}></Tabs>
-    {/if}
+    <Tabs items={tabs}></Tabs>
 </Page>

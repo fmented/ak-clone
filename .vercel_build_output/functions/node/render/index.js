@@ -7051,9 +7051,9 @@ function init(settings = default_settings) {
     amp: false,
     dev: false,
     entry: {
-      file: assets + "/app/start-21f0f9c8.js",
+      file: assets + "/app/start-1d66b193.js",
       css: [assets + "/app/assets/start-61d1577b.css"],
-      js: [assets + "/app/start-21f0f9c8.js", assets + "/app/chunks/vendor-fe0f6730.js", assets + "/app/chunks/paths-28a87002.js"]
+      js: [assets + "/app/start-1d66b193.js", assets + "/app/chunks/vendor-fe0f6730.js", assets + "/app/chunks/paths-28a87002.js"]
     },
     fetched: void 0,
     floc: false,
@@ -7223,7 +7223,7 @@ var module_lookup = {
     return index;
   })
 };
-var metadata_lookup = { ".svelte-kit/build/components/layout.svelte": { "entry": "layout.svelte-8e0ba7c2.js", "css": [], "js": ["layout.svelte-8e0ba7c2.js", "chunks/vendor-fe0f6730.js"], "styles": [] }, ".svelte-kit/build/components/error.svelte": { "entry": "error.svelte-87002c77.js", "css": [], "js": ["error.svelte-87002c77.js", "chunks/vendor-fe0f6730.js"], "styles": [] }, "src/routes/index.svelte": { "entry": "pages/index.svelte-78554a77.js", "css": ["assets/pages/index.svelte-34361a92.css", "assets/PageHead-b16df459.css"], "js": ["pages/index.svelte-78554a77.js", "chunks/vendor-fe0f6730.js", "chunks/helper-10cfd0ee.js", "chunks/paths-28a87002.js", "chunks/PageHead-6fa28c50.js"], "styles": [] }, "src/routes/changepassword/index.svelte": { "entry": "pages/changepassword/index.svelte-f2e6e016.js", "css": ["assets/pages/changepassword/index.svelte-0cbfab54.css", "assets/FormControl-799f52a1.css", "assets/Page-ce71ea78.css", "assets/PageHead-b16df459.css", "assets/stores-2ede06c6.css"], "js": ["pages/changepassword/index.svelte-f2e6e016.js", "chunks/vendor-fe0f6730.js", "chunks/helper-10cfd0ee.js", "chunks/paths-28a87002.js", "chunks/FormControl-e009d08a.js", "chunks/Page-b22dd7a6.js", "chunks/PageHead-6fa28c50.js", "chunks/stores-7d6bd2a0.js"], "styles": [] }, "src/routes/input/index.svelte": { "entry": "pages/input/index.svelte-63bcdabd.js", "css": ["assets/pages/input/index.svelte-95cbe373.css", "assets/PageHead-b16df459.css"], "js": ["pages/input/index.svelte-63bcdabd.js", "chunks/vendor-fe0f6730.js", "chunks/PageHead-6fa28c50.js", "chunks/paths-28a87002.js"], "styles": [] }, "src/routes/login/index.svelte": { "entry": "pages/login/index.svelte-923f8ba6.js", "css": ["assets/pages/login/index.svelte-4116ffbe.css", "assets/PageHead-b16df459.css"], "js": ["pages/login/index.svelte-923f8ba6.js", "chunks/vendor-fe0f6730.js", "chunks/helper-10cfd0ee.js", "chunks/paths-28a87002.js", "chunks/PageHead-6fa28c50.js"], "styles": [] }, "src/routes/loker/index.svelte": { "entry": "pages/loker/index.svelte-079d4c8c.js", "css": ["assets/pages/loker/index.svelte-69f40f79.css", "assets/FormControl-799f52a1.css", "assets/SortableTable-51f0657a.css", "assets/Page-ce71ea78.css", "assets/PageHead-b16df459.css", "assets/Spinner-2c252a10.css"], "js": ["pages/loker/index.svelte-079d4c8c.js", "chunks/vendor-fe0f6730.js", "chunks/helper-10cfd0ee.js", "chunks/paths-28a87002.js", "chunks/FormControl-e009d08a.js", "chunks/SortableTable-16864c84.js", "chunks/Page-b22dd7a6.js", "chunks/PageHead-6fa28c50.js", "chunks/Spinner-5f2ce44e.js"], "styles": [] }, "src/routes/nilai/index.svelte": { "entry": "pages/nilai/index.svelte-c30d44f5.js", "css": ["assets/pages/nilai/index.svelte-dfc61709.css", "assets/SortableTable-51f0657a.css", "assets/Page-ce71ea78.css", "assets/PageHead-b16df459.css", "assets/Spinner-2c252a10.css"], "js": ["pages/nilai/index.svelte-c30d44f5.js", "chunks/vendor-fe0f6730.js", "chunks/helper-10cfd0ee.js", "chunks/paths-28a87002.js", "chunks/SortableTable-16864c84.js", "chunks/Page-b22dd7a6.js", "chunks/PageHead-6fa28c50.js", "chunks/Spinner-5f2ce44e.js"], "styles": [] }, "src/routes/home/index.svelte": { "entry": "pages/home/index.svelte-7ed48dfc.js", "css": ["assets/pages/home/index.svelte-8cbf3e75.css", "assets/SortableTable-51f0657a.css", "assets/stores-2ede06c6.css", "assets/Page-ce71ea78.css", "assets/PageHead-b16df459.css", "assets/Spinner-2c252a10.css"], "js": ["pages/home/index.svelte-7ed48dfc.js", "chunks/vendor-fe0f6730.js", "chunks/helper-10cfd0ee.js", "chunks/paths-28a87002.js", "chunks/SortableTable-16864c84.js", "chunks/stores-7d6bd2a0.js", "chunks/Page-b22dd7a6.js", "chunks/PageHead-6fa28c50.js", "chunks/Spinner-5f2ce44e.js"], "styles": [] }, "src/routes/spin/index.svelte": { "entry": "pages/spin/index.svelte-4ecb947d.js", "css": ["assets/Spinner-2c252a10.css"], "js": ["pages/spin/index.svelte-4ecb947d.js", "chunks/vendor-fe0f6730.js", "chunks/Spinner-5f2ce44e.js"], "styles": [] } };
+var metadata_lookup = { ".svelte-kit/build/components/layout.svelte": { "entry": "layout.svelte-8e0ba7c2.js", "css": [], "js": ["layout.svelte-8e0ba7c2.js", "chunks/vendor-fe0f6730.js"], "styles": [] }, ".svelte-kit/build/components/error.svelte": { "entry": "error.svelte-87002c77.js", "css": [], "js": ["error.svelte-87002c77.js", "chunks/vendor-fe0f6730.js"], "styles": [] }, "src/routes/index.svelte": { "entry": "pages/index.svelte-4cc4a68e.js", "css": ["assets/pages/index.svelte-34361a92.css", "assets/PageHead-3b77c1b3.css"], "js": ["pages/index.svelte-4cc4a68e.js", "chunks/vendor-fe0f6730.js", "chunks/helper-f30ad25d.js", "chunks/paths-28a87002.js", "chunks/PageHead-6fa28c50.js"], "styles": [] }, "src/routes/changepassword/index.svelte": { "entry": "pages/changepassword/index.svelte-8e3bd6d0.js", "css": ["assets/pages/changepassword/index.svelte-0cbfab54.css", "assets/FormControl-799f52a1.css", "assets/Page-ce71ea78.css", "assets/PageHead-3b77c1b3.css", "assets/stores-2ede06c6.css"], "js": ["pages/changepassword/index.svelte-8e3bd6d0.js", "chunks/vendor-fe0f6730.js", "chunks/helper-f30ad25d.js", "chunks/paths-28a87002.js", "chunks/FormControl-e009d08a.js", "chunks/Page-b22dd7a6.js", "chunks/PageHead-6fa28c50.js", "chunks/stores-7d6bd2a0.js"], "styles": [] }, "src/routes/input/index.svelte": { "entry": "pages/input/index.svelte-63bcdabd.js", "css": ["assets/pages/input/index.svelte-95cbe373.css", "assets/PageHead-3b77c1b3.css"], "js": ["pages/input/index.svelte-63bcdabd.js", "chunks/vendor-fe0f6730.js", "chunks/PageHead-6fa28c50.js", "chunks/paths-28a87002.js"], "styles": [] }, "src/routes/login/index.svelte": { "entry": "pages/login/index.svelte-87b2f15d.js", "css": ["assets/pages/login/index.svelte-4116ffbe.css", "assets/PageHead-3b77c1b3.css"], "js": ["pages/login/index.svelte-87b2f15d.js", "chunks/vendor-fe0f6730.js", "chunks/helper-f30ad25d.js", "chunks/paths-28a87002.js", "chunks/PageHead-6fa28c50.js"], "styles": [] }, "src/routes/loker/index.svelte": { "entry": "pages/loker/index.svelte-f7ca9664.js", "css": ["assets/pages/loker/index.svelte-69f40f79.css", "assets/FormControl-799f52a1.css", "assets/SortableTable-2e0ca44d.css", "assets/Page-ce71ea78.css", "assets/PageHead-3b77c1b3.css"], "js": ["pages/loker/index.svelte-f7ca9664.js", "chunks/vendor-fe0f6730.js", "chunks/helper-f30ad25d.js", "chunks/paths-28a87002.js", "chunks/FormControl-e009d08a.js", "chunks/SortableTable-9156a735.js", "chunks/Page-b22dd7a6.js", "chunks/PageHead-6fa28c50.js"], "styles": [] }, "src/routes/nilai/index.svelte": { "entry": "pages/nilai/index.svelte-ccc5104c.js", "css": ["assets/pages/nilai/index.svelte-dfc61709.css", "assets/SortableTable-2e0ca44d.css", "assets/Page-ce71ea78.css", "assets/PageHead-3b77c1b3.css"], "js": ["pages/nilai/index.svelte-ccc5104c.js", "chunks/vendor-fe0f6730.js", "chunks/helper-f30ad25d.js", "chunks/paths-28a87002.js", "chunks/SortableTable-9156a735.js", "chunks/Page-b22dd7a6.js", "chunks/PageHead-6fa28c50.js"], "styles": [] }, "src/routes/home/index.svelte": { "entry": "pages/home/index.svelte-fe4c5584.js", "css": ["assets/pages/home/index.svelte-8cbf3e75.css", "assets/SortableTable-2e0ca44d.css", "assets/stores-2ede06c6.css", "assets/Page-ce71ea78.css", "assets/PageHead-3b77c1b3.css"], "js": ["pages/home/index.svelte-fe4c5584.js", "chunks/vendor-fe0f6730.js", "chunks/helper-f30ad25d.js", "chunks/paths-28a87002.js", "chunks/SortableTable-9156a735.js", "chunks/stores-7d6bd2a0.js", "chunks/Page-b22dd7a6.js", "chunks/PageHead-6fa28c50.js"], "styles": [] }, "src/routes/spin/index.svelte": { "entry": "pages/spin/index.svelte-209cf273.js", "css": ["assets/pages/spin/index.svelte-de157c20.css"], "js": ["pages/spin/index.svelte-209cf273.js", "chunks/vendor-fe0f6730.js"], "styles": [] } };
 async function load_component(file) {
   const { entry, css: css2, js, styles } = metadata_lookup[file];
   return {
@@ -7311,8 +7311,8 @@ var index$9 = /* @__PURE__ */ Object.freeze({
   get: get$2
 });
 async function get$1({ params, headers }) {
-  const { semester } = params;
-  const result = semester == "all" ? nilai() : nilai().filter((i) => i.semester == semester);
+  const { semester: semester2 } = params;
+  const result = semester2 == "all" ? nilai() : nilai().filter((i) => i.semester == semester2);
   const user = getUserFromToken(readCookie(headers.cookie, "userToken"));
   if (result.length && user) {
     return {
@@ -7885,7 +7885,7 @@ var Stack = create_ssr_component(($$result, $$props, $$bindings, slots) => {
 </div>`;
 });
 var css$4 = {
-  code: ":root{--mobile-head-column:40%;--row-accent:var(--readonly)}table.svelte-1rfaaxn.svelte-1rfaaxn.svelte-1rfaaxn{width:100%;border-collapse:collapse}thead.svelte-1rfaaxn.svelte-1rfaaxn.svelte-1rfaaxn{visibility:collapse}tr.svelte-1rfaaxn.svelte-1rfaaxn.svelte-1rfaaxn{display:flex;flex-direction:column;margin-bottom:.5rem;padding-inline-end:4px}.wrap.svelte-1rfaaxn.svelte-1rfaaxn.svelte-1rfaaxn{display:grid;grid-template-columns:var(--mobile-head-column) calc( 100% - var(--mobile-head-column) );align-items:center;grid-gap:.5rem}th.svelte-1rfaaxn>.wrap.svelte-1rfaaxn.svelte-1rfaaxn{grid-template-columns:auto 1fr;text-align:left}td.svelte-1rfaaxn.svelte-1rfaaxn.svelte-1rfaaxn{overflow:hidden;border:1px solid var(--text)}td.svelte-1rfaaxn>.wrap.svelte-1rfaaxn.svelte-1rfaaxn{padding:0 .25rem}tbody.svelte-1rfaaxn tr td.svelte-1rfaaxn>.wrap.svelte-1rfaaxn{background-image:linear-gradient(90deg, var(--brand) var(--mobile-head-column), var(--surface1) var(--mobile-head-column))}tbody.svelte-1rfaaxn tr td.svelte-1rfaaxn:nth-child(even)>.wrap.svelte-1rfaaxn{background-image:linear-gradient(90deg, var(--brand) var(--mobile-head-column), var(--row-accent) var(--mobile-head-column));;}td.svelte-1rfaaxn>.wrap.svelte-1rfaaxn>span.svelte-1rfaaxn:first-child{color:white}.fake-label.svelte-1rfaaxn.svelte-1rfaaxn.svelte-1rfaaxn{word-wrap:break-word;white-space:nowrap}td.svelte-1rfaaxn.svelte-1rfaaxn.svelte-1rfaaxn:first-of-type{border-radius:4px 4px 0 0}td.svelte-1rfaaxn.svelte-1rfaaxn.svelte-1rfaaxn:last-of-type{border-radius:0 0 4px 4px}.wrap.svelte-1rfaaxn>.svelte-1rfaaxn.svelte-1rfaaxn{padding:.25rem}th.svelte-1rfaaxn.svelte-1rfaaxn.svelte-1rfaaxn{padding:0 .25rem}.sorter.svelte-1rfaaxn.svelte-1rfaaxn.svelte-1rfaaxn{padding:0;padding-bottom:1rem}section.svelte-1rfaaxn.svelte-1rfaaxn.svelte-1rfaaxn{margin-top:1rem}@media print, (orientation: landscape) and (min-width:800px){.tableWrapper.svelte-1rfaaxn.svelte-1rfaaxn.svelte-1rfaaxn{padding-inline-end:4px}tbody.svelte-1rfaaxn tr:nth-child(even) td.svelte-1rfaaxn>.wrap.svelte-1rfaaxn{background-image:none}tbody.svelte-1rfaaxn tr.svelte-1rfaaxn.svelte-1rfaaxn:nth-child(even){background:var(--row-accent)}.sorter.svelte-1rfaaxn.svelte-1rfaaxn.svelte-1rfaaxn{grid-template-columns:auto 1fr}tbody.svelte-1rfaaxn tr:nth-child(odd) td.svelte-1rfaaxn>.wrap.svelte-1rfaaxn{background-image:none\n    }thead.svelte-1rfaaxn.svelte-1rfaaxn.svelte-1rfaaxn{visibility:visible;cursor:pointer;border-collapse:collapse;border-radius:4px 4px 0 0}th.svelte-1rfaaxn.svelte-1rfaaxn.svelte-1rfaaxn{position:sticky;top:0;z-index:1;background:var(--brand)}th.svelte-1rfaaxn.svelte-1rfaaxn.svelte-1rfaaxn:first-of-type{border-radius:4px 0 0 0}th.svelte-1rfaaxn.svelte-1rfaaxn.svelte-1rfaaxn:last-of-type{border-radius:0 4px 0 0}td.svelte-1rfaaxn.svelte-1rfaaxn.svelte-1rfaaxn,th.svelte-1rfaaxn.svelte-1rfaaxn.svelte-1rfaaxn{min-width:5rem;max-width:10rem}td.svelte-1rfaaxn.svelte-1rfaaxn.svelte-1rfaaxn:hover,th.svelte-1rfaaxn.svelte-1rfaaxn.svelte-1rfaaxn:hover{box-shadow:var(--shadow) inset}tr.svelte-1rfaaxn.svelte-1rfaaxn.svelte-1rfaaxn{display:table-row;padding-inline-end:0}td.svelte-1rfaaxn>.wrap.svelte-1rfaaxn.svelte-1rfaaxn{grid-template-columns:1fr}td.svelte-1rfaaxn>.wrap.svelte-1rfaaxn>.fake-label.svelte-1rfaaxn{visibility:collapse;display:none;font-weight:600}th.svelte-1rfaaxn .wrap.svelte-1rfaaxn.svelte-1rfaaxn{font-size:.8rem;display:flex;flex-direction:column;gap:0;align-items:flex-start}td.svelte-1rfaaxn.svelte-1rfaaxn.svelte-1rfaaxn:first-of-type,td.svelte-1rfaaxn.svelte-1rfaaxn.svelte-1rfaaxn:last-of-type{border-radius:0}.sorter.svelte-1rfaaxn.svelte-1rfaaxn.svelte-1rfaaxn:first-of-type{display:none}td.svelte-1rfaaxn.svelte-1rfaaxn.svelte-1rfaaxn{border:0}th.svelte-1rfaaxn .svelte-1rfaaxn.svelte-1rfaaxn:first-of-type{border-radius:8px 0 0 0;overflow:hidden}}td.svelte-1rfaaxn .wrap .fake-label.svelte-1rfaaxn.svelte-1rfaaxn{font-size:.9rem}.paginator.svelte-1rfaaxn.svelte-1rfaaxn.svelte-1rfaaxn{display:grid;grid-template-columns:auto 1fr auto;padding:.25rem 0;text-align:center}.paginator.svelte-1rfaaxn>.svelte-1rfaaxn.svelte-1rfaaxn{padding:.5rem}.paginator.svelte-1rfaaxn>span.svelte-1rfaaxn.svelte-1rfaaxn{font-size:1.25rem}input.svelte-1rfaaxn.svelte-1rfaaxn.svelte-1rfaaxn,select.svelte-1rfaaxn.svelte-1rfaaxn.svelte-1rfaaxn{width:calc(100% - 1ch)}.controlWrapper.svelte-1rfaaxn.svelte-1rfaaxn.svelte-1rfaaxn{background:var(--surface1);position:sticky;top:0;z-index:1}.tableWrapper.svelte-1rfaaxn.svelte-1rfaaxn.svelte-1rfaaxn{max-height:var(--maxHeight);overflow-y:auto}@media print{th.svelte-1rfaaxn.svelte-1rfaaxn.svelte-1rfaaxn,td.svelte-1rfaaxn.svelte-1rfaaxn.svelte-1rfaaxn{box-shadow:var(--shadow) inset;position:initial}}",
+  code: ":root{--mobile-head-column:40%;--row-accent:var(--readonly)}table.svelte-90n26x.svelte-90n26x.svelte-90n26x{width:100%;border-collapse:collapse}thead.svelte-90n26x.svelte-90n26x.svelte-90n26x{visibility:collapse}tr.svelte-90n26x.svelte-90n26x.svelte-90n26x{display:flex;flex-direction:column;margin-bottom:.5rem}.wrap.svelte-90n26x.svelte-90n26x.svelte-90n26x{display:grid;grid-template-columns:var(--mobile-head-column) calc( 100% - var(--mobile-head-column) );align-items:center;grid-gap:.5rem}th.svelte-90n26x>.wrap.svelte-90n26x.svelte-90n26x{grid-template-columns:auto 1fr;text-align:left}td.svelte-90n26x.svelte-90n26x.svelte-90n26x{overflow:hidden;border:1px solid var(--text)}td.svelte-90n26x>.wrap.svelte-90n26x.svelte-90n26x{padding:0 .25rem}tbody.svelte-90n26x tr td.svelte-90n26x>.wrap.svelte-90n26x{background-image:linear-gradient(90deg, var(--brand) var(--mobile-head-column), var(--surface1) var(--mobile-head-column))}tbody.svelte-90n26x tr td.svelte-90n26x:nth-child(even)>.wrap.svelte-90n26x{background-image:linear-gradient(90deg, var(--brand) var(--mobile-head-column), var(--row-accent) var(--mobile-head-column));;}td.svelte-90n26x>.wrap.svelte-90n26x>span.svelte-90n26x:first-child{color:white}.fake-label.svelte-90n26x.svelte-90n26x.svelte-90n26x{word-wrap:break-word;white-space:nowrap}td.svelte-90n26x.svelte-90n26x.svelte-90n26x:first-of-type{border-radius:4px 4px 0 0}td.svelte-90n26x.svelte-90n26x.svelte-90n26x:last-of-type{border-radius:0 0 4px 4px}.wrap.svelte-90n26x>.svelte-90n26x.svelte-90n26x{padding:.25rem}th.svelte-90n26x.svelte-90n26x.svelte-90n26x{padding:0 .25rem}.sorter.svelte-90n26x.svelte-90n26x.svelte-90n26x{padding:0;padding-bottom:1rem}section.svelte-90n26x.svelte-90n26x.svelte-90n26x{margin-top:1rem}@media print, (orientation: landscape) and (min-width:800px){.tableWrapper.svelte-90n26x.svelte-90n26x.svelte-90n26x{padding-inline-end:4px}tbody.svelte-90n26x tr:nth-child(even) td.svelte-90n26x>.wrap.svelte-90n26x{background-image:none}tbody.svelte-90n26x tr.svelte-90n26x.svelte-90n26x:nth-child(even){background:var(--row-accent)}.sorter.svelte-90n26x.svelte-90n26x.svelte-90n26x{grid-template-columns:auto 1fr}tbody.svelte-90n26x tr:nth-child(odd) td.svelte-90n26x>.wrap.svelte-90n26x{background-image:none\n    }thead.svelte-90n26x.svelte-90n26x.svelte-90n26x{visibility:visible;cursor:pointer;border-collapse:collapse;border-radius:4px 4px 0 0}th.svelte-90n26x.svelte-90n26x.svelte-90n26x{position:sticky;top:0;z-index:1;background:var(--brand)}th.svelte-90n26x.svelte-90n26x.svelte-90n26x:first-of-type{border-radius:4px 0 0 0}th.svelte-90n26x.svelte-90n26x.svelte-90n26x:last-of-type{border-radius:0 4px 0 0}td.svelte-90n26x.svelte-90n26x.svelte-90n26x,th.svelte-90n26x.svelte-90n26x.svelte-90n26x{min-width:5rem;max-width:10rem}td.svelte-90n26x.svelte-90n26x.svelte-90n26x:hover,th.svelte-90n26x.svelte-90n26x.svelte-90n26x:hover{box-shadow:var(--shadow) inset}tr.svelte-90n26x.svelte-90n26x.svelte-90n26x{display:table-row;padding-inline-end:0}td.svelte-90n26x>.wrap.svelte-90n26x.svelte-90n26x{grid-template-columns:1fr}td.svelte-90n26x>.wrap.svelte-90n26x>.fake-label.svelte-90n26x{visibility:collapse;display:none;font-weight:600}th.svelte-90n26x .wrap.svelte-90n26x.svelte-90n26x{font-size:.8rem;display:flex;flex-direction:column;gap:0;align-items:flex-start}td.svelte-90n26x.svelte-90n26x.svelte-90n26x:first-of-type,td.svelte-90n26x.svelte-90n26x.svelte-90n26x:last-of-type{border-radius:0}.sorter.svelte-90n26x.svelte-90n26x.svelte-90n26x:first-of-type{display:none}td.svelte-90n26x.svelte-90n26x.svelte-90n26x{border:0}th.svelte-90n26x .svelte-90n26x.svelte-90n26x:first-of-type{border-radius:8px 0 0 0;overflow:hidden}}td.svelte-90n26x .wrap .fake-label.svelte-90n26x.svelte-90n26x{font-size:.9rem}.paginator.svelte-90n26x.svelte-90n26x.svelte-90n26x{display:grid;grid-template-columns:auto 1fr auto;padding:.25rem 0;text-align:center}.paginator.svelte-90n26x>.svelte-90n26x.svelte-90n26x{padding:.5rem}.paginator.svelte-90n26x>span.svelte-90n26x.svelte-90n26x{font-size:1.25rem}input.svelte-90n26x.svelte-90n26x.svelte-90n26x,select.svelte-90n26x.svelte-90n26x.svelte-90n26x{width:calc(100% - 1ch)}.controlWrapper.svelte-90n26x.svelte-90n26x.svelte-90n26x{background:var(--surface1);position:sticky;top:0;z-index:1}.tableWrapper.svelte-90n26x.svelte-90n26x.svelte-90n26x{max-height:var(--maxHeight);overflow-y:auto}@media print{th.svelte-90n26x.svelte-90n26x.svelte-90n26x,td.svelte-90n26x.svelte-90n26x.svelte-90n26x{box-shadow:var(--shadow) inset;position:initial}}",
   map: null
 };
 var SortableTable = create_ssr_component(($$result, $$props, $$bindings, slots) => {
@@ -7926,66 +7926,69 @@ var SortableTable = create_ssr_component(($$result, $$props, $$bindings, slots) 
   {
     sort(currentSort);
   }
-  return `<section class="${"svelte-1rfaaxn"}">${row.length ? `<div class="${"controlWrapper svelte-1rfaaxn"}">${validate_component(Stack, "Stack").$$render($$result, { gap: "5%" }, {}, {
-    default: () => `<div class="${"wrap sorter svelte-1rfaaxn"}"><label for="${"sortBy"}" class="${"svelte-1rfaaxn"}">Urutkan</label>
-        <select id="${"sortBy"}" class="${"svelte-1rfaaxn"}">${each(column, (field) => `<option${add_attribute("value", field, 0)}>${escape(capitalize(field))}</option>`)}</select></div>
+  return `<section class="${"svelte-90n26x"}">${row.length ? `<div class="${"controlWrapper svelte-90n26x"}">${validate_component(Stack, "Stack").$$render($$result, { gap: "5%" }, {}, {
+    default: () => `<div class="${"wrap sorter svelte-90n26x"}"><label for="${"sortBy"}" class="${"svelte-90n26x"}">Urutkan</label>
+        <select id="${"sortBy"}" class="${"svelte-90n26x"}">${each(column, (field) => `<option${add_attribute("value", field, 0)}>${escape(capitalize(field))}</option>`)}</select></div>
 
-    <div class="${"wrap sorter svelte-1rfaaxn"}"><label for="${"paginateBy"}" class="${"svelte-1rfaaxn"}">Maximum</label>
-        <select id="${"paginateBy"}" class="${"svelte-1rfaaxn"}">${each(Array(10), (_, i) => `<option${add_attribute("value", (i + 1) * 5, 0)}>${escape((i + 1) * 5)}</option>`)}</select></div>
+    <div class="${"wrap sorter svelte-90n26x"}"><label for="${"paginateBy"}" class="${"svelte-90n26x"}">Maximum</label>
+        <select id="${"paginateBy"}" class="${"svelte-90n26x"}">${each(Array(10), (_, i) => `<option${add_attribute("value", (i + 1) * 5, 0)}>${escape((i + 1) * 5)}</option>`)}</select></div>
     
-    <div class="${"wrap sorter svelte-1rfaaxn"}"><label for="${"search"}" class="${"svelte-1rfaaxn"}">Pencarian</label>
-        <input id="${"search"}" type="${"search"}" class="${"svelte-1rfaaxn"}"${add_attribute("value", search, 0)}></div>`
+    <div class="${"wrap sorter svelte-90n26x"}"><label for="${"search"}" class="${"svelte-90n26x"}">Pencarian</label>
+        <input id="${"search"}" type="${"search"}" class="${"svelte-90n26x"}"${add_attribute("value", search, 0)}></div>`
   })}</div>` : ``}
 
-<div style="${"--maxHeight:" + escape(maxHeight)}" class="${"tableWrapper svelte-1rfaaxn"}">${validate_component(PrintableArea, "PrintableArea").$$render($$result, {}, {}, {
-    default: () => `<table class="${"svelte-1rfaaxn"}"><thead class="${"svelte-1rfaaxn"}"><tr class="${"svelte-1rfaaxn"}">${each(column, (field) => `${field != data_id ? `<th title="${"Sort By " + escape(capitalize(field))}" class="${"svelte-1rfaaxn"}"><div class="${"wrap svelte-1rfaaxn"}">${currentSort === field ? `<span class="${"svelte-1rfaaxn"}">\u{1F53A}</span>` : `<span class="${"svelte-1rfaaxn"}">\u{1F536}</span>`}
-                            <span class="${"svelte-1rfaaxn"}">${escape(capitalize(field))}
+<div style="${"--maxHeight:" + escape(maxHeight)}" class="${"tableWrapper svelte-90n26x"}">${validate_component(PrintableArea, "PrintableArea").$$render($$result, {}, {}, {
+    default: () => `<table class="${"svelte-90n26x"}"><thead class="${"svelte-90n26x"}"><tr class="${"svelte-90n26x"}">${each(column, (field) => `${field != data_id ? `<th title="${"Sort By " + escape(capitalize(field))}" class="${"svelte-90n26x"}"><div class="${"wrap svelte-90n26x"}">${currentSort === field ? `<span class="${"svelte-90n26x"}">\u{1F53A}</span>` : `<span class="${"svelte-90n26x"}">\u{1F536}</span>`}
+                            <span class="${"svelte-90n26x"}">${escape(capitalize(field))}
                             </span></div>
                     </th>` : ``}`)}</tr></thead>
-            <tbody class="${"svelte-1rfaaxn"}">${filteredTable.length ? `${each(filteredTable.filter((_, i) => i >= limit * page && i < limit * (page + 1)), (data) => `<tr class="${"svelte-1rfaaxn"}">${each(column, (field) => `${field != data_id ? `<td${add_attribute("title", capitalize(field), 0)} class="${"svelte-1rfaaxn"}"><div class="${"wrap svelte-1rfaaxn"}"><span class="${"fake-label svelte-1rfaaxn"}">${escape(field == data_id ? "No." : capitalize(field))}</span>
-                            <span class="${"svelte-1rfaaxn"}">${field == "link" ? `<a${add_attribute("href", data[field].href, 0)}>${escape(data[field].text)}</a>` : `${escape(data[field])}`}
+            <tbody class="${"svelte-90n26x"}">${filteredTable.length ? `${each(filteredTable.filter((_, i) => i >= limit * page && i < limit * (page + 1)), (data) => `<tr class="${"svelte-90n26x"}">${each(column, (field) => `${field != data_id ? `<td${add_attribute("title", capitalize(field), 0)} class="${"svelte-90n26x"}"><div class="${"wrap svelte-90n26x"}"><span class="${"fake-label svelte-90n26x"}">${escape(field == data_id ? "No." : capitalize(field))}</span>
+                            <span class="${"svelte-90n26x"}">${field == "link" ? `<a${add_attribute("href", data[field].href, 0)}>${escape(data[field].text)}</a>` : `${escape(data[field])}`}
                             </span></div>
                     </td>` : ``}`)}
-                </tr>`)}` : `<tr class="${"svelte-1rfaaxn"}"><td${add_attribute("colspan", column.length, 0)} style="${"text-align:center;border-radius:0;padding:1rem"}" class="${"svelte-1rfaaxn"}">No Data To Show</td></tr>`}</tbody></table>`
+                </tr>`)}` : `<tr class="${"svelte-90n26x"}"><td${add_attribute("colspan", column.length, 0)} style="${"text-align:center;border-radius:0;padding:1rem"}" class="${"svelte-90n26x"}">No Data To Show</td></tr>`}</tbody></table>`
   })}</div>
 
-${paginate > 1 ? `<div class="${"paginator svelte-1rfaaxn"}">${page == 0 ? `<button disabled class="${"svelte-1rfaaxn"}">Prev</button>` : `<button class="${"svelte-1rfaaxn"}">Prev</button>`}
+${paginate > 1 ? `<div class="${"paginator svelte-90n26x"}">${page == 0 ? `<button disabled class="${"svelte-90n26x"}">Prev</button>` : `<button class="${"svelte-90n26x"}">Prev</button>`}
             
-            <span class="${"svelte-1rfaaxn"}">${escape(page + 1)} / ${escape(paginate)}</span>
+            <span class="${"svelte-90n26x"}">${escape(page + 1)} / ${escape(paginate)}</span>
             
-            ${page + 1 == paginate ? `<button disabled class="${"svelte-1rfaaxn"}">Next</button>` : `<button class="${"svelte-1rfaaxn"}">Next</button>`}</div>` : ``}</section>`;
+            ${page + 1 == paginate ? `<button disabled class="${"svelte-90n26x"}">Next</button>` : `<button class="${"svelte-90n26x"}">Next</button>`}</div>` : ``}</section>`;
 });
 var css$3 = {
-  code: ".svelte-1h2d8hz{box-sizing:content-box}.spinner.svelte-1h2d8hz{max-height:min(40vh, 200px);margin:0 auto;padding:1rem}.out.svelte-1h2d8hz,.in.svelte-1h2d8hz{border-width:8px;border-style:solid;height:40%;border-image:linear-gradient(to bottom, var(--secondary, #65b), var(--brand, #66d)) 1 100%;animation-name:svelte-1h2d8hz-spin-out;animation-duration:1500ms}strong.svelte-1h2d8hz{position:absolute;bottom:0;text-align:center;animation:svelte-1h2d8hz-txt 1500ms ease-in-out infinite;animation-direction:alternate;color:#66d}.in.svelte-1h2d8hz{animation-name:svelte-1h2d8hz-spin-in;border-image:linear-gradient(to bottom, var(--secondary, #65b), var(--brand, #66d)) 1 100%;height:calc(100%);transform:rotate(90deg)}div.svelte-1h2d8hz{aspect-ratio:1;display:flex;align-items:center;justify-content:center;position:relative}div.svelte-1h2d8hz:not(.spinner){animation-timing-function:ease-in-out;animation-iteration-count:infinite;animation-direction:alternate}@keyframes svelte-1h2d8hz-spin-out{to{transform:rotate(-90deg )}}@keyframes svelte-1h2d8hz-spin-in{to{transform:rotate(calc(1turn - 90deg) )}}@keyframes svelte-1h2d8hz-txt{to{transform:translateY(50%)}}",
-  map: null
-};
-var Spinner = create_ssr_component(($$result, $$props, $$bindings, slots) => {
-  $$result.css.add(css$3);
-  return `<div class="${"spinner svelte-1h2d8hz"}"><strong class="${"svelte-1h2d8hz"}">Please Wait ...</strong>
-    <div class="${"out svelte-1h2d8hz"}"><div class="${"in svelte-1h2d8hz"}"></div></div>
-</div>`;
-});
-var css$2 = {
   code: "div.svelte-x6virq{overflow:auto}.btn-container.svelte-x6virq{display:flex;gap:1rem}",
   map: null
 };
-var load$2 = loginRequired;
+var load$2 = async ({ fetch: fetch2, session: session2 }) => {
+  if (!session2.user)
+    return loginRequired({ session: session2 });
+  let res = await fetch2(base + "/api/lowongan");
+  let data = (await res.json()).result;
+  return { props: { data } };
+};
 var Loker = create_ssr_component(($$result, $$props, $$bindings, slots) => {
+  let column;
+  let { data } = $$props;
   let close;
   let modalActive = false;
   let posisi, perusahaan, expired;
-  $$result.css.add(css$2);
+  if ($$props.data === void 0 && $$bindings.data && data !== void 0)
+    $$bindings.data(data);
+  $$result.css.add(css$3);
   let $$settled;
   let $$rendered;
   do {
     $$settled = true;
+    column = data ? Object.keys(data[0]) : [];
     $$rendered = `
 
 ${validate_component(Page, "Page").$$render($$result, {
       title: "Info Loker",
       description: "Informai Lowongan Kerja"
     }, {}, {
-      default: () => `${`${validate_component(Spinner, "Spinner").$$render($$result, {}, {}, {})}`}`
+      default: () => `<div class="${"btn-container svelte-x6virq"}"><button>Tambah</button>
+        <button>Print</button></div>
+    ${validate_component(SortableTable, "SortableTable").$$render($$result, { row: data, column, maxHeight: "65vh" }, {}, {})}`
     })}
 
 
@@ -8040,7 +8043,7 @@ var index$3 = /* @__PURE__ */ Object.freeze({
   "default": Loker,
   load: load$2
 });
-var css$1 = {
+var css$2 = {
   code: ".box.svelte-1lsfq0o.svelte-1lsfq0o{padding:.5rem;border:1px solid #dee2e6;border-radius:0 0 4px 4px;border-top:0}ul.svelte-1lsfq0o.svelte-1lsfq0o{display:flex;padding-left:0;margin-bottom:0;list-style:none;border-bottom:1px solid #dee2e6;flex-wrap:wrap;overflow:hidden}li.svelte-1lsfq0o.svelte-1lsfq0o{margin-bottom:-1px}span.svelte-1lsfq0o.svelte-1lsfq0o{border:1px solid transparent;border-top-left-radius:0.25rem;border-top-right-radius:0.25rem;display:block;padding:0.5rem 1rem;cursor:pointer;position:relative;user-select:none}span.svelte-1lsfq0o.svelte-1lsfq0o:hover{border-color:#e9ecef #e9ecef #dee2e6}li.active.svelte-1lsfq0o>span.svelte-1lsfq0o{color:var(--brand);border-color:#dee2e6 #dee2e6 #fff}li.svelte-1lsfq0o>span.svelte-1lsfq0o::before{content:'';position:absolute;bottom:0;left:0;height:3px;background:var(--brand);width:100%;transform-origin:0 50%;transform:scaleX(0);opacity:0;transition:transform 300ms ease, opacity 200ms ease-out}li.active.svelte-1lsfq0o>span.svelte-1lsfq0o::before{transform:scaleX(1);opacity:1}",
   map: null
 };
@@ -8051,17 +8054,30 @@ var Tabs = create_ssr_component(($$result, $$props, $$bindings, slots) => {
     $$bindings.items(items);
   if ($$props.activeTabValue === void 0 && $$bindings.activeTabValue && activeTabValue !== void 0)
     $$bindings.activeTabValue(activeTabValue);
-  $$result.css.add(css$1);
+  $$result.css.add(css$2);
   return `<ul class="${"svelte-1lsfq0o"}">${each(items, (item) => `<li class="${escape(null_to_empty(activeTabValue === item?.value ? "active" : "")) + " svelte-1lsfq0o"}"><span class="${"svelte-1lsfq0o"}">${escape(item?.label)}</span>
 	</li>`)}</ul>
 ${each(items, (item) => `${activeTabValue == item?.value ? `<div class="${"box svelte-1lsfq0o"}">${validate_component(item?.component || missing_component, "svelte:component").$$render($$result, Object.assign(item?.props), {}, {})}
 	</div>` : ``}`)}`;
 });
-var load$1 = loginRequired;
+var semester = [1, 2, 3, 4, 5, 6, 7, 8];
+var load$1 = async ({ fetch: fetch2, session: session2 }) => {
+  if (!session2.user)
+    return loginRequired({ session: session2 });
+  let result = [];
+  for (let i of semester) {
+    let res = await fetch2(`${base}/api/nilai/${i}`);
+    let data = (await res.json()).result;
+    result.push(data);
+  }
+  return { props: { result } };
+};
 var Nilai = create_ssr_component(($$result, $$props, $$bindings, slots) => {
   let tabs;
-  let result = [];
+  let { result = [] } = $$props;
   let column = ["id", "mata_kuliah", "dosen", "tugas", "uts", "uas", "nilai_akhir", "grade"];
+  if ($$props.result === void 0 && $$bindings.result && result !== void 0)
+    $$bindings.result(result);
   {
     if (result.length == 8) {
       const all = [...result].flat();
@@ -8084,7 +8100,7 @@ var Nilai = create_ssr_component(($$result, $$props, $$bindings, slots) => {
     title: "Lihat Nilai",
     description: "Lihat Nilai Hasil Studi"
   }, {}, {
-    default: () => `${!result.length ? `${validate_component(Spinner, "Spinner").$$render($$result, {}, {}, {})}` : `${validate_component(Tabs, "Tabs").$$render($$result, { items: tabs }, {}, {})}`}`
+    default: () => `${validate_component(Tabs, "Tabs").$$render($$result, { items: tabs }, {}, {})}`
   })}`;
 });
 var index$2 = /* @__PURE__ */ Object.freeze({
@@ -8093,15 +8109,25 @@ var index$2 = /* @__PURE__ */ Object.freeze({
   "default": Nilai,
   load: load$1
 });
-var css = {
+var css$1 = {
   code: "ol.svelte-152n3fm{padding:0 1rem}div.svelte-152n3fm{margin-bottom:1rem}",
   map: null
 };
-var load = loginRequired;
+var load = async ({ fetch: fetch2, session: session2 }) => {
+  if (!session2.user)
+    return loginRequired({ session: session2 });
+  let res = await fetch2(base + "/api/info");
+  let data = (await res.json()).result;
+  return { props: { data } };
+};
 var Home = create_ssr_component(($$result, $$props, $$bindings, slots) => {
   let $session, $$unsubscribe_session;
   $$unsubscribe_session = subscribe(session, (value) => $session = value);
-  $$result.css.add(css);
+  let { data } = $$props;
+  let column = ["id", "tanggal", "informasi", "link"];
+  if ($$props.data === void 0 && $$bindings.data && data !== void 0)
+    $$bindings.data(data);
+  $$result.css.add(css$1);
   $$unsubscribe_session();
   return `${validate_component(Page, "Page").$$render($$result, {
     title: "SIA STTM - Home",
@@ -8110,7 +8136,7 @@ var Home = create_ssr_component(($$result, $$props, $$bindings, slots) => {
     default: () => `<br>
     ${validate_component(Stack, "Stack").$$render($$result, { template: "55% calc(45% - 2em)" }, {}, {
       default: () => `${validate_component(TitledBox, "TitledBox").$$render($$result, { name: "Info Terbaru" }, {}, {
-        default: () => `${`${validate_component(Spinner, "Spinner").$$render($$result, {}, {}, {})}`}`
+        default: () => `${validate_component(SortableTable, "SortableTable").$$render($$result, { row: data, column }, {}, {})}`
       })}
         ${validate_component(TitledBox, "TitledBox").$$render($$result, { name: "Visi dan Misi" }, {}, {
         default: () => `<div class="${"svelte-152n3fm"}"><b>Visi:</b>
@@ -8135,6 +8161,16 @@ var index$1 = /* @__PURE__ */ Object.freeze({
   [Symbol.toStringTag]: "Module",
   "default": Home,
   load
+});
+var css = {
+  code: ".svelte-1h2d8hz{box-sizing:content-box}.spinner.svelte-1h2d8hz{max-height:min(40vh, 200px);margin:0 auto;padding:1rem}.out.svelte-1h2d8hz,.in.svelte-1h2d8hz{border-width:8px;border-style:solid;height:40%;border-image:linear-gradient(to bottom, var(--secondary, #65b), var(--brand, #66d)) 1 100%;animation-name:svelte-1h2d8hz-spin-out;animation-duration:1500ms}strong.svelte-1h2d8hz{position:absolute;bottom:0;text-align:center;animation:svelte-1h2d8hz-txt 1500ms ease-in-out infinite;animation-direction:alternate;color:#66d}.in.svelte-1h2d8hz{animation-name:svelte-1h2d8hz-spin-in;border-image:linear-gradient(to bottom, var(--secondary, #65b), var(--brand, #66d)) 1 100%;height:calc(100%);transform:rotate(90deg)}div.svelte-1h2d8hz{aspect-ratio:1;display:flex;align-items:center;justify-content:center;position:relative}div.svelte-1h2d8hz:not(.spinner){animation-timing-function:ease-in-out;animation-iteration-count:infinite;animation-direction:alternate}@keyframes svelte-1h2d8hz-spin-out{to{transform:rotate(-90deg )}}@keyframes svelte-1h2d8hz-spin-in{to{transform:rotate(calc(1turn - 90deg) )}}@keyframes svelte-1h2d8hz-txt{to{transform:translateY(50%)}}",
+  map: null
+};
+var Spinner = create_ssr_component(($$result, $$props, $$bindings, slots) => {
+  $$result.css.add(css);
+  return `<div class="${"spinner svelte-1h2d8hz"}"><strong class="${"svelte-1h2d8hz"}">Please Wait ...</strong>
+    <div class="${"out svelte-1h2d8hz"}"><div class="${"in svelte-1h2d8hz"}"></div></div>
+</div>`;
 });
 var Spin = create_ssr_component(($$result, $$props, $$bindings, slots) => {
   return `

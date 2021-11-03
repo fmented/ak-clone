@@ -1,6 +1,16 @@
 <script context=module>
     import { loginRequired } from "$lib/scripts/helper";
-    export const load = loginRequired
+
+    export const load = async ({fetch ,session}) =>{
+        if(!session.user) return loginRequired({session})
+        let res = await fetch(base+'/api/lowongan')
+        let data = (await res.json()).result
+        return {
+            props: {
+                data
+            }
+        }
+    }
 </script>
 
 
@@ -8,23 +18,13 @@
 import FormControl from "$lib/FormControl.svelte";
 import Modal from "$lib/Modal.svelte";
 import SortableTable from "$lib/SortableTable.svelte";
-import { onMount } from "svelte";
-import { getJSON } from "$lib/scripts/helper";
 import {base} from '$app/paths'
 import Page from "$lib/Page.svelte";
-import Spinner from "$lib/Spinner.svelte";
 
-
-onMount(async ()=>{
-    let data = await getJSON(base+'/api/lowongan')
-    row=data.result
-})
-
-
-let row 
+export let data 
 let close
 
-$: column = row? Object.keys(row[0]) : []
+$: column = data? Object.keys(data[0]) : []
 
 let modalActive = false
 
@@ -40,7 +40,7 @@ function add() {
             informasi,
             expired
         }
-        row = [...row, form] 
+        data = [...data, form] 
         close()
         return
     }
@@ -52,16 +52,12 @@ $: valid = posisi&&perusahaan&&alamat&&informasi&&expired
 
 <svelte:body on:keyup={e=>{if(e.key=='Enter' && modalActive && valid) add()}} />
 
-<Page title='Info Loker' description='Informai Lowongan Kerja'>
-    {#if !row}
-        <Spinner></Spinner>
-        {:else}        
-        <div class=btn-container>
-            <button on:click={()=>modalActive=true}>Tambah</button>
-            <button on:click={()=>window.print()}>Print</button>
-        </div>
-        <SortableTable {row} {column} maxHeight=65vh></SortableTable>
-    {/if}
+<Page title='Info Loker' description='Informai Lowongan Kerja'>      
+    <div class=btn-container>
+        <button on:click={()=>modalActive=true}>Tambah</button>
+        <button on:click={()=>window.print()}>Print</button>
+    </div>
+    <SortableTable row={data} {column} maxHeight=65vh></SortableTable>
 </Page>
 
 
